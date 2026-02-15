@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="十二支詣, 十二支にまつわる神社探し, 十二支, 神社, 動物">
+    <meta name="description" content="「十二支詣」──十二支にまつわる神社探し">
+    <title>十二支詣</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Kosugi+Maru&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap&family=Kaisei+Decol:wght@400;500;700');
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.webp">
+</head>
+
+<body class="page-jyunishi">
+    <!-- Existing decorative elements -->
+    <div class="en1">
+        <img src="images/en1.webp">
+    </div>
+    <div class="en2">
+        <img src="images/en2.webp">
+    </div>
+    <div class="cloud1">
+        <img src="images/cloud1.webp">
+    </div>
+    <div class="cloud2">
+        <img src="images/cloud2.webp">
+    </div>
+
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/nav-top.webp" alt="トップ">
+        </a>
+    </div>
+
+    <div class="body-wrapper">
+        <div class="left-column">
+            <div class="page-title">
+                <img src="images/title-jyunishi.webp">
+            </div>
+        </div><!--/.left-column-->
+
+        <div class="center-column">
+            <main class="whole">
+                <div class="page-icon">
+                    <img src="images/icon-jyunishi.webp">
+                </div>
+                <div class="selection-area" id="selectionArea">
+                    <h1 class="jyunishi">診断したい年を選んでね！</h1>
+                    <select id="yearSelect"></select>
+                    <button id="confirmBtn" onclick="showZodiac()">OK！</button>
+                </div>
+
+                <div id="resultArea">
+                    <img id="zodiacImage" src="" alt="Zodiac Image">
+                    <div id="zodiacResult"></div>
+                    <button id="retryBtn" onclick="resetSelection()">もう一回</button>
+                </div>
+            </main>
+        </div><!--/.center-column-->
+
+        <div class="right-column">
+            <div class="nav-area">
+                <nav class="nav-area-items">
+                    <ul>
+                        <li><a href="jinjasagashi.html">神社探し</a>
+                            <br /><span class="nav-small">あなたに縁のある一社を</span>
+                        </li>
+                        <li><a href="jyunishi.html">十二支診断</a>
+                            <br /><span class="nav-small">特定年の十二支をチェック</span>
+                        </li>
+                        <li><a href="#">バーチャル参拝</a>
+                            <br /><span class="nav-small">距離を越えて祈りを届ける</span>
+                        </li>
+                        <li><a href="kotowaza.html">ことわざくじ</a>
+                            <br /><span class="nav-small">動物に関する一語</span>
+                        </li>
+                        <li><a href="about.html">サイト紹介</a>
+                            <br /><span class="nav-small">用語集・サイトについて</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div><!--/.nav-area-->
+        </div><!--/.right-column-->
+    </div><!--/.body-wrapper-->
+    
+    <script src="js/jyunishi.js"></script>
+
+</body>
+
+</html>

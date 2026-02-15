@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="十二支詣, 十二支にまつわる神社探し, 十二支, 神社, 動物">
+    <meta name="description" content="「十二支詣」──十二支にまつわる神社探し">
+    <title id="pageTitle"> | 十二支詣</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Kosugi+Maru&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap&family=Kaisei+Decol:wght@400;500;700');
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.png">
+</head>
+<body>
+    <!-- Existing decorative elements -->
+    <div class="en1"><img src="images/en1.png"></div>
+    <div class="en2"><img src="images/en2.png"></div>
+    <div class="cloud1"><img src="images/cloud1.png"></div>
+    <div class="cloud2"><img src="images/cloud2.png"></div>
+    <div class="logo"><a href="index.html"><img src="images/nav-top.png" alt="トップ"></a></div>
+
+    <div class="body-wrapper">
+        <div class="left-column">
+            <div class="page-title">
+                <img src="images/title-jinjasagashi.png">
+            </div>
+        </div>
+
+        <div class="center-column">
+            <div class="main-area">
+                <main class="index">
+                    <div class="deco"><img src="images/deco.png"></div>
+                    <div class="spot-image">
+                        <img id="spotImage" src="" alt="">
+                    </div>
+                    <div class="spot-info">
+                        <div class="spot-name-items">
+                            <h1 id="spotId" class="spot-id"></h1>
+                            <p id="spotHiragana" class="spot-hiragana"></p>
+                        </div>
+                        <div id="spotCatch" class="spot-catch"></div>
+                        <div id="spotDesc" class="spot-desc"></div>
+                        <hr/>
+                        <div id="addr" class="addr"></div>
+                        <div class="spot-site">
+                            <a id="spotSiteLink" href="" target="_blank" rel="noopener noreferrer"></a>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="nav-area">
+                <nav class="nav-area-items">
+                    <ul>
+                        <li><a href="jinjasagashi.html">神社探し</a><br /><span class="nav-small">あなたに縁のある一社を</span></li>
+                        <li><a href="jyunishi.html">十二支診断</a><br /><span class="nav-small">特定年の十二支を確認</span></li>
+                        <li><a href="#">バーチャル参拝</a><br /><span class="nav-small">（工事中）</span></li>
+                        <li><a href="kotowaza.html">ことわざくじ</a><br /><span class="nav-small">動物に関する一語</span></li>
+                        <li><a href="about.html">サイト紹介</a><br /><span class="nav-small">用語集・サイトについて</span></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/shrines.js"></script>
+    <script src="js/loadShrine.js"></script>
+</body>
+</html>
