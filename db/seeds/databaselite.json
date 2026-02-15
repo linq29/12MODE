@@ -1,0 +1,244 @@
+{
+  "spots": [
+    {
+      "spotID": "1",
+      "zodiacID": "1",
+      "spot": "大豊神社",
+      "spotHiragana": "おおとよじんじゃ",
+      "addr": "京都府京都市左京区鹿ケ谷宮ノ前町1",
+      "spotCatch": "狛ねずみが迎える哲学の道の社",
+      "spotDesc": "平安時代に創建された歴史ある神社。鹿ケ谷の静かな地に鎮座し、四季折々の自然が美しい。豊穣や学問の神として知られる大己貴命を祀る。境内は落ち着いた雰囲気で、地元の人々に親しまれている。",
+      "spotSite": "https://ootoyojinja.jp/"
+    },
+    {
+      "spotID": "2",
+      "zodiacID": "1",
+      "spot": "戸部杉山神社",
+      "spotHiragana": "とべすぎやまじんじゃ",
+      "addr": "神奈川県横浜市西区中央1-13-1",
+      "spotCatch": "横浜最古の歴史ある神社",
+      "spotDesc": "横浜の古社で、源頼朝が創建したと伝わる。杉山明神を祀り、厄除けや健康祈願で信仰を集める。都会の中の静寂な空間として、訪れる人を癒す。春には桜が咲き、見事な景観が楽しめる。",
+      "spotSite": "https://www.kanagawa-jinja.or.jp/shrine/1204011-000/"
+    },
+    {
+      "spotID": "3",
+      "zodiacID": "1",
+      "spot": "大国主神社",
+      "spotHiragana": "しきつまつのみや",
+      "addr": "大阪府大阪市浪速区敷津西1-2-12",
+      "spotCatch": "米俵を抱える狛ねずみの社",
+      "spotDesc": "大国主大神を祀る神社で、縁結びや商売繁盛のご利益で知られる。大阪の喧騒から離れた場所にあり、参拝者に穏やかなひと時を提供。シンプルながらも温かみのある境内が特徴。",
+      "spotSite": "https://www.city.osaka.lg.jp/naniwa/page/0000001078.html"
+    },
+    {
+      "spotID": "4",
+      "zodiacID": "1",
+      "spot": "多賀神社",
+      "spotHiragana": "たがじんじゃ",
+      "addr": "青森県弘前市桜庭字外山948",
+      "spotCatch": "津軽一代様のひとつ",
+      "spotDesc": "弘前の山間に佇む神社で、多賀大神を祀る。清水観音堂として知られ、子育てや長寿の祈願に訪れる人が多い。自然に囲まれた静寂な環境で、心が洗われるような場所。",
+      "spotSite": "https://www.trip-tsugaru.com/special/ichidaisama/"
+    },
+    {
+      "spotID": "5",
+      "zodiacID": "2",
+      "spot": "北野天満宮",
+      "spotHiragana": "きたのてんまんぐう",
+      "addr": "京都府京都市上京区馬喰町",
+      "spotCatch": "撫牛で学問成就・病気平癒",
+      "spotDesc": "菅原道真を祀る学問の神様として有名。京都の名所の一つで、梅の名所としても知られる。歴史的な建造物と美しい庭園が魅力。受験生や学業成就を願う参拝者で賑わう。",
+      "spotSite": "https://kitanotenmangu.or.jp/"
+    },
+    {
+      "spotID": "6",
+      "zodiacID": "2",
+      "spot": "牛嶋神社",
+      "spotHiragana": "たかなわがんしょうじ",
+      "addr": "東京都墨田区向島1-4-5",
+      "spotCatch": "三ツ鳥居が特徴の牛の社",
+      "spotDesc": "隅田川近くに位置し、牛頭天王を祀る。江戸時代から続く伝統ある神社で、厄除けや健康祈願に訪れる人が多い。こぢんまりとした境内は地域の憩いの場として親しまれている。",
+      "spotSite": "https://gansho-ji.net/"
+    },
+    {
+      "spotID": "7",
+      "zodiacID": "2",
+      "spot": "牛天神北野神社",
+      "spotHiragana": "うしてんじんきたのじんじゃ",
+      "addr": "東京都文京区春日1-5-2",
+      "spotCatch": "願いを叶える「ねがい牛」",
+      "spotDesc": "文京区の隠れた名所で、学問の神・菅原道真を祀る。牛にまつわる伝説が残り、境内には牛の像が特徴的。静かな住宅街にあり、落ち着いた雰囲気の中で参拝できる。",
+      "spotSite": "http://www.ushitenjin.jp/"
+    },
+    {
+      "spotID": "8",
+      "zodiacID": "2",
+      "spot": "田倉牛神社",
+      "spotHiragana": "たくらうしがみしゃ",
+      "addr": "岡山県備前市吉永町福満994-1",
+      "spotCatch": "牛神信仰が残る神社",
+      "spotDesc": "備前焼の里近くに鎮座し、牛の神を祀る珍しい神社。農耕や家畜の守護として信仰され、地域の歴史を感じさせる。素朴で穏やかな境内は、心安らぐスポットとして知られる。",
+      "spotSite": "http://bizen-kanko.com/spot/spot_detail/index/113.html"
+    },
+    {
+      "spotID": "9",
+      "zodiacID": "3",
+      "spot": "鳳来山東照宮",
+      "spotHiragana": "ほうらいさんとうしょうぐう",
+      "addr": "愛知県新城市門谷鳳来寺4",
+      "spotCatch": "徳川家ゆかりの霊験あらたか社",
+      "spotDesc": "徳川家康を祀る東照宮で、鳳来寺山の自然に囲まれた場所にある。歴史的な建築と厳かな雰囲気が魅力。山道を登る参拝は、心身を清める体験として人気。",
+      "spotSite": "https://www.horaisantoshogu.com/"
+    },
+    {
+      "spotID": "10",
+      "zodiacID": "3",
+      "spot": "加藤神社",
+      "spotHiragana": "かとうじんじゃ",
+      "addr": "熊本県熊本市中央区本丸2-1",
+      "spotCatch": "厄除けの虎くぐりが名物",
+      "spotDesc": "熊本城内にあり、加藤清正を祀る。武将の魂が宿る場所として、勝負事や開運を願う参拝者が多い。城と一体となった景観は壮観で、歴史好きにもおすすめ。",
+      "spotSite": "http://www.kato-jinja.or.jp/"
+    },
+    {
+      "spotID": "11",
+      "zodiacID": "3",
+      "spot": "賀露神社",
+      "spotHiragana": "かろじんじゃ",
+      "addr": "鳥取市賀露町北1-21-8",
+      "spotCatch": "なでると強くなる虎の狛犬",
+      "spotDesc": "鳥取港近くに鎮座し、海の安全と豊漁を祈願する神社。素朴ながらも地域に根付いた信仰が感じられる。周辺の海風を感じながら、穏やかな参拝が楽しめる。",
+      "spotSite": "http://karojinjya.jp/"
+    },
+    {
+      "spotID": "12",
+      "zodiacID": "3",
+      "spot": "八房神社",
+      "spotHiragana": "やぶさじんじゃ",
+      "addr": "鹿児島県鹿児島市犬迫町3453-1",
+      "spotCatch": "地球一の大虎が鎮座する社",
+      "spotDesc": "自然豊かな場所にあり、八房龍王を祀る。地域の守護神として崇敬され、雨乞いや豊作を願う伝統が残る。静かな山間にあるため、心落ち着く場所として知られる。",
+      "spotSite": "https://www.pref.kagoshima.jp/ab27/yafusa-jinja.html"
+    },
+    {
+      "spotID": "13",
+      "zodiacID": "4",
+      "spot": "調神社",
+      "spotHiragana": "つきじんじゃ",
+      "addr": "埼玉県さいたま市浦和区岸町3-17-25",
+      "spotCatch": "鳥居のない珍しい神社",
+      "spotDesc": "「つきのみや」と呼ばれ、兎がシンボルの珍しい神社。月読命を祀り、縁結びや安産祈願で人気。境内には兎の像が多く、訪れる人を和ませる。",
+      "spotSite": "https://visitsaitamacity.jp/spots/20"
+    },
+    {
+      "spotID": "14",
+      "zodiacID": "4",
+      "spot": "白兎神社",
+      "spotHiragana": "はくとじんじゃ",
+      "addr": "鳥取県鳥取市白兎603",
+      "spotCatch": "因幡の白兎伝説の神社",
+      "spotDesc": "日本神話「因幡の白兎」に由来する神社。縁結びや皮膚病治癒のご利益で知られ、海辺の風光明媚な場所にある。白兎伝説を感じながら参拝できるロマンチックなスポット。",
+      "spotSite": "https://jbpress.ismedia.jp/articles/-/73338"
+    },
+    {
+      "spotID": "15",
+      "zodiacID": "4",
+      "spot": "岡﨑神社",
+      "spotHiragana": "おかざきじんじゃ",
+      "addr": "京都府京都市左京区岡崎東天王町51",
+      "spotCatch": "うさぎが神使の子授け神社",
+      "spotDesc": "兎を神使とする神社で、安産や子宝祈願に多くの人が訪れる。境内には兎の像が点在し、愛らしい雰囲気。京都の風情ある街並みの中にある隠れた名所。",
+      "spotSite": "https://okazakijinja.jp/"
+    },
+    {
+      "spotID": "16",
+      "zodiacID": "4",
+      "spot": "住吉大社",
+      "spotHiragana": "すみよしたいしゃ",
+      "addr": "大阪府大阪市住吉区住吉2-9-89",
+      "spotCatch": "全国の住吉神社の総本社",
+      "spotDesc": "全国の住吉神社の総本社で、海の神を祀る。航海安全や商売繁盛のご利益で知られ、太鼓橋がシンボル。歴史深い境内は、大阪を代表するパワースポット。",
+      "spotSite": "https://www.sumiyoshitaisha.net/"
+    },
+    {
+      "spotID": "17",
+      "zodiacID": "5",
+      "spot": "九頭龍神社",
+      "spotHiragana": "くずりゅうじんじゃ",
+      "addr": "山形県南陽市宮内3707-1",
+      "spotCatch": "九つの龍神が守る社",
+      "spotDesc": "九頭龍大神を祀り、水や龍神信仰で有名。自然豊かな環境にあり、開運や縁結びを願う参拝者が訪れる。神秘的な雰囲気の中で、心が浄化される場所。",
+      "spotSite": "https://www.city.nanyo.yamagata.jp/kanko/shrines-temples/198.html"
+    },
+    {
+      "spotID": "18",
+      "zodiacID": "5",
+      "spot": "伊豆山神社",
+      "spotHiragana": "いずさんじんじゃ",
+      "addr": "静岡県熱海市伊豆山708-1",
+      "spotCatch": "赤白二龍が宿る名社",
+      "spotDesc": "熱海を見下ろす高台にあり、縁結びと開運のご利益で知られる。源頼朝と北条政子のロマンスゆかりの地としても有名。海と山の絶景が楽しめる。",
+      "spotSite": "https://izusanjinjya.jp/"
+    },
+    {
+      "spotID": "19",
+      "zodiacID": "5",
+      "spot": "江島神社",
+      "spotHiragana": "えのしまじんじゃ",
+      "addr": "神奈川県藤沢市江の島2-3-8",
+      "spotCatch": "天女と五頭龍伝説の地",
+      "spotDesc": "江の島のシンボルで、弁財天を祀る。縁結びや芸能上達のご利益で人気。島全体が神聖な雰囲気で、観光と参拝を兼ねて訪れる人が多い。",
+      "spotSite": "http://enoshimajinja.or.jp/"
+    },
+    {
+      "spotID": "20",
+      "zodiacID": "5",
+      "spot": "荏原神社",
+      "spotHiragana": "えばらじんじゃ",
+      "addr": "東京都品川区北品川2-30-28",
+      "spotCatch": "品川の龍神を祀る社",
+      "spotDesc": "平安時代から続く古社で、天皇の勅使が訪れた歴史を持つ。地域の守護神として信仰され、穏やかな境内は都会の中のオアシス。夏祭りも盛大。",
+      "spotSite": "http://ebarajinja.org/top.html"
+    },
+    {
+      "spotID": "21",
+      "zodiacID": "6",
+      "spot": "大神神社",
+      "spotHiragana": "おおみわじんじゃ",
+      "addr": "奈良県桜井市三輪1422",
+      "spotCatch": "日本最古の神社のひとつ",
+      "spotDesc": "日本最古の神社の一つで、大物主大神を祀る。三輪山を神体とし、自然と調和した神秘的な空間。縁結びや国家安泰を願う参拝者が絶えない。",
+      "spotSite": "https://oomiwa.or.jp/"
+    },
+    {
+      "spotID": "22",
+      "zodiacID": "6",
+      "spot": "蛇窪神社",
+      "spotHiragana": "へびくぼじんじゃ",
+      "addr": "東京都品川区二葉4-4-12",
+      "spotCatch": "白蛇伝説の残る開運神社",
+      "spotDesc": "白蛇を神使とする珍しい神社で、金運や厄除けのご利益が人気。地域に愛されるこぢんまりとした境内は、静かで心落ち着く場所として知られる。",
+      "spotSite": "https://hebikubo.jp/"
+    },
+    {
+      "spotID": "23",
+      "zodiacID": "6",
+      "spot": "岩國白蛇神社",
+      "spotHiragana": "いわくにしろへびじんじゃ",
+      "addr": "山口県岩国市今津町6-4-2",
+      "spotCatch": "白蛇を祀る縁起の良い社",
+      "spotDesc": "白蛇を祀る神社で、金運や商売繁盛のご利益が期待される。岩国の天然記念物・白蛇にちなみ、神秘的な雰囲気が漂う。参拝者に穏やかな癒しを。",
+      "spotSite": "https://yamaguchi-tourism.jp/spot/detail_17961.html"
+    },
+    {
+      "spotID": "24",
+      "zodiacID": "6",
+      "spot": "金蛇水神社",
+      "spotHiragana": "かなへびすいじんじゃ",
+      "addr": "宮城県岩沼市三色吉水神7",
+      "spotCatch": "水と財運のご利益ある社",
+      "spotDesc": "金蛇大神を祀り、水と金運のご利益で有名。美しい庭園と池が特徴で、四季折々の風景が楽しめる。商売繁盛を願う人々が遠方からも訪れる。",
+      "spotSite": "https://kanahebi.cdx.jp/"
+    }
+  ]
+}

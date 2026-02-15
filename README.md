@@ -1,71 +1,67 @@
-# 十二支詣〜干支にまつわる神社探し〜
+# 12MODE (Restructured)
 
-本リポジトリは、就職作品プレゼンテーション（2026）にて展示した  
-個人制作作品 **「十二支詣」** の DEMO バージョンです。
+This repository has been restructured from a static HTML/CSS/JS site into a TypeScript-first full-stack layout:
 
+- Frontend: React + TypeScript (`apps/web`)
+- Backend: Express + TypeScript (`apps/api`)
+- Database: PostgreSQL (`db/migrations` + seed script)
+- Shared types: (`packages/shared`)
+- Legacy static site preserved in: `legacy/`
 
-## 概要
+## Project Structure
 
-> **十二支を辿りながら、自分と縁のある神社に出会おう**
+```txt
+.
+├─ apps/
+│  ├─ web/        # React + Vite + TypeScript frontend
+│  └─ api/        # Express + TypeScript API + PG access
+├─ packages/
+│  └─ shared/     # Shared TS types
+├─ db/
+│  ├─ migrations/ # SQL schema
+│  └─ seeds/      # JSON seed source
+└─ legacy/        # Original static site files (preserved)
+```
 
-- 神社巡りに興味はあるものの、  
-始め方がわからない方や、自分と呼び合う神社を見つけたい方のためのサイトです
+## Quick Start
 
-- 干支の動物とご利益を通して、  
-  - 「神社探し」
-  -  「十二支診断」
-  -  「バーチャル参拝」
-  -  「ことわざくじ」  
-などの機能により、オンラインで神社巡りを楽しめる構成としています
-- HAL東京進級制作展2024年度　銀賞受賞
+1. Install dependencies:
 
+```bash
+npm install
+```
 
-## セールスポイント
+2. Create environment file:
 
-企画立案から情報整理、UIデザイン、コーディングまでを一貫して制作し、  
-世界観（ビジュアル）と操作性のバランスを重視して設計しました。  
-整理した情報を提示するだけでなく、「自分と縁のある神社へ導かれていく感覚」を大切にし、  
-診断や選択を重ねながら、ユーザーが自分のペースで神社探しや干支にまつわる要素を楽しめる構成としています。  
+```bash
+cp .env.example .env
+```
 
-また、制作およびリニューアルの過程を通して、コンポーネント設計やイベント管理を意識した実装へと改善を重ね、  
-更新や調整がしやすい構造を段階的に整えてきました。  
-体験設計と実装の両面から、継続的に育てていくことを前提に設計したWebサービスです。  
+3. Create PostgreSQL database and apply migration:
 
+```bash
+psql "$DATABASE_URL" -f db/migrations/001_init.sql
+```
 
-## 使用技術
+4. Seed shrine data:
 
-- HTML / CSS  
-- React（コンポーネント設計、状態管理）
-- Photoshop / Illustrator（画面設計・素材制作）
+```bash
+npm --workspace @12mode/api run seed
+```
 
+5. Run API and web in separate terminals:
 
-## 制作時期
+```bash
+npm run dev:api
+npm run dev:web
+```
 
-- 出展時期：2025年3月 / 2026年2月（リニュアル）  
+## API Endpoints
 
+- `GET /api/health`
+- `GET /api/shrines`
+- `GET /api/shrines/:spotId`
 
-## 画像・資料について
+## Migration Notes
 
-本サイト内で使用している画像・イラスト・資料は、  
-**すべて学習目的の範囲内で引用**しています。  
-商用利用や再配布を目的としたものではありません。
-
-
-### 参考・引用元
-
-- Pexels（神社写真）  
-  https://www.pexels.com/ja-jp/
-
-- Freepik（アイコン等）  
-  https://jp.freepik.com/
-
-- 無料 AI・PNG 白黒シルエットイラスト  
-  https://www.silhouette-illust.com/
-
-
-## 備考
-
-- AI補助あり（chatGPT / Gemini）
-- 本リポジトリは **DEMO バージョン**として、  
-さらに GitHub Pages 上での公開を前提とした  
-**静的 Web サイト**として構築しています。  
+See `docs/migration-issues.md` for known risks and cleanup items discovered during restructure.

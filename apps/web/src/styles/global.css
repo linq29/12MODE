@@ -1,0 +1,50 @@
+:root {
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  color: #222;
+  background: #f7f4ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app-shell {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d9cfb6;
+  margin-bottom: 24px;
+}
+
+nav a {
+  color: #5a3921;
+  text-decoration: none;
+}
+
+.shrine-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.shrine-list li {
+  background: #fff;
+  border: 1px solid #e7dcc6;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.error {
+  color: #9f1d1d;
+}

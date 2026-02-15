@@ -68,3 +68,16 @@ Icon[]
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+# =======================================
+# Node / TypeScript
+# =======================================
+node_modules/
+dist/
+build/
+.turbo/
+coverage/
+.env
+.env.local
+.env.*.local
