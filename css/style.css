@@ -503,17 +503,18 @@ h1 {
     width: 100%;
     height: auto;
     display: block;
+    animation: none;
+    transform: none;
+    transition: none;
 }
 
 .blessing-pick-btn:hover {
-    transform: translateY(-0.5rem);
+    transform: none;
 }
 
-.select-step2-item a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease;
+.blessing-pick-btn:hover img {
+    animation: none;
+    transform: none;
 }
 
 .select-step2-item img {
@@ -521,10 +522,6 @@ h1 {
     height: auto;
     margin-bottom: 1rem;
     display: block;
-}
-
-.select-step2-item a:hover {
-    transform: translateY(-0.5rem);
 }
 
 .jinja-step-note {
