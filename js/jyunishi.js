@@ -21,7 +21,7 @@ function showZodiac() {
     const furigana = zodiacRuby[zodiacIndex];
 
     // 干支の画像をセット
-    const imgPath = `images/zodiacA${zodiacIndex + 1}.webp`;
+    const imgPath = `images/zodiacA${zodiacIndex + 1}.png`;
     const imgEl = document.getElementById("zodiacImage");
     imgEl.src = imgPath;
     imgEl.style.display = "block";

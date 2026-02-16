@@ -44,7 +44,7 @@ body {
     font-weight: 500;
     font-style: normal;
     letter-spacing: 0.05em;
-    background-image: url(../images/grid.webp);
+    background-image: url(../images/grid.jpg);
     background-repeat: repeat;
     background-attachment: fixed;
     min-width: 1200px;
@@ -369,6 +369,13 @@ h1 {
     text-align: center;
 }
 
+.zodiac-pick-btn {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
 .zodiac-box {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -467,6 +474,24 @@ h1 {
     text-align: center;
 }
 
+.shrine-card-btn {
+    border: 2px solid #b18b09;
+    background-color: #fff;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: left;
+}
+
+.shrine-card-btn h3 {
+    color: #950303;
+    font-family: "Kaisei Decol", serif;
+    margin: 0 0 0.5rem 0;
+}
+
+.shrine-card-btn p {
+    margin: 0;
+}
+
 .select-step2-item a {
     display: block;
     width: 100%;
@@ -483,6 +508,23 @@ h1 {
 
 .select-step2-item a:hover {
     transform: translateY(-0.5rem);
+}
+
+.jinja-step-note {
+    text-align: center;
+    margin: 0 auto 1.5rem;
+    color: #302833;
+}
+
+.jinja-step-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.shrine-preview {
+    margin-top: 1rem;
 }
 
 /* for spots.html */

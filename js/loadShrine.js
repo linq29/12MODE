@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('pageTitle').textContent = `${shrine.spot} | 十二支詣`;
 
         // 神社画像を更新
-        document.getElementById('spotImage').src = `images/spot${shrine.spotID}.webp`;
+        document.getElementById('spotImage').src = `images/spot${shrine.spotID}.jpg`;
         document.getElementById('spotImage').alt = shrine.spot;
 
         // 神社情報を更新
