@@ -492,6 +492,23 @@ h1 {
     margin: 0;
 }
 
+.blessing-pick-btn {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.blessing-pick-btn img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.blessing-pick-btn:hover {
+    transform: translateY(-0.5rem);
+}
+
 .select-step2-item a {
     display: block;
     width: 100%;
@@ -523,6 +540,11 @@ h1 {
     margin: 1.5rem 0 2rem;
 }
 
+.jinja-step-actions .random-btn,
+.jinja-step-actions .retry-btn {
+    margin: 0;
+}
+
 .shrine-preview {
     margin-top: 1rem;
 }
@@ -541,6 +563,15 @@ h1 {
 }
 
 main.index {
+    padding: 2rem 2rem 1rem 2rem;
+    position: relative;
+}
+
+.jinja-result-main {
+    background-color: #f6efe5;
+}
+
+.jinja-result-main .index {
     padding: 2rem 2rem 1rem 2rem;
     position: relative;
 }

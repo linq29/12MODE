@@ -25,18 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // 「気ままに行こう！」ボタンのランダム遷移機能
-    // 実装版
-    // const randomBtn = document.getElementById('randomShrineBtn');
+    const randomBtn = document.getElementById('randomShrineBtn');
 
-    // randomBtn.addEventListener('click', () => {
-    //     const randomSpotID = Math.floor(Math.random() * 24) + 1;
-    //     window.location.href = `jinja${randomSpotID}.html`;
-    // });
-
-    // DEMO版（遷移しない）
-    const randomBtn = document.getElementById("randomShrineBtn");
-
-    randomBtn.addEventListener("click", () => {
-        window.location.href = "blessings.html";
+    randomBtn.addEventListener('click', () => {
+        const randomSpotID = Math.floor(Math.random() * 24) + 1;
+        window.location.href = `jinja${randomSpotID}.html`;
     });
+
 });
