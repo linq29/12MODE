@@ -1,7 +1,9 @@
 (function () {
     const e = React.createElement;
     const useEffect = React.useEffect;
+    const useRef = React.useRef;
     const useState = React.useState;
+    const STEP_TRANSITION_MS = 420;
 
     function getSpotImage(spotId) {
         return "images/spot" + spotId + ".jpg";
@@ -72,6 +74,7 @@
 
     function App() {
         const [loading, setLoading] = useState(true);
+        const [stepLoading, setStepLoading] = useState(false);
         const [error, setError] = useState("");
         const [db, setDb] = useState(null);
         const [step, setStep] = useState(1);
@@ -79,6 +82,7 @@
         const [blessingChoices, setBlessingChoices] = useState([]);
         const [selectedBlessing, setSelectedBlessing] = useState(null);
         const [selectedSpot, setSelectedSpot] = useState(null);
+        const transitionTimerRef = useRef(null);
 
         useEffect(function () {
             let mounted = true;
@@ -108,6 +112,27 @@
                 mounted = false;
             };
         }, []);
+
+        useEffect(function () {
+            return function () {
+                if (transitionTimerRef.current) {
+                    clearTimeout(transitionTimerRef.current);
+                }
+            };
+        }, []);
+
+        function runStepTransition(next) {
+            if (transitionTimerRef.current) {
+                clearTimeout(transitionTimerRef.current);
+            }
+
+            setStepLoading(true);
+            transitionTimerRef.current = setTimeout(function () {
+                next();
+                setStepLoading(false);
+                transitionTimerRef.current = null;
+            }, STEP_TRANSITION_MS);
+        }
 
         function getZodiacSpots(zodiacId) {
             if (!db || !Array.isArray(db.spots)) {
@@ -144,12 +169,20 @@
             });
         }
 
-        function prepareBlessingStep(zodiacId) {
+        function prepareBlessingStep(zodiacId, withTransition) {
             const pool = getBlessingPoolForZodiac(zodiacId);
-            setBlessingChoices(pickRandomItems(pool, 4));
-            setSelectedBlessing(null);
-            setSelectedSpot(null);
-            setStep(2);
+            const next = function () {
+                setBlessingChoices(pickRandomItems(pool, 4));
+                setSelectedBlessing(null);
+                setSelectedSpot(null);
+                setStep(2);
+            };
+
+            if (withTransition) {
+                runStepTransition(next);
+                return;
+            }
+            next();
         }
 
         function pickRandom() {
@@ -157,10 +190,13 @@
                 return;
             }
             const randomIndex = Math.floor(Math.random() * db.spots.length);
-            setSelectedSpot(db.spots[randomIndex]);
-            setSelectedZodiac(null);
-            setSelectedBlessing(null);
-            setStep(3);
+            const randomSpot = db.spots[randomIndex];
+            runStepTransition(function () {
+                setSelectedSpot(randomSpot);
+                setSelectedZodiac(null);
+                setSelectedBlessing(null);
+                setStep(3);
+            });
         }
 
         function selectBlessingAndPickShrine(blessing) {
@@ -197,17 +233,30 @@
             }
 
             const randomSpot = candidateSpots[Math.floor(Math.random() * candidateSpots.length)];
-            setSelectedBlessing(blessing);
-            setSelectedSpot(randomSpot);
-            setStep(3);
+            runStepTransition(function () {
+                setSelectedBlessing(blessing);
+                setSelectedSpot(randomSpot);
+                setStep(3);
+            });
         }
 
         function resetSearch() {
-            setSelectedZodiac(null);
-            setBlessingChoices([]);
-            setSelectedBlessing(null);
-            setSelectedSpot(null);
-            setStep(1);
+            runStepTransition(function () {
+                setSelectedZodiac(null);
+                setBlessingChoices([]);
+                setSelectedBlessing(null);
+                setSelectedSpot(null);
+                setStep(1);
+            });
+        }
+
+        function renderStepLoading() {
+            return e(
+                "div",
+                { className: "jinja-loading-screen", role: "status", "aria-live": "polite" },
+                e("div", { className: "jinja-loading-spinner", "aria-hidden": "true" }),
+                e("p", { className: "jinja-loading-text" }, "次の神社へご案内中...")
+            );
         }
 
         function renderStep1() {
@@ -230,8 +279,7 @@
                                 className: "select-step1-item zodiac-pick-btn",
                                 onClick: function () {
                                     const zodiacId = Number(zodiac.zodiacID);
-                                    setSelectedZodiac(zodiacId);
-                                    prepareBlessingStep(zodiacId);
+                                    prepareBlessingStep(zodiacId, true);
                                 }
                             },
                             e("img", {
@@ -308,7 +356,7 @@
                             className: "retry-btn",
                             type: "button",
                             onClick: function () {
-                                prepareBlessingStep(selectedZodiac);
+                                prepareBlessingStep(selectedZodiac, false);
                             }
                         },
                         "ご利益を引き直す"
@@ -390,6 +438,10 @@
 
         if (loading) {
             return e("h1", { className: "jinjasagashi" }, "読み込み中...");
+        }
+
+        if (stepLoading) {
+            return renderStepLoading();
         }
 
         if (error) {

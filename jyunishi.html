@@ -14,32 +14,11 @@
 </head>
 
 <body class="page-jyunishi">
-    <!-- Existing decorative elements -->
-    <div class="en1">
-        <img src="images/en1.png">
-    </div>
-    <div class="en2">
-        <img src="images/en2.png">
-    </div>
-    <div class="cloud1">
-        <img src="images/cloud1.png">
-    </div>
-    <div class="cloud2">
-        <img src="images/cloud2.png">
-    </div>
-
-    <div class="logo">
-        <a href="index.html">
-            <img src="images/nav-top.png" alt="トップ">
-        </a>
-    </div>
+    <site-decorations></site-decorations>
+    <site-logo></site-logo>
 
     <div class="body-wrapper">
-        <div class="left-column">
-            <div class="page-title">
-                <img src="images/title-jyunishi.png">
-            </div>
-        </div><!--/.left-column-->
+        <site-left-column class="left-column" title-image="images/title-jyunishi.png" title-alt="十二支診断"></site-left-column>
 
         <div class="center-column">
             <main class="whole">
@@ -60,31 +39,10 @@
             </main>
         </div><!--/.center-column-->
 
-        <div class="right-column">
-            <div class="nav-area">
-                <nav class="nav-area-items">
-                    <ul>
-                        <li><a href="jinjasagashi.html">神社探し</a>
-                            <br /><span class="nav-small">あなたに縁のある一社を</span>
-                        </li>
-                        <li><a href="jyunishi.html">十二支診断</a>
-                            <br /><span class="nav-small">特定年の十二支をチェック</span>
-                        </li>
-                        <li><a href="#">バーチャル参拝</a>
-                            <br /><span class="nav-small">距離を越えて祈りを届ける</span>
-                        </li>
-                        <li><a href="kotowaza.html">ことわざくじ</a>
-                            <br /><span class="nav-small">動物に関する一語</span>
-                        </li>
-                        <li><a href="about.html">サイト紹介</a>
-                            <br /><span class="nav-small">用語集・サイトについて</span>
-                        </li>
-                    </ul>
-                </nav>
-            </div><!--/.nav-area-->
-        </div><!--/.right-column-->
+        <site-right-column class="right-column"></site-right-column>
     </div><!--/.body-wrapper-->
     
+    <script src="js/layout-components.js"></script>
     <script src="js/jyunishi.js"></script>
 
 </body>
