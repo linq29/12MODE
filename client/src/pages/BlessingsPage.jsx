@@ -1,30 +1,25 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "../layouts/PageLayout";
-
-const BLESSING_LINKS = [
-  {
-    to: "/jinja/1",
-    image: "/images/jinjasagashi/blessing_gakugyo_joju.png",
-    alt: "学業成就",
-  },
-  {
-    to: "/jinja/2",
-    image: "/images/jinjasagashi/blessing_enmusubi.png",
-    alt: "縁結び",
-  },
-  {
-    to: "/jinja/3",
-    image: "/images/jinjasagashi/blessing_kinun.png",
-    alt: "金運",
-  },
-  {
-    to: "/jinja/4",
-    image: "/images/jinjasagashi/blessing_kaiun.png",
-    alt: "開運",
-  },
-];
+import { getJson } from "../lib/api";
 
 export default function BlessingsPage() {
+  const [blessingLinks, setBlessingLinks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    getJson("/api/featured-blessings")
+      .then((data) => {
+        setBlessingLinks(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError("ご利益データの読み込みに失敗しました。");
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <PageLayout
       pageTitle="ご利益選択 | 十二支詣"
@@ -37,15 +32,21 @@ export default function BlessingsPage() {
         </div>
         <h1 className="jinjasagashi">気になるご利益は？</h1>
 
-        <div className="select-step2 justify-wrapper">
-          {BLESSING_LINKS.map((item) => (
-            <div key={item.to} className="select-step2-item">
-              <Link to={item.to}>
-                <img src={item.image} alt={item.alt} />
-              </Link>
-            </div>
-          ))}
-        </div>
+        {loading ? (
+          <p className="jinja-step-note">読み込み中...</p>
+        ) : error ? (
+          <p className="jinja-step-note">{error}</p>
+        ) : (
+          <div className="select-step2 justify-wrapper">
+            {blessingLinks.map((item) => (
+              <div key={item.toPath} className="select-step2-item">
+                <Link to={item.toPath}>
+                  <img src={item.image} alt={item.alt} />
+                </Link>
+              </div>
+            ))}
+          </div>
+        )}
       </main>
     </PageLayout>
   );

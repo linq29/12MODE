@@ -1,0 +1,62 @@
+[
+  {
+    "blessingID": 1,
+    "blessing": "金運",
+    "blessingEn": "kinun"
+  },
+  {
+    "blessingID": 2,
+    "blessing": "商売繁盛",
+    "blessingEn": "shobai_hanjo"
+  },
+  {
+    "blessingID": 3,
+    "blessing": "勝運・仕事運",
+    "blessingEn": "shoun_shigotoun"
+  },
+  {
+    "blessingID": 4,
+    "blessing": "縁結び",
+    "blessingEn": "enmusubi"
+  },
+  {
+    "blessingID": 5,
+    "blessing": "家内安全",
+    "blessingEn": "kanai_anzen"
+  },
+  {
+    "blessingID": 6,
+    "blessing": "子宝",
+    "blessingEn": "kodakara"
+  },
+  {
+    "blessingID": 7,
+    "blessing": "学業成就",
+    "blessingEn": "gakugyo_joju"
+  },
+  {
+    "blessingID": 8,
+    "blessing": "健康祈願",
+    "blessingEn": "kenko_kigan"
+  },
+  {
+    "blessingID": 9,
+    "blessing": "厄除け",
+    "blessingEn": "yakuyoke"
+  },
+  {
+    "blessingID": 10,
+    "blessing": "交通安全",
+    "blessingEn": "kotsu_anzen"
+  },
+  {
+    "blessingID": 11,
+    "blessing": "心願成就",
+    "blessingEn": "shingan_joju"
+  },
+  {
+    "blessingID": 12,
+    "blessing": "開運",
+    "blessingEn": "kaiun"
+  }
+]

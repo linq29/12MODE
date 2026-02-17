@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import PageLayout from "../layouts/PageLayout";
+import { getJson } from "../lib/api";
 
 const e = React.createElement;
 const STEP_TRANSITION_MS = 420;
@@ -88,13 +89,7 @@ function JinjaSagashiApp() {
   useEffect(() => {
     let mounted = true;
 
-    fetch("/data/database.json")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to load database.json");
-        }
-        return res.json();
-      })
+    getJson("/api/jinja-sagashi/bootstrap")
       .then((data) => {
         if (!mounted) {
           return;
@@ -108,7 +103,7 @@ function JinjaSagashiApp() {
           return;
         }
 
-        setError("データの読み込みに失敗しました。ローカルサーバーで開いてください。");
+        setError("データの読み込みに失敗しました。APIサーバーを確認してください。");
         setLoading(false);
       });
 

@@ -1,0 +1,218 @@
+[
+  {
+    "proverbID": 1,
+    "proverb": "鼠も虎の如し",
+    "hiragana": "<ruby>鼠<rt>ねずみ</rt></ruby>も<ruby>虎<rt>とら</rt></ruby>の<ruby>如<rt>ごと</rt></ruby>し",
+    "proverbDesc": "勢いに乗って攻め込むときなどは、弱い者でも相手を圧倒するような激しさを示すたとえ。"
+  },
+  {
+    "proverbID": 2,
+    "proverb": "大山鳴動して鼠一匹",
+    "hiragana": "<ruby>大山<rt>たいざん</rt></ruby><ruby>鳴動<rt>めいどう</rt></ruby>して<ruby>鼠<rt>ねずみ</rt></ruby><ruby>一匹<rt>いっぴき</rt></ruby>",
+    "proverbDesc": "騒ぎばかりが大きいわりに、取り立てていうほどの事件もなかったことのたとえ。"
+  },
+  {
+    "proverbID": 3,
+    "proverb": "鼠が塩を引く",
+    "hiragana": "<ruby>鼠<rt>ねずみ</rt></ruby>が<ruby>塩<rt>しお</rt></ruby>を<ruby>引<rt>ひ</rt></ruby>く",
+    "proverbDesc": "小事が積もり積もって大事になることのたとえ。"
+  },
+  {
+    "proverbID": 4,
+    "proverb": "黄牛に突かれる",
+    "hiragana": "<ruby>黄牛<rt>あめうし</rt></ruby>に<ruby>突<rt>つ</rt></ruby>かれる",
+    "proverbDesc": "油断をして、思いがけない相手にやりこめられてしまうことのたとえ。"
+  },
+  {
+    "proverbID": 5,
+    "proverb": "牛に引かれて善光寺参り",
+    "hiragana": "<ruby>牛<rt>うし</rt></ruby>に<ruby>引<rt>ひ</rt></ruby>かれて<ruby>善光寺<rt>ぜんこうじ</rt></ruby><ruby>参<rt>まい</rt></ruby>り",
+    "proverbDesc": "思いがけないことが縁で偶然よい方に導かれる"
+  },
+  {
+    "proverbID": 6,
+    "proverb": "牛の歩みも千里",
+    "hiragana": "<ruby>牛<rt>うし</rt></ruby>の<ruby>歩<rt>あゆ</rt></ruby>みも<ruby>千里<rt>せんり</rt></ruby>",
+    "proverbDesc": "遅くても早くても、下手でも上手でも、怠らず努力し続ければ成果があがることのたとえ。"
+  },
+  {
+    "proverbID": 7,
+    "proverb": "虎は千里往って千里還る",
+    "hiragana": "<ruby>虎<rt>とら</rt></ruby>は<ruby>千里<rt>せんり</rt></ruby><ruby>往<rt>い</rt></ruby>って<ruby>千里<rt>せんり</rt></ruby><ruby>還<rt>かえ</rt></ruby>る",
+    "proverbDesc": "活力に満ちた、行動力のあるさまなどを表す言い回し。また、親の、子に対する愛情が強いことのたとえ。"
+  },
+  {
+    "proverbID": 8,
+    "proverb": "虎穴に入らずんば虎子を得ず",
+    "hiragana": "<ruby>虎穴<rt>こけつ</rt></ruby>に<ruby>入<rt>い</rt></ruby>らずんば<ruby>虎子<rt>こじ</rt></ruby>を<ruby>得<rt>え</rt></ruby>ず",
+    "proverbDesc": "危険を冒さなければ、大きな成功は得られないことのたとえ。"
+  },
+  {
+    "proverbID": 9,
+    "proverb": "虎視眈々",
+    "hiragana": "<ruby>虎<rt>こ</rt></ruby><ruby>視<rt>し</rt></ruby><ruby>眈々<rt>たんたん</rt></ruby>",
+    "proverbDesc": "虎が獲物を狙って身構えるように、強い者が機会を狙って形勢をうかがっているさま。"
+  },
+  {
+    "proverbID": 10,
+    "proverb": "兎の登り坂",
+    "hiragana": "<ruby>兎<rt>うさぎ</rt></ruby>の<ruby>登<rt>のぼ</rt></ruby>り<ruby>坂<rt>ざか</rt></ruby>",
+    "proverbDesc": "持ち前の力を振るうことができて、物事が早く進むたとえ。"
+  },
+  {
+    "proverbID": 11,
+    "proverb": "狡兔三窟",
+    "hiragana": "<ruby>狡<rt>こう</rt></ruby><ruby>兔<rt>と</rt></ruby><ruby>三<rt>さん</rt></ruby><ruby>窟<rt>くつ</rt></ruby>",
+    "proverbDesc": "たくさんの避難場所やさまざまな策を用意するたとえ。難を逃れるのに巧みなたとえ。"
+  },
+  {
+    "proverbID": 12,
+    "proverb": "二兎を追う者は一兎をも得ず",
+    "hiragana": "<ruby>二兎<rt>にと</rt></ruby>を<ruby>追<rt>お</rt></ruby>う<ruby>者<rt>もの</rt></ruby>は<ruby>一兎<rt>いっと</rt></ruby>をも<ruby>得<rt>え</rt></ruby>ず",
+    "proverbDesc": "同時に違った二つの事をしようとすれば、結局どちらも成功しないというたとえ。"
+  },
+  {
+    "proverbID": 13,
+    "proverb": "雲は龍に従い、風は虎に従う",
+    "hiragana": "<ruby>雲<rt>くも</rt></ruby>は<ruby>龍<rt>りゅう</rt></ruby>に<ruby>従<rt>したが</rt></ruby>い、<ruby>風<rt>かぜ</rt></ruby>は<ruby>虎<rt>とら</rt></ruby>に<ruby>従<rt>したが</rt></ruby>う",
+    "proverbDesc": "相似た性質を持った者同士が互いに求め合う。りっぱな君主のもとにはすぐれた臣下が現れるということのたとえ。"
+  },
+  {
+    "proverbID": 14,
+    "proverb": "龍の水を得る如し",
+    "hiragana": "<ruby>龍<rt>りゅう</rt></ruby>の<ruby>水<rt>みず</rt></ruby>を<ruby>得<rt>え</rt></ruby>る<ruby>如<rt>ごと</rt></ruby>し",
+    "proverbDesc": "龍が水を得て昇天するように、強いものがいっそう勢いを得ること。また、ところや時宜を得て大いに活躍すること。"
+  },
+  {
+    "proverbID": 15,
+    "proverb": "画竜点睛",
+    "hiragana": "<ruby>画<rt>が</rt></ruby><ruby>竜<rt>りょう</rt></ruby><ruby>点<rt>てん</rt></ruby><ruby>睛<rt>せい</rt></ruby>",
+    "proverbDesc": "物事の眼目、中心となる大切な部分を付け加えれば、物事を完全に仕上げること。"
+  },
+  {
+    "proverbID": 16,
+    "proverb": "蛇の足より人の足見よ",
+    "hiragana": "<ruby>蛇<rt>へび</rt></ruby>の<ruby>足<rt>あし</rt></ruby>より<ruby>人<rt>ひと</rt></ruby>の<ruby>足<rt>あし</rt></ruby><ruby>見<rt>み</rt></ruby>よ",
+    "proverbDesc": "必要もないことをしたために災いを受けるたとえ。"
+  },
+  {
+    "proverbID": 17,
+    "proverb": "蛇の道は蛇",
+    "hiragana": "<ruby>蛇<rt>じゃ</rt></ruby>の<ruby>道<rt>みち</rt></ruby>は<ruby>蛇<rt>へび</rt></ruby>",
+    "proverbDesc": "同類のすることは、その方面の者にはすぐわかるというたとえ。"
+  },
+  {
+    "proverbID": 18,
+    "proverb": "蛇は寸にして人を呑む",
+    "hiragana": "<ruby>蛇<rt>じゃ</rt></ruby>は<ruby>寸<rt>すん</rt></ruby>にして<ruby>人<rt>ひと</rt></ruby>を<ruby>呑<rt>の</rt></ruby>む",
+    "proverbDesc": "すぐれた人物が幼少の頃から抜きんでた素質を示すことのたとえ。"
+  },
+  {
+    "proverbID": 19,
+    "proverb": "馬は馬連れ",
+    "hiragana": "<ruby>馬<rt>うま</rt></ruby>は<ruby>馬<rt>うま</rt></ruby><ruby>連<rt>づ</rt></ruby>れ",
+    "proverbDesc": "同類のものが集まることで物事がうまくいくことのたとえ。"
+  },
+  {
+    "proverbID": 20,
+    "proverb": "人間万事塞翁が馬",
+    "hiragana": "<ruby>人間<rt>にんげん</rt></ruby><ruby>万事<rt>ばんじ</rt></ruby><ruby>塞翁<rt>さいおう</rt></ruby>が<ruby>馬<rt>うま</rt></ruby>",
+    "proverbDesc": "人生の禍福は転々として予測できないことのたとえ。"
+  },
+  {
+    "proverbID": 21,
+    "proverb": "馬には乗ってみよ",
+    "hiragana": "<ruby>馬<rt>うま</rt></ruby>には<ruby>乗<rt>の</rt></ruby>ってみよ",
+    "proverbDesc": "馬のよしあしは乗ってみなければわからない。何事も自分で直接経験してみよということ。"
+  },
+  {
+    "proverbID": 22,
+    "proverb": "多岐亡羊",
+    "hiragana": "<ruby>多<rt>た</rt></ruby><ruby>岐<rt>き</rt></ruby><ruby>亡<rt>ぼう</rt></ruby><ruby>羊<rt>よう</rt></ruby>",
+    "proverbDesc": "学問の道があまりにも幅広いため、真理をとらえることの難しさを嘆くことのたとえ。"
+  },
+  {
+    "proverbID": 23,
+    "proverb": "群羊を駆って猛虎を攻む",
+    "hiragana": "<ruby>群羊<rt>ぐんよう</rt></ruby>を<ruby>駆<rt>か</rt></ruby>って<ruby>猛虎<rt>もうこ</rt></ruby>を<ruby>攻<rt>せ</rt></ruby>む",
+    "proverbDesc": "多くの弱い者を連合させて、強者に対抗することのたとえ。"
+  },
+  {
+    "proverbID": 24,
+    "proverb": "三陽開泰",
+    "hiragana": "<ruby>三<rt>さん</rt></ruby><ruby>羊<rt>よう</rt></ruby><ruby>開<rt>かい</rt></ruby><ruby>泰<rt>たい</rt></ruby>",
+    "proverbDesc": "春が巡って来て、万物の生気が満ち溢れることという。「陽」と「羊」の発音が同じことから生じた言葉。"
+  },
+  {
+    "proverbID": 25,
+    "proverb": "意馬心猿",
+    "hiragana": "<ruby>意<rt>い</rt></ruby><ruby>馬<rt>ば</rt></ruby><ruby>心<rt>しん</rt></ruby><ruby>猿<rt>えん</rt></ruby>",
+    "proverbDesc": "馬が奔走し猿が騒ぎたてるのを止めがたいように、煩悩・妄念などが起こって心が乱れ、抑えがたいこと。"
+  },
+  {
+    "proverbID": 26,
+    "proverb": "猿も木から落ちる",
+    "hiragana": "<ruby>猿<rt>さる</rt></ruby>も<ruby>木<rt>き</rt></ruby>から<ruby>落<rt>お</rt></ruby>ちる",
+    "proverbDesc": "その道にすぐれた者でも、時には失敗することがあるということのたとえ。"
+  },
+  {
+    "proverbID": 27,
+    "proverb": "見猿聞か猿言わ猿",
+    "hiragana": "<ruby>見<rt>み</rt></ruby><ruby>猿<rt>ざる</rt></ruby><ruby>聞<rt>き</rt></ruby>か<ruby>猿<rt>ざる</rt></ruby><ruby>言<rt>い</rt></ruby>わ<ruby>猿<rt>ざる</rt></ruby>",
+    "proverbDesc": "余計なことは見ようとせず、聞こうとせず、言おうとしないのがよい。"
+  },
+  {
+    "proverbID": 28,
+    "proverb": "どこの鶏も裸足",
+    "hiragana": "どこの<ruby>鶏<rt>とり</rt></ruby>も<ruby>裸足<rt>はだし</rt></ruby>",
+    "proverbDesc": "どこへ行っても同じものは同じで、変わるはずがない。また、人間の本性はどこの国でも同じである。"
+  },
+  {
+    "proverbID": 29,
+    "proverb": "鶏口となるとも牛後となる無かれ",
+    "hiragana": "<ruby>鶏口<rt>けいこう</rt></ruby>となるとも<ruby>牛後<rt>ぎゅうご</rt></ruby>となる<ruby>無<rt>な</rt></ruby>かれ",
+    "proverbDesc": "大きな集団の末端に連なるよりは、小さな集団でトップとなるほうがよい、ということ。"
+  },
+  {
+    "proverbID": 30,
+    "proverb": "夜深き鶏の声",
+    "hiragana": "<ruby>夜深<rt>よぶか</rt></ruby>き<ruby>鶏<rt>とり</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>",
+    "proverbDesc": "夜深いころの鶏の声が聞こえるのも、しみじみと哀れを感じさせる。"
+  },
+  {
+    "proverbID": 31,
+    "proverb": "犬は三日飼えば三年恩を忘れぬ",
+    "hiragana": "<ruby>犬<rt>いぬ</rt></ruby>は<ruby>三日<rt>みっか</rt></ruby><ruby>飼<rt>か</rt></ruby>えば<ruby>三年<rt>さんねん</rt></ruby><ruby>恩<rt>おん</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れぬ",
+    "proverbDesc": "犬でさえ恩を忘れないのだから、まして人間なら恩を忘れてはいけないということ。"
+  },
+  {
+    "proverbID": 32,
+    "proverb": "犬も歩けば棒に当たる",
+    "hiragana": "<ruby>犬<rt>いぬ</rt></ruby>も<ruby>歩<rt>ある</rt></ruby>けば<ruby>棒<rt>ぼう</rt></ruby>に<ruby>当<rt>あ</rt></ruby>たる",
+    "proverbDesc": "行動を起こすと、幸運なことでも、災難なことでも、何らかの経験をすることができることのたとえ。"
+  },
+  {
+    "proverbID": 33,
+    "proverb": "頼むと頼まれては犬も木へ登る",
+    "hiragana": "<ruby>頼<rt>たの</rt></ruby>むと<ruby>頼<rt>たの</rt></ruby>まれては<ruby>犬<rt>いぬ</rt></ruby>も<ruby>木<rt>き</rt></ruby>へ<ruby>登<rt>のぼ</rt></ruby>る",
+    "proverbDesc": "人が懇願されると、通常なら不可能と思われる事柄でも挑戦しようとする気持ちが湧くということ。"
+  },
+  {
+    "proverbID": 34,
+    "proverb": "馴染みては猪の子も可愛い",
+    "hiragana": "<ruby>馴染<rt>なじ</rt></ruby>みては<ruby>猪<rt>いのしし</rt></ruby>の<ruby>子<rt>こ</rt></ruby>も<ruby>可愛<rt>かわい</rt></ruby>い",
+    "proverbDesc": "どのようなでものでも慣れ親しむと情が移ってかわいく思えるということ。"
+  },
+  {
+    "proverbID": 35,
+    "proverb": "猪も七代目には豕になる",
+    "hiragana": "<ruby>猪<rt>いのしし</rt></ruby>も<ruby>七代目<rt>しちだいめ</rt></ruby>には<ruby>豕<rt>ぶた</rt></ruby>になる",
+    "proverbDesc": "変わらないように見えても、長い年月の間には成長・変化することのたとえ。"
+  },
+  {
+    "proverbID": 36,
+    "proverb": "山より大きな猪は出ぬ",
+    "hiragana": "<ruby>山<rt>やま</rt></ruby>より<ruby>大<rt>おお</rt></ruby>きな<ruby>猪<rt>いのしし</rt></ruby>は<ruby>出<rt>で</rt></ruby>ぬ",
+    "proverbDesc": "入れ物よりも大きな中身などあり得ないというたとえ。また、大げさな言い方もほどほどにしろということ。"
+  }
+]

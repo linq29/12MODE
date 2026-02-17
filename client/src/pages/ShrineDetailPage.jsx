@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PageLayout from "../layouts/PageLayout";
+import { getJson } from "../lib/api";
 
 function getSpotSite(spot) {
   return spot.spotSite || spot["Unnamed: 7"] || "";
@@ -35,28 +36,13 @@ export default function ShrineDetailPage() {
   useEffect(() => {
     let mounted = true;
 
-    fetch("/data/database.json")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("failed to load database");
-        }
-        return res.json();
-      })
-      .then((data) => {
+    getJson(`/api/spots/${spotId}`)
+      .then((foundSpot) => {
         if (!mounted) {
           return;
         }
 
-        const foundSpot = (data.spots || []).find(
-          (item) => Number(item.spotID) === Number(spotId)
-        );
-
-        if (!foundSpot) {
-          setError("ご縁は、もう少し先のようです……");
-        } else {
-          setSpot(foundSpot);
-        }
-
+        setSpot(foundSpot);
         setLoading(false);
       })
       .catch(() => {
@@ -64,7 +50,7 @@ export default function ShrineDetailPage() {
           return;
         }
 
-        setError("神社データの読み込みに失敗しました。");
+        setError("ご縁は、もう少し先のようです……");
         setLoading(false);
       });
 

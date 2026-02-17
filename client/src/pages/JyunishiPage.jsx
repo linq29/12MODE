@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import PageLayout from "../layouts/PageLayout";
-
-const ZODIACS = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"];
-const ZODIAC_RUBY = ["ね", "うし", "とら", "う", "たつ", "へび", "うま", "ひつじ", "さる", "とり", "いぬ", "い"];
+import { getJson } from "../lib/api";
 
 export default function JyunishiPage() {
+  const [zodiacs, setZodiacs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   const years = useMemo(() => {
     const list = [];
     for (let year = 2030; year >= 1924; year -= 1) {
@@ -16,12 +17,29 @@ export default function JyunishiPage() {
   const [year, setYear] = useState(2026);
   const [result, setResult] = useState(null);
 
+  useEffect(() => {
+    getJson("/api/zodiacs")
+      .then((data) => {
+        setZodiacs(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError("干支データの読み込みに失敗しました。");
+        setLoading(false);
+      });
+  }, []);
+
   const handleConfirm = () => {
-    const zodiacIndex = (Number(year) - 1924) % 12;
+    const zodiacId = ((Number(year) - 1924) % 12 + 12) % 12 + 1;
+    const zodiacData = zodiacs.find((item) => Number(item.zodiacID) === zodiacId);
+    if (!zodiacData) {
+      return;
+    }
+
     setResult({
-      zodiac: ZODIACS[zodiacIndex],
-      ruby: ZODIAC_RUBY[zodiacIndex],
-      image: `/images/jinjasagashi/zodiacA${zodiacIndex + 1}.png`,
+      zodiac: zodiacData.name,
+      ruby: zodiacData.ruby,
+      image: `/images/jinjasagashi/zodiacA${zodiacId}.png`,
     });
   };
 
@@ -51,10 +69,11 @@ export default function JyunishiPage() {
                 </option>
               ))}
             </select>
-            <button id="confirmBtn" type="button" onClick={handleConfirm}>
+            <button id="confirmBtn" type="button" onClick={handleConfirm} disabled={loading}>
               OK！
             </button>
           </div>
+          {error ? <p className="jinja-step-note">{error}</p> : null}
         </div>
 
         <div id="resultArea">
@@ -78,6 +97,7 @@ export default function JyunishiPage() {
             type="button"
             onClick={() => setResult(null)}
             style={{ display: result ? "block" : "none" }}
+            disabled={loading}
           >
             もう一回
           </button>

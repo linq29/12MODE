@@ -34,9 +34,32 @@
 
 ## 使用技術
 
-- HTML / CSS  
-- React（コンポーネント設計、状態管理）
-- Photoshop / Illustrator（画面設計・素材制作）
+- HTML / CSS 
+- JavaScript / React （フロントエンド）
+- Node.js / SQLite （バックエンド）
+- Photoshop / Illustrator （画面設計・素材制作）
+
+
+## 開発コマンド（リニューアル版）
+
+- `npm run sync:data`  
+  `client/public/data/database.json` と各ページ定数から `data/json/*.json` を生成
+- `npm run db:build`  
+  `data/json/*.json` から `data/db/content.sqlite` を再生成
+- `npm run dev`  
+  DB再生成後、APIサーバー（`:8787`）+ Vite（`client`）を同時起動
+- `npm run build`  
+  フロントエンドをビルド
+
+
+## データ構成（リニューアル版）
+
+- `data/json/`  
+  ページごと・機能ごとの分割JSON（zodiacs / spots / proverbs / about_terms など）
+- `data/db/content.sqlite`  
+  フロント各ページが共通参照する SQLite DB
+- `server/index.cjs`  
+  SQLite から読み出す API サーバー（`/api/*`）
 
 
 ## 制作時期
