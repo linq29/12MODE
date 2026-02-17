@@ -1,0 +1,1418 @@
+{
+  "zodiacs": [
+    {
+      "zodiacID": 1,
+      "name": "子",
+      "animal": "鼠"
+    },
+    {
+      "zodiacID": 2,
+      "name": "丑",
+      "animal": "牛"
+    },
+    {
+      "zodiacID": 3,
+      "name": "寅",
+      "animal": "虎"
+    },
+    {
+      "zodiacID": 4,
+      "name": "卯",
+      "animal": "兎"
+    },
+    {
+      "zodiacID": 5,
+      "name": "辰",
+      "animal": "竜"
+    },
+    {
+      "zodiacID": 6,
+      "name": "巳",
+      "animal": "蛇"
+    },
+    {
+      "zodiacID": 7,
+      "name": "午",
+      "animal": "馬"
+    },
+    {
+      "zodiacID": 8,
+      "name": "未",
+      "animal": "羊"
+    },
+    {
+      "zodiacID": 9,
+      "name": "申",
+      "animal": "猿"
+    },
+    {
+      "zodiacID": 10,
+      "name": "酉",
+      "animal": "鶏"
+    },
+    {
+      "zodiacID": 11,
+      "name": "戌",
+      "animal": "犬"
+    },
+    {
+      "zodiacID": 12,
+      "name": "亥",
+      "animal": "猪"
+    }
+  ],
+  "blessings": [
+  {
+    "blessingID": 1,
+    "blessing": "金運",
+    "blessingEn": "kinun"
+  },
+  {
+    "blessingID": 2,
+    "blessing": "商売繁盛",
+    "blessingEn": "shobai_hanjo"
+  },
+  {
+    "blessingID": 3,
+    "blessing": "勝運・仕事運",
+    "blessingEn": "shoun_shigotoun"
+  },
+  {
+    "blessingID": 4,
+    "blessing": "縁結び",
+    "blessingEn": "enmusubi"
+  },
+  {
+    "blessingID": 5,
+    "blessing": "家内安全",
+    "blessingEn": "kanai_anzen"
+  },
+  {
+    "blessingID": 6,
+    "blessing": "子宝",
+    "blessingEn": "kodakara"
+  },
+  {
+    "blessingID": 7,
+    "blessing": "学業成就",
+    "blessingEn": "gakugyo_joju"
+  },
+  {
+    "blessingID": 8,
+    "blessing": "健康祈願",
+    "blessingEn": "kenko_kigan"
+  },
+  {
+    "blessingID": 9,
+    "blessing": "厄除け",
+    "blessingEn": "yakuyoke"
+  },
+  {
+    "blessingID": 10,
+    "blessing": "交通安全",
+    "blessingEn": "kotsu_anzen"
+  },
+  {
+    "blessingID": 11,
+    "blessing": "心願成就",
+    "blessingEn": "shingan_joju"
+  },
+  {
+    "blessingID": 12,
+    "blessing": "開運",
+    "blessingEn": "kaiun"
+  }
+  ],
+  "spots": [
+    {
+      "spotID": 1,
+      "zodiacID": 1,
+      "spot": "大豊神社",
+      "spotHiragana": "おおとよじんじゃ",
+      "addr": "京都府京都市左京区鹿ケ谷宮ノ前町1",
+      "spotCatch": "狛ねずみが迎える哲学の道の社",
+      "spotDesc": "平安時代に創建された歴史ある神社。鹿ケ谷の静かな地に鎮座し、四季折々の自然が美しい。豊穣や学問の神として知られる大己貴命を祀る。境内は落ち着いた雰囲気で、地元の人々に親しまれている。",
+      "Unnamed: 7": "https://ootoyojinja.jp/"
+    },
+    {
+      "spotID": 2,
+      "zodiacID": 1,
+      "spot": "戸部杉山神社",
+      "spotHiragana": "とべすぎやまじんじゃ",
+      "addr": "神奈川県横浜市西区中央1-13-1",
+      "spotCatch": "横浜最古の歴史ある神社",
+      "spotDesc": "横浜の古社で、源頼朝が創建したと伝わる。杉山明神を祀り、厄除けや健康祈願で信仰を集める。都会の中の静寂な空間として、訪れる人を癒す。春には桜が咲き、見事な景観が楽しめる。",
+      "Unnamed: 7": "https://www.kanagawa-jinja.or.jp/shrine/1204011-000/"
+    },
+    {
+      "spotID": 3,
+      "zodiacID": 1,
+      "spot": "大国主神社",
+      "spotHiragana": "しきつまつのみや",
+      "addr": "大阪府大阪市浪速区敷津西1-2-12",
+      "spotCatch": "米俵を抱える狛ねずみの社",
+      "spotDesc": "大国主大神を祀る神社で、縁結びや商売繁盛のご利益で知られる。大阪の喧騒から離れた場所にあり、参拝者に穏やかなひと時を提供。シンプルながらも温かみのある境内が特徴。",
+      "Unnamed: 7": "https://www.city.osaka.lg.jp/naniwa/page/0000001078.html"
+    },
+    {
+      "spotID": 4,
+      "zodiacID": 1,
+      "spot": "多賀神社",
+      "spotHiragana": "たがじんじゃ",
+      "addr": "青森県弘前市桜庭字外山948",
+      "spotCatch": "津軽一代様のひとつ",
+      "spotDesc": "弘前の山間に佇む神社で、多賀大神を祀る。清水観音堂として知られ、子育てや長寿の祈願に訪れる人が多い。自然に囲まれた静寂な環境で、心が洗われるような場所。",
+      "Unnamed: 7": "https://www.trip-tsugaru.com/special/ichidaisama/"
+    },
+    {
+      "spotID": 5,
+      "zodiacID": 2,
+      "spot": "北野天満宮",
+      "spotHiragana": "きたのてんまんぐう",
+      "addr": "京都府京都市上京区馬喰町",
+      "spotCatch": "撫牛で学問成就・病気平癒",
+      "spotDesc": "菅原道真を祀る学問の神様として有名。京都の名所の一つで、梅の名所としても知られる。歴史的な建造物と美しい庭園が魅力。受験生や学業成就を願う参拝者で賑わう。",
+      "Unnamed: 7": "https://kitanotenmangu.or.jp/"
+    },
+    {
+      "spotID": 6,
+      "zodiacID": 2,
+      "spot": "牛嶋神社",
+      "spotHiragana": "うしじまじんじゃ",
+      "addr": "東京都墨田区向島1-4-5",
+      "spotCatch": "三ツ鳥居が特徴の牛の社",
+      "spotDesc": "隅田川近くに位置し、牛頭天王を祀る。江戸時代から続く伝統ある神社で、厄除けや健康祈願に訪れる人が多い。こぢんまりとした境内は地域の憩いの場として親しまれている。",
+      "Unnamed: 7": "https://gansho-ji.net/"
+    },
+    {
+      "spotID": 7,
+      "zodiacID": 2,
+      "spot": "牛天神北野神社",
+      "spotHiragana": "うしてんじんきたのじんじゃ",
+      "addr": "東京都文京区春日1-5-2",
+      "spotCatch": "願いを叶える「ねがい牛」",
+      "spotDesc": "文京区の隠れた名所で、学問の神・菅原道真を祀る。牛にまつわる伝説が残り、境内には牛の像が特徴的。静かな住宅街にあり、落ち着いた雰囲気の中で参拝できる。",
+      "Unnamed: 7": "http://www.ushitenjin.jp/"
+    },
+    {
+      "spotID": 8,
+      "zodiacID": 2,
+      "spot": "田倉牛神社",
+      "spotHiragana": "たくらうしがみしゃ",
+      "addr": "岡山県備前市吉永町福満994-1",
+      "spotCatch": "牛神信仰が残る神社",
+      "spotDesc": "備前焼の里近くに鎮座し、牛の神を祀る珍しい神社。農耕や家畜の守護として信仰され、地域の歴史を感じさせる。素朴で穏やかな境内は、心安らぐスポットとして知られる。",
+      "Unnamed: 7": "http://bizen-kanko.com/spot/spot_detail/index/113.html"
+    },
+    {
+      "spotID": 9,
+      "zodiacID": 3,
+      "spot": "鳳来山東照宮",
+      "spotHiragana": "ほうらいさんとうしょうぐう",
+      "addr": "愛知県新城市門谷鳳来寺4",
+      "spotCatch": "徳川家ゆかりの霊験あらたか社",
+      "spotDesc": "徳川家康を祀る東照宮で、鳳来寺山の自然に囲まれた場所にある。歴史的な建築と厳かな雰囲気が魅力。山道を登る参拝は、心身を清める体験として人気。",
+      "Unnamed: 7": "https://www.horaisantoshogu.com/"
+    },
+    {
+      "spotID": 10,
+      "zodiacID": 3,
+      "spot": "加藤神社",
+      "spotHiragana": "かとうじんじゃ",
+      "addr": "熊本県熊本市中央区本丸2-1",
+      "spotCatch": "厄除けの虎くぐりが名物",
+      "spotDesc": "熊本城内にあり、加藤清正を祀る。武将の魂が宿る場所として、勝負事や開運を願う参拝者が多い。城と一体となった景観は壮観で、歴史好きにもおすすめ。",
+      "Unnamed: 7": "http://www.kato-jinja.or.jp/"
+    },
+    {
+      "spotID": 11,
+      "zodiacID": 3,
+      "spot": "賀露神社",
+      "spotHiragana": "かろじんじゃ",
+      "addr": "鳥取市賀露町北1-21-8",
+      "spotCatch": "なでると強くなる虎の狛犬",
+      "spotDesc": "鳥取港近くに鎮座し、海の安全と豊漁を祈願する神社。素朴ながらも地域に根付いた信仰が感じられる。周辺の海風を感じながら、穏やかな参拝が楽しめる。",
+      "Unnamed: 7": "http://karojinjya.jp/"
+    },
+    {
+      "spotID": 12,
+      "zodiacID": 3,
+      "spot": "八房神社",
+      "spotHiragana": "やぶさじんじゃ",
+      "addr": "鹿児島県鹿児島市犬迫町3453-1",
+      "spotCatch": "地球一の大虎が鎮座する社",
+      "spotDesc": "自然豊かな場所にあり、八房龍王を祀る。地域の守護神として崇敬され、雨乞いや豊作を願う伝統が残る。静かな山間にあるため、心落ち着く場所として知られる。",
+      "Unnamed: 7": "https://www.pref.kagoshima.jp/ab27/yafusa-jinja.html"
+    },
+    {
+      "spotID": 13,
+      "zodiacID": 4,
+      "spot": "調神社",
+      "spotHiragana": "つきじんじゃ",
+      "addr": "埼玉県さいたま市浦和区岸町3-17-25",
+      "spotCatch": "鳥居のない珍しい神社",
+      "spotDesc": "「つきのみや」と呼ばれ、兎がシンボルの珍しい神社。月読命を祀り、縁結びや安産祈願で人気。境内には兎の像が多く、訪れる人を和ませる。",
+      "Unnamed: 7": "https://visitsaitamacity.jp/spots/20"
+    },
+    {
+      "spotID": 14,
+      "zodiacID": 4,
+      "spot": "白兎神社",
+      "spotHiragana": "はくとじんじゃ",
+      "addr": "鳥取県鳥取市白兎603",
+      "spotCatch": "因幡の白兎伝説の神社",
+      "spotDesc": "日本神話「因幡の白兎」に由来する神社。縁結びや皮膚病治癒のご利益で知られ、海辺の風光明媚な場所にある。白兎伝説を感じながら参拝できるロマンチックなスポット。",
+      "Unnamed: 7": "https://jbpress.ismedia.jp/articles/-/73338"
+    },
+    {
+      "spotID": 15,
+      "zodiacID": 4,
+      "spot": "岡﨑神社",
+      "spotHiragana": "おかざきじんじゃ",
+      "addr": "京都府京都市左京区岡崎東天王町51",
+      "spotCatch": "うさぎが神使の子授け神社",
+      "spotDesc": "兎を神使とする神社で、安産や子宝祈願に多くの人が訪れる。境内には兎の像が点在し、愛らしい雰囲気。京都の風情ある街並みの中にある隠れた名所。",
+      "Unnamed: 7": "https://okazakijinja.jp/"
+    },
+    {
+      "spotID": 16,
+      "zodiacID": 4,
+      "spot": "住吉大社",
+      "spotHiragana": "すみよしたいしゃ",
+      "addr": "大阪府大阪市住吉区住吉2-9-89",
+      "spotCatch": "全国の住吉神社の総本社",
+      "spotDesc": "全国の住吉神社の総本社で、海の神を祀る。航海安全や商売繁盛のご利益で知られ、太鼓橋がシンボル。歴史深い境内は、大阪を代表するパワースポット。",
+      "Unnamed: 7": "https://www.sumiyoshitaisha.net/"
+    },
+    {
+      "spotID": 17,
+      "zodiacID": 5,
+      "spot": "九頭龍神社",
+      "spotHiragana": "くずりゅうじんじゃ",
+      "addr": "山形県南陽市宮内3707-1",
+      "spotCatch": "九つの龍神が守る社",
+      "spotDesc": "九頭龍大神を祀り、水や龍神信仰で有名。自然豊かな環境にあり、開運や縁結びを願う参拝者が訪れる。神秘的な雰囲気の中で、心が浄化される場所。",
+      "Unnamed: 7": "https://www.city.nanyo.yamagata.jp/kanko/shrines-temples/198.html"
+    },
+    {
+      "spotID": 18,
+      "zodiacID": 5,
+      "spot": "伊豆山神社",
+      "spotHiragana": "いずさんじんじゃ",
+      "addr": "静岡県熱海市伊豆山708-1",
+      "spotCatch": "赤白二龍が宿る名社",
+      "spotDesc": "熱海を見下ろす高台にあり、縁結びと開運のご利益で知られる。源頼朝と北条政子のロマンスゆかりの地としても有名。海と山の絶景が楽しめる。",
+      "Unnamed: 7": "https://izusanjinjya.jp/"
+    },
+    {
+      "spotID": 19,
+      "zodiacID": 5,
+      "spot": "江島神社",
+      "spotHiragana": "えのしまじんじゃ",
+      "addr": "神奈川県藤沢市江の島2-3-8",
+      "spotCatch": "天女と五頭龍伝説の地",
+      "spotDesc": "江の島のシンボルで、弁財天を祀る。縁結びや芸能上達のご利益で人気。島全体が神聖な雰囲気で、観光と参拝を兼ねて訪れる人が多い。",
+      "Unnamed: 7": "http://enoshimajinja.or.jp/"
+    },
+    {
+      "spotID": 20,
+      "zodiacID": 5,
+      "spot": "荏原神社",
+      "spotHiragana": "えばらじんじゃ",
+      "addr": "東京都品川区北品川2-30-28",
+      "spotCatch": "品川の龍神を祀る社",
+      "spotDesc": "平安時代から続く古社で、天皇の勅使が訪れた歴史を持つ。地域の守護神として信仰され、穏やかな境内は都会の中のオアシス。夏祭りも盛大。",
+      "Unnamed: 7": "http://ebarajinja.org/top.html"
+    },
+    {
+      "spotID": 21,
+      "zodiacID": 6,
+      "spot": "大神神社",
+      "spotHiragana": "おおみわじんじゃ",
+      "addr": "奈良県桜井市三輪1422",
+      "spotCatch": "日本最古の神社のひとつ",
+      "spotDesc": "日本最古の神社の一つで、大物主大神を祀る。三輪山を神体とし、自然と調和した神秘的な空間。縁結びや国家安泰を願う参拝者が絶えない。",
+      "Unnamed: 7": "https://oomiwa.or.jp/"
+    },
+    {
+      "spotID": 22,
+      "zodiacID": 6,
+      "spot": "蛇窪神社",
+      "spotHiragana": "へびくぼじんじゃ",
+      "addr": "東京都品川区二葉4-4-12",
+      "spotCatch": "白蛇伝説の残る開運神社",
+      "spotDesc": "白蛇を神使とする珍しい神社で、金運や厄除けのご利益が人気。地域に愛されるこぢんまりとした境内は、静かで心落ち着く場所として知られる。",
+      "Unnamed: 7": "https://hebikubo.jp/"
+    },
+    {
+      "spotID": 23,
+      "zodiacID": 6,
+      "spot": "岩國白蛇神社",
+      "spotHiragana": "いわくにしろへびじんじゃ",
+      "addr": "山口県岩国市今津町6-4-2",
+      "spotCatch": "白蛇を祀る縁起の良い社",
+      "spotDesc": "白蛇を祀る神社で、金運や商売繁盛のご利益が期待される。岩国の天然記念物・白蛇にちなみ、神秘的な雰囲気が漂う。参拝者に穏やかな癒しを。",
+      "Unnamed: 7": "https://yamaguchi-tourism.jp/spot/detail_17961.html"
+    },
+    {
+      "spotID": 24,
+      "zodiacID": 6,
+      "spot": "金蛇水神社",
+      "spotHiragana": "かなへびすいじんじゃ",
+      "addr": "宮城県岩沼市三色吉水神7",
+      "spotCatch": "水と財運のご利益ある社",
+      "spotDesc": "金蛇大神を祀り、水と金運のご利益で有名。美しい庭園と池が特徴で、四季折々の風景が楽しめる。商売繁盛を願う人々が遠方からも訪れる。",
+      "Unnamed: 7": "https://kanahebi.cdx.jp/"
+    }
+  ],
+  "spot_blessing": [
+    {
+      "spotID": 1,
+      "blessingID": 8
+    },
+    {
+      "spotID": 1,
+      "blessingID": 7
+    },
+    {
+      "spotID": 1,
+      "blessingID": 4
+    },
+    {
+      "spotID": 1,
+      "blessingID": 6
+    },
+    {
+      "spotID": 2,
+      "blessingID": 4
+    },
+    {
+      "spotID": 2,
+      "blessingID": 2
+    },
+    {
+      "spotID": 2,
+      "blessingID": 8
+    },
+    {
+      "spotID": 2,
+      "blessingID": 3
+    },
+    {
+      "spotID": 3,
+      "blessingID": 1
+    },
+    {
+      "spotID": 3,
+      "blessingID": 2
+    },
+    {
+      "spotID": 3,
+      "blessingID": 4
+    },
+    {
+      "spotID": 3,
+      "blessingID": 12
+    },
+    {
+      "spotID": 4,
+      "blessingID": 12
+    },
+    {
+      "spotID": 4,
+      "blessingID": 9
+    },
+    {
+      "spotID": 4,
+      "blessingID": 11
+    },
+    {
+      "spotID": 4,
+      "blessingID": 8
+    },
+    {
+      "spotID": 4,
+      "blessingID": 5
+    },
+    {
+      "spotID": 4,
+      "blessingID": 4
+    },
+    {
+      "spotID": 4,
+      "blessingID": 6
+    },
+    {
+      "spotID": 5,
+      "blessingID": 7
+    },
+    {
+      "spotID": 5,
+      "blessingID": 9
+    },
+    {
+      "spotID": 6,
+      "blessingID": 7
+    },
+    {
+      "spotID": 6,
+      "blessingID": 4
+    },
+    {
+      "spotID": 6,
+      "blessingID": 3
+    },
+    {
+      "spotID": 7,
+      "blessingID": 11
+    },
+    {
+      "spotID": 8,
+      "blessingID": 5
+    },
+    {
+      "spotID": 8,
+      "blessingID": 2
+    },
+    {
+      "spotID": 8,
+      "blessingID": 11
+    },
+    {
+      "spotID": 9,
+      "blessingID": 5
+    },
+    {
+      "spotID": 9,
+      "blessingID": 3
+    },
+    {
+      "spotID": 9,
+      "blessingID": 2
+    },
+    {
+      "spotID": 9,
+      "blessingID": 9
+    },
+    {
+      "spotID": 9,
+      "blessingID": 7
+    },
+    {
+      "spotID": 9,
+      "blessingID": 1
+    },
+    {
+      "spotID": 9,
+      "blessingID": 4
+    },
+    {
+      "spotID": 9,
+      "blessingID": 12
+    },
+    {
+      "spotID": 10,
+      "blessingID": 3
+    },
+    {
+      "spotID": 10,
+      "blessingID": 10
+    },
+    {
+      "spotID": 10,
+      "blessingID": 5
+    },
+    {
+      "spotID": 10,
+      "blessingID": 2
+    },
+    {
+      "spotID": 10,
+      "blessingID": 7
+    },
+    {
+      "spotID": 10,
+      "blessingID": 8
+    },
+    {
+      "spotID": 11,
+      "blessingID": 10
+    },
+    {
+      "spotID": 11,
+      "blessingID": 7
+    },
+    {
+      "spotID": 11,
+      "blessingID": 6
+    },
+    {
+      "spotID": 12,
+      "blessingID": 5
+    },
+    {
+      "spotID": 12,
+      "blessingID": 8
+    },
+    {
+      "spotID": 13,
+      "blessingID": 1
+    },
+    {
+      "spotID": 13,
+      "blessingID": 3
+    },
+    {
+      "spotID": 13,
+      "blessingID": 12
+    },
+    {
+      "spotID": 14,
+      "blessingID": 8
+    },
+    {
+      "spotID": 14,
+      "blessingID": 4
+    },
+    {
+      "spotID": 14,
+      "blessingID": 12
+    },
+    {
+      "spotID": 14,
+      "blessingID": 9
+    },
+    {
+      "spotID": 14,
+      "blessingID": 5
+    },
+    {
+      "spotID": 15,
+      "blessingID": 4
+    },
+    {
+      "spotID": 15,
+      "blessingID": 9
+    },
+    {
+      "spotID": 15,
+      "blessingID": 6
+    },
+    {
+      "spotID": 16,
+      "blessingID": 2
+    },
+    {
+      "spotID": 16,
+      "blessingID": 4
+    },
+    {
+      "spotID": 16,
+      "blessingID": 6
+    },
+    {
+      "spotID": 16,
+      "blessingID": 5
+    },
+    {
+      "spotID": 16,
+      "blessingID": 8
+    },
+    {
+      "spotID": 17,
+      "blessingID": 1
+    },
+    {
+      "spotID": 17,
+      "blessingID": 12
+    },
+    {
+      "spotID": 17,
+      "blessingID": 2
+    },
+    {
+      "spotID": 17,
+      "blessingID": 4
+    },
+    {
+      "spotID": 18,
+      "blessingID": 3
+    },
+    {
+      "spotID": 18,
+      "blessingID": 4
+    },
+    {
+      "spotID": 19,
+      "blessingID": 4
+    },
+    {
+      "spotID": 19,
+      "blessingID": 1
+    },
+    {
+      "spotID": 19,
+      "blessingID": 3
+    },
+    {
+      "spotID": 20,
+      "blessingID": 3
+    },
+    {
+      "spotID": 20,
+      "blessingID": 7
+    },
+    {
+      "spotID": 20,
+      "blessingID": 2
+    },
+    {
+      "spotID": 20,
+      "blessingID": 10
+    },
+    {
+      "spotID": 20,
+      "blessingID": 8
+    },
+    {
+      "spotID": 20,
+      "blessingID": 5
+    },
+    {
+      "spotID": 20,
+      "blessingID": 4
+    },
+    {
+      "spotID": 21,
+      "blessingID": 3
+    },
+    {
+      "spotID": 21,
+      "blessingID": 10
+    },
+    {
+      "spotID": 21,
+      "blessingID": 4
+    },
+    {
+      "spotID": 21,
+      "blessingID": 8
+    },
+    {
+      "spotID": 22,
+      "blessingID": 1
+    },
+    {
+      "spotID": 22,
+      "blessingID": 12
+    },
+    {
+      "spotID": 22,
+      "blessingID": 11
+    },
+    {
+      "spotID": 22,
+      "blessingID": 4
+    },
+    {
+      "spotID": 22,
+      "blessingID": 8
+    },
+    {
+      "spotID": 23,
+      "blessingID": 1
+    },
+    {
+      "spotID": 23,
+      "blessingID": 2
+    },
+    {
+      "spotID": 23,
+      "blessingID": 8
+    },
+    {
+      "spotID": 24,
+      "blessingID": 2
+    },
+    {
+      "spotID": 24,
+      "blessingID": 1
+    },
+    {
+      "spotID": 24,
+      "blessingID": 9
+    },
+    {
+      "spotID": 25,
+      "blessingID": 9
+    },
+    {
+      "spotID": 25,
+      "blessingID": 12
+    },
+    {
+      "spotID": 26,
+      "blessingID": 3
+    },
+    {
+      "spotID": 26,
+      "blessingID": 12
+    },
+    {
+      "spotID": 26,
+      "blessingID": 5
+    },
+    {
+      "spotID": 27,
+      "blessingID": 8
+    },
+    {
+      "spotID": 27,
+      "blessingID": 3
+    },
+    {
+      "spotID": 28,
+      "blessingID": 2
+    },
+    {
+      "spotID": 28,
+      "blessingID": 4
+    },
+    {
+      "spotID": 28,
+      "blessingID": 6
+    },
+    {
+      "spotID": 28,
+      "blessingID": 8
+    },
+    {
+      "spotID": 28,
+      "blessingID": 9
+    },
+    {
+      "spotID": 28,
+      "blessingID": 12
+    },
+    {
+      "spotID": 29,
+      "blessingID": 3
+    },
+    {
+      "spotID": 29,
+      "blessingID": 12
+    },
+    {
+      "spotID": 29,
+      "blessingID": 7
+    },
+    {
+      "spotID": 30,
+      "blessingID": 9
+    },
+    {
+      "spotID": 30,
+      "blessingID": 2
+    },
+    {
+      "spotID": 30,
+      "blessingID": 1
+    },
+    {
+      "spotID": 31,
+      "blessingID": 9
+    },
+    {
+      "spotID": 31,
+      "blessingID": 4
+    },
+    {
+      "spotID": 31,
+      "blessingID": 5
+    },
+    {
+      "spotID": 31,
+      "blessingID": 2
+    },
+    {
+      "spotID": 32,
+      "blessingID": 4
+    },
+    {
+      "spotID": 32,
+      "blessingID": 3
+    },
+    {
+      "spotID": 32,
+      "blessingID": 2
+    },
+    {
+      "spotID": 32,
+      "blessingID": 6
+    },
+    {
+      "spotID": 33,
+      "blessingID": 5
+    },
+    {
+      "spotID": 33,
+      "blessingID": 8
+    },
+    {
+      "spotID": 33,
+      "blessingID": 10
+    },
+    {
+      "spotID": 33,
+      "blessingID": 9
+    },
+    {
+      "spotID": 33,
+      "blessingID": 7
+    },
+    {
+      "spotID": 34,
+      "blessingID": 12
+    },
+    {
+      "spotID": 34,
+      "blessingID": 9
+    },
+    {
+      "spotID": 35,
+      "blessingID": 2
+    },
+    {
+      "spotID": 35,
+      "blessingID": 4
+    },
+    {
+      "spotID": 35,
+      "blessingID": 10
+    },
+    {
+      "spotID": 35,
+      "blessingID": 5
+    },
+    {
+      "spotID": 35,
+      "blessingID": 3
+    },
+    {
+      "spotID": 35,
+      "blessingID": 1
+    },
+    {
+      "spotID": 35,
+      "blessingID": 9
+    },
+    {
+      "spotID": 35,
+      "blessingID": 8
+    },
+    {
+      "spotID": 36,
+      "blessingID": 2
+    },
+    {
+      "spotID": 36,
+      "blessingID": 9
+    },
+    {
+      "spotID": 36,
+      "blessingID": 8
+    },
+    {
+      "spotID": 36,
+      "blessingID": 7
+    },
+    {
+      "spotID": 37,
+      "blessingID": 11
+    },
+    {
+      "spotID": 38,
+      "blessingID": 8
+    },
+    {
+      "spotID": 38,
+      "blessingID": 9
+    },
+    {
+      "spotID": 38,
+      "blessingID": 11
+    },
+    {
+      "spotID": 39,
+      "blessingID": 9
+    },
+    {
+      "spotID": 39,
+      "blessingID": 5
+    },
+    {
+      "spotID": 39,
+      "blessingID": 4
+    },
+    {
+      "spotID": 39,
+      "blessingID": 6
+    },
+    {
+      "spotID": 39,
+      "blessingID": 11
+    },
+    {
+      "spotID": 40,
+      "blessingID": 9
+    },
+    {
+      "spotID": 40,
+      "blessingID": 8
+    },
+    {
+      "spotID": 40,
+      "blessingID": 6
+    },
+    {
+      "spotID": 41,
+      "blessingID": 6
+    },
+    {
+      "spotID": 41,
+      "blessingID": 5
+    },
+    {
+      "spotID": 41,
+      "blessingID": 9
+    },
+    {
+      "spotID": 42,
+      "blessingID": 9
+    },
+    {
+      "spotID": 42,
+      "blessingID": 4
+    },
+    {
+      "spotID": 43,
+      "blessingID": 3
+    },
+    {
+      "spotID": 43,
+      "blessingID": 12
+    },
+    {
+      "spotID": 44,
+      "blessingID": 8
+    },
+    {
+      "spotID": 44,
+      "blessingID": 9
+    },
+    {
+      "spotID": 44,
+      "blessingID": 6
+    },
+    {
+      "spotID": 45,
+      "blessingID": 8
+    },
+    {
+      "spotID": 45,
+      "blessingID": 9
+    },
+    {
+      "spotID": 45,
+      "blessingID": 12
+    },
+    {
+      "spotID": 45,
+      "blessingID": 6
+    },
+    {
+      "spotID": 46,
+      "blessingID": 8
+    },
+    {
+      "spotID": 46,
+      "blessingID": 5
+    },
+    {
+      "spotID": 46,
+      "blessingID": 2
+    }
+  ],
+  "proverbs": [
+    {
+      "proverbID": 1,
+      "proverb": "鼠も虎の如し",
+      "hiragana": "<ruby>鼠<rt>ねずみ</rt></ruby>も<ruby>虎<rt>とら</rt></ruby>の<ruby>如<rt>ごと</rt></ruby>し",
+      "proverbDesc": "勢いに乗って攻め込むときなどは、弱い者でも相手を圧倒するような激しさを示すたとえ。"
+    },
+    {
+      "proverbID": 2,
+      "proverb": "大山鳴動して鼠一匹",
+      "hiragana": "<ruby>大山<rt>たいざん</rt></ruby><ruby>鳴動<rt>めいどう</rt></ruby>して<ruby>鼠<rt>ねずみ</rt></ruby><ruby>一匹<rt>いっぴき</rt></ruby>",
+      "proverbDesc": "騒ぎばかりが大きいわりに、取り立てていうほどの事件もなかったことのたとえ。"
+    },
+    {
+      "proverbID": 3,
+      "proverb": "鼠が塩を引く",
+      "hiragana": "<ruby>鼠<rt>ねずみ</rt></ruby>が<ruby>塩<rt>しお</rt></ruby>を<ruby>引<rt>ひ</rt></ruby>く",
+      "proverbDesc": "小事が積もり積もって大事になることのたとえ。"
+    },
+    {
+      "proverbID": 4,
+      "proverb": "黄牛に突かれる",
+      "hiragana": "<ruby>黄牛<rt>あめうし</rt></ruby>に<ruby>突<rt>つ</rt></ruby>かれる",
+      "proverbDesc": "油断をして、思いがけない相手にやりこめられてしまうことのたとえ。"
+    },
+    {
+      "proverbID": 5,
+      "proverb": "牛に引かれて善光寺参り",
+      "hiragana": "<ruby>牛<rt>うし</rt></ruby>に<ruby>引<rt>ひ</rt></ruby>かれて<ruby>善光寺<rt>ぜんこうじ</rt></ruby><ruby>参<rt>まい</rt></ruby>り",
+      "proverbDesc": "思いがけないことが縁で偶然よい方に導かれる"
+    },
+    {
+      "proverbID": 6,
+      "proverb": "牛の歩みも千里",
+      "hiragana": "<ruby>牛<rt>うし</rt></ruby>の<ruby>歩<rt>あゆ</rt></ruby>みも<ruby>千里<rt>せんり</rt></ruby>",
+      "proverbDesc": "遅くても早くても、下手でも上手でも、怠らず努力し続ければ成果があがることのたとえ。"
+    },
+    {
+      "proverbID": 7,
+      "proverb": "虎は千里往って千里還る",
+      "hiragana": "<ruby>虎<rt>とら</rt></ruby>は<ruby>千里<rt>せんり</rt></ruby><ruby>往<rt>い</rt></ruby>って<ruby>千里<rt>せんり</rt></ruby><ruby>還<rt>かえ</rt></ruby>る",
+      "proverbDesc": "活力に満ちた、行動力のあるさまなどを表す言い回し。また、親の、子に対する愛情が強いことのたとえ。"
+    },
+    {
+      "proverbID": 8,
+      "proverb": "虎穴に入らずんば虎子を得ず",
+      "hiragana": "<ruby>虎穴<rt>こけつ</rt></ruby>に<ruby>入<rt>い</rt></ruby>らずんば<ruby>虎子<rt>こじ</rt></ruby>を<ruby>得<rt>え</rt></ruby>ず",
+      "proverbDesc": "危険を冒さなければ、大きな成功は得られないことのたとえ。"
+    },
+    {
+      "proverbID": 9,
+      "proverb": "虎視眈々",
+      "hiragana": "<ruby>虎<rt>こ</rt></ruby><ruby>視<rt>し</rt></ruby><ruby>眈々<rt>たんたん</rt></ruby>",
+      "proverbDesc": "虎が獲物を狙って身構えるように、強い者が機会を狙って形勢をうかがっているさま。"
+    },
+    {
+      "proverbID": 10,
+      "proverb": "兎の登り坂",
+      "hiragana": "<ruby>兎<rt>うさぎ</rt></ruby>の<ruby>登<rt>のぼ</rt></ruby>り<ruby>坂<rt>ざか</rt></ruby>",
+      "proverbDesc": "持ち前の力を振るうことができて、物事が早く進むたとえ。"
+    },
+    {
+      "proverbID": 11,
+      "proverb": "狡兔三窟",
+      "hiragana": "<ruby>狡<rt>こう</rt></ruby><ruby>兔<rt>と</rt></ruby><ruby>三<rt>さん</rt></ruby><ruby>窟<rt>くつ</rt></ruby>",
+      "proverbDesc": "たくさんの避難場所やさまざまな策を用意するたとえ。難を逃れるのに巧みなたとえ。"
+    },
+    {
+      "proverbID": 12,
+      "proverb": "二兎を追う者は一兎をも得ず",
+      "hiragana": "<ruby>二兎<rt>にと</rt></ruby>を<ruby>追<rt>お</rt></ruby>う<ruby>者<rt>もの</rt></ruby>は<ruby>一兎<rt>いっと</rt></ruby>をも<ruby>得<rt>え</rt></ruby>ず",
+      "proverbDesc": "同時に違った二つの事をしようとすれば、結局どちらも成功しないというたとえ。"
+    },
+    {
+      "proverbID": 13,
+      "proverb": "雲は龍に従い、風は虎に従う",
+      "hiragana": "<ruby>雲<rt>くも</rt></ruby>は<ruby>龍<rt>りゅう</rt></ruby>に<ruby>従<rt>したが</rt></ruby>い、<ruby>風<rt>かぜ</rt></ruby>は<ruby>虎<rt>とら</rt></ruby>に<ruby>従<rt>したが</rt></ruby>う",
+      "proverbDesc": "相似た性質を持った者同士が互いに求め合う。りっぱな君主のもとにはすぐれた臣下が現れるということのたとえ。"
+    },
+    {
+      "proverbID": 14,
+      "proverb": "龍の水を得る如し",
+      "hiragana": "<ruby>龍<rt>りゅう</rt></ruby>の<ruby>水<rt>みず</rt></ruby>を<ruby>得<rt>え</rt></ruby>る<ruby>如<rt>ごと</rt></ruby>し",
+      "proverbDesc": "龍が水を得て昇天するように、強いものがいっそう勢いを得ること。また、ところや時宜を得て大いに活躍すること。"
+    },
+    {
+      "proverbID": 15,
+      "proverb": "画竜点睛",
+      "hiragana": "<ruby>画<rt>が</rt></ruby><ruby>竜<rt>りょう</rt></ruby><ruby>点<rt>てん</rt></ruby><ruby>睛<rt>せい</rt></ruby>",
+      "proverbDesc": "物事の眼目、中心となる大切な部分を付け加えれば、物事を完全に仕上げること。"
+    },
+    {
+      "proverbID": 16,
+      "proverb": "蛇の足より人の足見よ",
+      "hiragana": "<ruby>蛇<rt>へび</rt></ruby>の<ruby>足<rt>あし</rt></ruby>より<ruby>人<rt>ひと</rt></ruby>の<ruby>足<rt>あし</rt></ruby><ruby>見<rt>み</rt></ruby>よ",
+      "proverbDesc": "必要もないことをしたために災いを受けるたとえ。"
+    },
+    {
+      "proverbID": 17,
+      "proverb": "蛇の道は蛇",
+      "hiragana": "<ruby>蛇<rt>じゃ</rt></ruby>の<ruby>道<rt>みち</rt></ruby>は<ruby>蛇<rt>へび</rt></ruby>",
+      "proverbDesc": "同類のすることは、その方面の者にはすぐわかるというたとえ。"
+    },
+    {
+      "proverbID": 18,
+      "proverb": "蛇は寸にして人を呑む",
+      "hiragana": "<ruby>蛇<rt>じゃ</rt></ruby>は<ruby>寸<rt>すん</rt></ruby>にして<ruby>人<rt>ひと</rt></ruby>を<ruby>呑<rt>の</rt></ruby>む",
+      "proverbDesc": "すぐれた人物が幼少の頃から抜きんでた素質を示すことのたとえ。"
+    },
+    {
+      "proverbID": 19,
+      "proverb": "馬は馬連れ",
+      "hiragana": "<ruby>馬<rt>うま</rt></ruby>は<ruby>馬<rt>うま</rt></ruby><ruby>連<rt>づ</rt></ruby>れ",
+      "proverbDesc": "同類のものが集まることで物事がうまくいくことのたとえ。"
+    },
+    {
+      "proverbID": 20,
+      "proverb": "人間万事塞翁が馬",
+      "hiragana": "<ruby>人間<rt>にんげん</rt></ruby><ruby>万事<rt>ばんじ</rt></ruby><ruby>塞翁<rt>さいおう</rt></ruby>が<ruby>馬<rt>うま</rt></ruby>",
+      "proverbDesc": "人生の禍福は転々として予測できないことのたとえ。"
+    },
+    {
+      "proverbID": 21,
+      "proverb": "馬には乗ってみよ",
+      "hiragana": "<ruby>馬<rt>うま</rt></ruby>には<ruby>乗<rt>の</rt></ruby>ってみよ",
+      "proverbDesc": "馬のよしあしは乗ってみなければわからない。何事も自分で直接経験してみよということ。"
+    },
+    {
+      "proverbID": 22,
+      "proverb": "多岐亡羊",
+      "hiragana": "<ruby>多<rt>た</rt></ruby><ruby>岐<rt>き</rt></ruby><ruby>亡<rt>ぼう</rt></ruby><ruby>羊<rt>よう</rt></ruby>",
+      "proverbDesc": "学問の道があまりにも幅広いため、真理をとらえることの難しさを嘆くことのたとえ。"
+    },
+    {
+      "proverbID": 23,
+      "proverb": "群羊を駆って猛虎を攻む",
+      "hiragana": "<ruby>群羊<rt>ぐんよう</rt></ruby>を<ruby>駆<rt>か</rt></ruby>って<ruby>猛虎<rt>もうこ</rt></ruby>を<ruby>攻<rt>せ</rt></ruby>む",
+      "proverbDesc": "多くの弱い者を連合させて、強者に対抗することのたとえ。"
+    },
+    {
+      "proverbID": 24,
+      "proverb": "三陽開泰",
+      "hiragana": "<ruby>三<rt>さん</rt></ruby><ruby>羊<rt>よう</rt></ruby><ruby>開<rt>かい</rt></ruby><ruby>泰<rt>たい</rt></ruby>",
+      "proverbDesc": "春が巡って来て、万物の生気が満ち溢れることという。「陽」と「羊」の発音が同じことから生じた言葉。"
+    },
+    {
+      "proverbID": 25,
+      "proverb": "意馬心猿",
+      "hiragana": "<ruby>意<rt>い</rt></ruby><ruby>馬<rt>ば</rt></ruby><ruby>心<rt>しん</rt></ruby><ruby>猿<rt>えん</rt></ruby>",
+      "proverbDesc": "馬が奔走し猿が騒ぎたてるのを止めがたいように、煩悩・妄念などが起こって心が乱れ、抑えがたいこと。"
+    },
+    {
+      "proverbID": 26,
+      "proverb": "猿も木から落ちる",
+      "hiragana": "<ruby>猿<rt>さる</rt></ruby>も<ruby>木<rt>き</rt></ruby>から<ruby>落<rt>お</rt></ruby>ちる",
+      "proverbDesc": "その道にすぐれた者でも、時には失敗することがあるということのたとえ。"
+    },
+    {
+      "proverbID": 27,
+      "proverb": "見猿聞か猿言わ猿",
+      "hiragana": "<ruby>見<rt>み</rt></ruby><ruby>猿<rt>ざる</rt></ruby><ruby>聞<rt>き</rt></ruby>か<ruby>猿<rt>ざる</rt></ruby><ruby>言<rt>い</rt></ruby>わ<ruby>猿<rt>ざる</rt></ruby>",
+      "proverbDesc": "余計なことは見ようとせず、聞こうとせず、言おうとしないのがよい。"
+    },
+    {
+      "proverbID": 28,
+      "proverb": "どこの鶏も裸足",
+      "hiragana": "どこの<ruby>鶏<rt>とり</rt></ruby>も<ruby>裸足<rt>はだし</rt></ruby>",
+      "proverbDesc": "どこへ行っても同じものは同じで、変わるはずがない。また、人間の本性はどこの国でも同じである。"
+    },
+    {
+      "proverbID": 29,
+      "proverb": "鶏口となるとも牛後となる無かれ",
+      "hiragana": "<ruby>鶏口<rt>けいこう</rt></ruby>となるとも<ruby>牛後<rt>ぎゅうご</rt></ruby>となる<ruby>無<rt>な</rt></ruby>かれ",
+      "proverbDesc": "大きな集団の末端に連なるよりは、小さな集団でトップとなるほうがよい、ということ。"
+    },
+    {
+      "proverbID": 30,
+      "proverb": "夜深き鶏の声",
+      "hiragana": "<ruby>夜深<rt>よぶか</rt></ruby>き<ruby>鶏<rt>とり</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>",
+      "proverbDesc": "夜深いころの鶏の声が聞こえるのも、しみじみと哀れを感じさせる。"
+    },
+    {
+      "proverbID": 31,
+      "proverb": "犬は三日飼えば三年恩を忘れぬ",
+      "hiragana": "<ruby>犬<rt>いぬ</rt></ruby>は<ruby>三日<rt>みっか</rt></ruby><ruby>飼<rt>か</rt></ruby>えば<ruby>三年<rt>さんねん</rt></ruby><ruby>恩<rt>おん</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れぬ",
+      "proverbDesc": "犬でさえ恩を忘れないのだから、まして人間なら恩を忘れてはいけないということ。"
+    },
+    {
+      "proverbID": 32,
+      "proverb": "犬も歩けば棒に当たる",
+      "hiragana": "<ruby>犬<rt>いぬ</rt></ruby>も<ruby>歩<rt>ある</rt></ruby>けば<ruby>棒<rt>ぼう</rt></ruby>に<ruby>当<rt>あ</rt></ruby>たる",
+      "proverbDesc": "行動を起こすと、幸運なことでも、災難なことでも、何らかの経験をすることができることのたとえ。"
+    },
+    {
+      "proverbID": 33,
+      "proverb": "頼むと頼まれては犬も木へ登る",
+      "hiragana": "<ruby>頼<rt>たの</rt></ruby>むと<ruby>頼<rt>たの</rt></ruby>まれては<ruby>犬<rt>いぬ</rt></ruby>も<ruby>木<rt>き</rt></ruby>へ<ruby>登<rt>のぼ</rt></ruby>る",
+      "proverbDesc": "人が懇願されると、通常なら不可能と思われる事柄でも挑戦しようとする気持ちが湧くということ。"
+    },
+    {
+      "proverbID": 34,
+      "proverb": "馴染みては猪の子も可愛い",
+      "hiragana": "<ruby>馴染<rt>なじ</rt></ruby>みては<ruby>猪<rt>いのしし</rt></ruby>の<ruby>子<rt>こ</rt></ruby>も<ruby>可愛<rt>かわい</rt></ruby>い",
+      "proverbDesc": "どのようなでものでも慣れ親しむと情が移ってかわいく思えるということ。"
+    },
+    {
+      "proverbID": 35,
+      "proverb": "猪も七代目には豕になる",
+      "hiragana": "<ruby>猪<rt>いのしし</rt></ruby>も<ruby>七代目<rt>しちだいめ</rt></ruby>には<ruby>豕<rt>ぶた</rt></ruby>になる",
+      "proverbDesc": "変わらないように見えても、長い年月の間には成長・変化することのたとえ。"
+    },
+    {
+      "proverbID": 36,
+      "proverb": "山より大きな猪は出ぬ",
+      "hiragana": "<ruby>山<rt>やま</rt></ruby>より<ruby>大<rt>おお</rt></ruby>きな<ruby>猪<rt>いのしし</rt></ruby>は<ruby>出<rt>で</rt></ruby>ぬ",
+      "proverbDesc": "入れ物よりも大きな中身などあり得ないというたとえ。また、大げさな言い方もほどほどにしろということ。"
+    }
+  ],
+  "zodiac_proverb": [
+    {
+      "zodiacID": 1,
+      "proverbID": 1
+    },
+    {
+      "zodiacID": 1,
+      "proverbID": 2
+    },
+    {
+      "zodiacID": 1,
+      "proverbID": 3
+    },
+    {
+      "zodiacID": 2,
+      "proverbID": 4
+    },
+    {
+      "zodiacID": 2,
+      "proverbID": 5
+    },
+    {
+      "zodiacID": 2,
+      "proverbID": 6
+    },
+    {
+      "zodiacID": 3,
+      "proverbID": 7
+    },
+    {
+      "zodiacID": 3,
+      "proverbID": 8
+    },
+    {
+      "zodiacID": 3,
+      "proverbID": 9
+    },
+    {
+      "zodiacID": 4,
+      "proverbID": 10
+    },
+    {
+      "zodiacID": 4,
+      "proverbID": 11
+    },
+    {
+      "zodiacID": 4,
+      "proverbID": 12
+    },
+    {
+      "zodiacID": 5,
+      "proverbID": 13
+    },
+    {
+      "zodiacID": 3,
+      "proverbID": 13
+    },
+    {
+      "zodiacID": 5,
+      "proverbID": 14
+    },
+    {
+      "zodiacID": 5,
+      "proverbID": 15
+    },
+    {
+      "zodiacID": 6,
+      "proverbID": 16
+    },
+    {
+      "zodiacID": 6,
+      "proverbID": 17
+    },
+    {
+      "zodiacID": 6,
+      "proverbID": 18
+    },
+    {
+      "zodiacID": 7,
+      "proverbID": 19
+    },
+    {
+      "zodiacID": 7,
+      "proverbID": 20
+    },
+    {
+      "zodiacID": 7,
+      "proverbID": 21
+    },
+    {
+      "zodiacID": 8,
+      "proverbID": 22
+    },
+    {
+      "zodiacID": 8,
+      "proverbID": 23
+    },
+    {
+      "zodiacID": 8,
+      "proverbID": 24
+    },
+    {
+      "zodiacID": 7,
+      "proverbID": 25
+    },
+    {
+      "zodiacID": 9,
+      "proverbID": 25
+    },
+    {
+      "zodiacID": 9,
+      "proverbID": 26
+    },
+    {
+      "zodiacID": 9,
+      "proverbID": 27
+    },
+    {
+      "zodiacID": 10,
+      "proverbID": 28
+    },
+    {
+      "zodiacID": 10,
+      "proverbID": 29
+    },
+    {
+      "zodiacID": 10,
+      "proverbID": 30
+    },
+    {
+      "zodiacID": 11,
+      "proverbID": 31
+    },
+    {
+      "zodiacID": 11,
+      "proverbID": 32
+    },
+    {
+      "zodiacID": 11,
+      "proverbID": 33
+    },
+    {
+      "zodiacID": 12,
+      "proverbID": 34
+    },
+    {
+      "zodiacID": 12,
+      "proverbID": 35
+    },
+    {
+      "zodiacID": 12,
+      "proverbID": 36
+    }
+  ]
+}
