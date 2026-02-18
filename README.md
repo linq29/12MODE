@@ -3,6 +3,27 @@
 本リポジトリは、就職作品プレゼンテーション（2026）にて展示した  
 個人制作作品 **「十二支詣」** の DEMO バージョンです。
 
+## 開発構成（Vite）
+
+- `client/`: React + Vite フロントエンド（現行）
+- `server/`: SQLite を読む API サーバー（`/api/*`）
+- `data/`: JSON ソースと SQLite DB
+- `legacy/static-html/`: 旧静的版（`.html` + `css/` + `js/`）のアーカイブ
+
+## 起動方法
+
+- 依存関係準備  
+  `npm run setup:client`
+- フル起動（推奨）  
+  `npm run dev`  
+  API (`http://localhost:8787`) と Vite (`http://localhost:5173`) を同時起動
+- フロントエンドのみ  
+  `npm run dev:client`
+- API のみ  
+  `npm run dev:server`
+- 本番ビルド  
+  `npm run build`
+
 
 ## 概要
 
