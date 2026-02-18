@@ -1,0 +1,154 @@
+[
+  {
+    "zodiacID": 1,
+    "proverbID": 1
+  },
+  {
+    "zodiacID": 1,
+    "proverbID": 2
+  },
+  {
+    "zodiacID": 1,
+    "proverbID": 3
+  },
+  {
+    "zodiacID": 2,
+    "proverbID": 4
+  },
+  {
+    "zodiacID": 2,
+    "proverbID": 5
+  },
+  {
+    "zodiacID": 2,
+    "proverbID": 6
+  },
+  {
+    "zodiacID": 3,
+    "proverbID": 7
+  },
+  {
+    "zodiacID": 3,
+    "proverbID": 8
+  },
+  {
+    "zodiacID": 3,
+    "proverbID": 9
+  },
+  {
+    "zodiacID": 4,
+    "proverbID": 10
+  },
+  {
+    "zodiacID": 4,
+    "proverbID": 11
+  },
+  {
+    "zodiacID": 4,
+    "proverbID": 12
+  },
+  {
+    "zodiacID": 5,
+    "proverbID": 13
+  },
+  {
+    "zodiacID": 3,
+    "proverbID": 13
+  },
+  {
+    "zodiacID": 5,
+    "proverbID": 14
+  },
+  {
+    "zodiacID": 5,
+    "proverbID": 15
+  },
+  {
+    "zodiacID": 6,
+    "proverbID": 16
+  },
+  {
+    "zodiacID": 6,
+    "proverbID": 17
+  },
+  {
+    "zodiacID": 6,
+    "proverbID": 18
+  },
+  {
+    "zodiacID": 7,
+    "proverbID": 19
+  },
+  {
+    "zodiacID": 7,
+    "proverbID": 20
+  },
+  {
+    "zodiacID": 7,
+    "proverbID": 21
+  },
+  {
+    "zodiacID": 8,
+    "proverbID": 22
+  },
+  {
+    "zodiacID": 8,
+    "proverbID": 23
+  },
+  {
+    "zodiacID": 8,
+    "proverbID": 24
+  },
+  {
+    "zodiacID": 7,
+    "proverbID": 25
+  },
+  {
+    "zodiacID": 9,
+    "proverbID": 25
+  },
+  {
+    "zodiacID": 9,
+    "proverbID": 26
+  },
+  {
+    "zodiacID": 9,
+    "proverbID": 27
+  },
+  {
+    "zodiacID": 10,
+    "proverbID": 28
+  },
+  {
+    "zodiacID": 10,
+    "proverbID": 29
+  },
+  {
+    "zodiacID": 10,
+    "proverbID": 30
+  },
+  {
+    "zodiacID": 11,
+    "proverbID": 31
+  },
+  {
+    "zodiacID": 11,
+    "proverbID": 32
+  },
+  {
+    "zodiacID": 11,
+    "proverbID": 33
+  },
+  {
+    "zodiacID": 12,
+    "proverbID": 34
+  },
+  {
+    "zodiacID": 12,
+    "proverbID": 35
+  },
+  {
+    "zodiacID": 12,
+    "proverbID": 36
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "zodiacID": 1,
+    "name": "子",
+    "animal": "鼠",
+    "ruby": "ね"
+  },
+  {
+    "zodiacID": 2,
+    "name": "丑",
+    "animal": "牛",
+    "ruby": "うし"
+  },
+  {
+    "zodiacID": 3,
+    "name": "寅",
+    "animal": "虎",
+    "ruby": "とら"
+  },
+  {
+    "zodiacID": 4,
+    "name": "卯",
+    "animal": "兎",
+    "ruby": "う"
+  },
+  {
+    "zodiacID": 5,
+    "name": "辰",
+    "animal": "竜",
+    "ruby": "たつ"
+  },
+  {
+    "zodiacID": 6,
+    "name": "巳",
+    "animal": "蛇",
+    "ruby": "へび"
+  },
+  {
+    "zodiacID": 7,
+    "name": "午",
+    "animal": "馬",
+    "ruby": "うま"
+  },
+  {
+    "zodiacID": 8,
+    "name": "未",
+    "animal": "羊",
+    "ruby": "ひつじ"
+  },
+  {
+    "zodiacID": 9,
+    "name": "申",
+    "animal": "猿",
+    "ruby": "さる"
+  },
+  {
+    "zodiacID": 10,
+    "name": "酉",
+    "animal": "鶏",
+    "ruby": "とり"
+  },
+  {
+    "zodiacID": 11,
+    "name": "戌",
+    "animal": "犬",
+    "ruby": "いぬ"
+  },
+  {
+    "zodiacID": 12,
+    "name": "亥",
+    "animal": "猪",
+    "ruby": "い"
+  }
+]

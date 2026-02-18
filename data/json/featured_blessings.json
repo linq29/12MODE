@@ -1,0 +1,26 @@
+[
+  {
+    "to": "/jinja/1",
+    "image": "/images/jinjasagashi/blessing_gakugyo_joju.png",
+    "alt": "学業成就",
+    "sortOrder": 1
+  },
+  {
+    "to": "/jinja/2",
+    "image": "/images/jinjasagashi/blessing_enmusubi.png",
+    "alt": "縁結び",
+    "sortOrder": 2
+  },
+  {
+    "to": "/jinja/3",
+    "image": "/images/jinjasagashi/blessing_kinun.png",
+    "alt": "金運",
+    "sortOrder": 3
+  },
+  {
+    "to": "/jinja/4",
+    "image": "/images/jinjasagashi/blessing_kaiun.png",
+    "alt": "開運",
+    "sortOrder": 4
+  }
+]

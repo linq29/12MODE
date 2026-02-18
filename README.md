@@ -34,9 +34,10 @@
 
 ## 使用技術
 
-- HTML / CSS  
-- React（コンポーネント設計、状態管理）
-- Photoshop / Illustrator（画面設計・素材制作）
+- HTML / CSS 
+- JavaScript / React （フロントエンド）
+- Node.js / SQLite （バックエンド）
+- Photoshop / Illustrator （画面設計・素材制作）
 
 
 ## 制作時期
@@ -65,7 +66,4 @@
 
 ## 備考
 
-- AI補助あり（chatGPT / Gemini）
-- 本リポジトリは **DEMO バージョン**として、  
-さらに GitHub Pages 上での公開を前提とした  
-**静的 Web サイト**として構築しています。  
+- AI補助あり（chatGPT (Codex) / Gemini）

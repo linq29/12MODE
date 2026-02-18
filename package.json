@@ -1,0 +1,16 @@
+{
+  "name": "12mode",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "sync:data": "node scripts/sync-json-sources.cjs",
+    "db:build": "node scripts/build-db.cjs",
+    "predev": "npm run db:build",
+    "dev": "node scripts/dev.cjs",
+    "dev:client": "npm --prefix client run dev",
+    "dev:server": "node server/index.cjs",
+    "build": "npm --prefix client run build",
+    "preview": "npm --prefix client run preview",
+    "start:server": "node server/index.cjs"
+  }
+}

@@ -1,0 +1,678 @@
+[
+  {
+    "spotID": 1,
+    "blessingID": 8
+  },
+  {
+    "spotID": 1,
+    "blessingID": 7
+  },
+  {
+    "spotID": 1,
+    "blessingID": 4
+  },
+  {
+    "spotID": 1,
+    "blessingID": 6
+  },
+  {
+    "spotID": 2,
+    "blessingID": 4
+  },
+  {
+    "spotID": 2,
+    "blessingID": 2
+  },
+  {
+    "spotID": 2,
+    "blessingID": 8
+  },
+  {
+    "spotID": 2,
+    "blessingID": 3
+  },
+  {
+    "spotID": 3,
+    "blessingID": 1
+  },
+  {
+    "spotID": 3,
+    "blessingID": 2
+  },
+  {
+    "spotID": 3,
+    "blessingID": 4
+  },
+  {
+    "spotID": 3,
+    "blessingID": 12
+  },
+  {
+    "spotID": 4,
+    "blessingID": 12
+  },
+  {
+    "spotID": 4,
+    "blessingID": 9
+  },
+  {
+    "spotID": 4,
+    "blessingID": 11
+  },
+  {
+    "spotID": 4,
+    "blessingID": 8
+  },
+  {
+    "spotID": 4,
+    "blessingID": 5
+  },
+  {
+    "spotID": 4,
+    "blessingID": 4
+  },
+  {
+    "spotID": 4,
+    "blessingID": 6
+  },
+  {
+    "spotID": 5,
+    "blessingID": 7
+  },
+  {
+    "spotID": 5,
+    "blessingID": 9
+  },
+  {
+    "spotID": 6,
+    "blessingID": 7
+  },
+  {
+    "spotID": 6,
+    "blessingID": 4
+  },
+  {
+    "spotID": 6,
+    "blessingID": 3
+  },
+  {
+    "spotID": 7,
+    "blessingID": 11
+  },
+  {
+    "spotID": 8,
+    "blessingID": 5
+  },
+  {
+    "spotID": 8,
+    "blessingID": 2
+  },
+  {
+    "spotID": 8,
+    "blessingID": 11
+  },
+  {
+    "spotID": 9,
+    "blessingID": 5
+  },
+  {
+    "spotID": 9,
+    "blessingID": 3
+  },
+  {
+    "spotID": 9,
+    "blessingID": 2
+  },
+  {
+    "spotID": 9,
+    "blessingID": 9
+  },
+  {
+    "spotID": 9,
+    "blessingID": 7
+  },
+  {
+    "spotID": 9,
+    "blessingID": 1
+  },
+  {
+    "spotID": 9,
+    "blessingID": 4
+  },
+  {
+    "spotID": 9,
+    "blessingID": 12
+  },
+  {
+    "spotID": 10,
+    "blessingID": 3
+  },
+  {
+    "spotID": 10,
+    "blessingID": 10
+  },
+  {
+    "spotID": 10,
+    "blessingID": 5
+  },
+  {
+    "spotID": 10,
+    "blessingID": 2
+  },
+  {
+    "spotID": 10,
+    "blessingID": 7
+  },
+  {
+    "spotID": 10,
+    "blessingID": 8
+  },
+  {
+    "spotID": 11,
+    "blessingID": 10
+  },
+  {
+    "spotID": 11,
+    "blessingID": 7
+  },
+  {
+    "spotID": 11,
+    "blessingID": 6
+  },
+  {
+    "spotID": 12,
+    "blessingID": 5
+  },
+  {
+    "spotID": 12,
+    "blessingID": 8
+  },
+  {
+    "spotID": 13,
+    "blessingID": 1
+  },
+  {
+    "spotID": 13,
+    "blessingID": 3
+  },
+  {
+    "spotID": 13,
+    "blessingID": 12
+  },
+  {
+    "spotID": 14,
+    "blessingID": 8
+  },
+  {
+    "spotID": 14,
+    "blessingID": 4
+  },
+  {
+    "spotID": 14,
+    "blessingID": 12
+  },
+  {
+    "spotID": 14,
+    "blessingID": 9
+  },
+  {
+    "spotID": 14,
+    "blessingID": 5
+  },
+  {
+    "spotID": 15,
+    "blessingID": 4
+  },
+  {
+    "spotID": 15,
+    "blessingID": 9
+  },
+  {
+    "spotID": 15,
+    "blessingID": 6
+  },
+  {
+    "spotID": 16,
+    "blessingID": 2
+  },
+  {
+    "spotID": 16,
+    "blessingID": 4
+  },
+  {
+    "spotID": 16,
+    "blessingID": 6
+  },
+  {
+    "spotID": 16,
+    "blessingID": 5
+  },
+  {
+    "spotID": 16,
+    "blessingID": 8
+  },
+  {
+    "spotID": 17,
+    "blessingID": 1
+  },
+  {
+    "spotID": 17,
+    "blessingID": 12
+  },
+  {
+    "spotID": 17,
+    "blessingID": 2
+  },
+  {
+    "spotID": 17,
+    "blessingID": 4
+  },
+  {
+    "spotID": 18,
+    "blessingID": 3
+  },
+  {
+    "spotID": 18,
+    "blessingID": 4
+  },
+  {
+    "spotID": 19,
+    "blessingID": 4
+  },
+  {
+    "spotID": 19,
+    "blessingID": 1
+  },
+  {
+    "spotID": 19,
+    "blessingID": 3
+  },
+  {
+    "spotID": 20,
+    "blessingID": 3
+  },
+  {
+    "spotID": 20,
+    "blessingID": 7
+  },
+  {
+    "spotID": 20,
+    "blessingID": 2
+  },
+  {
+    "spotID": 20,
+    "blessingID": 10
+  },
+  {
+    "spotID": 20,
+    "blessingID": 8
+  },
+  {
+    "spotID": 20,
+    "blessingID": 5
+  },
+  {
+    "spotID": 20,
+    "blessingID": 4
+  },
+  {
+    "spotID": 21,
+    "blessingID": 3
+  },
+  {
+    "spotID": 21,
+    "blessingID": 10
+  },
+  {
+    "spotID": 21,
+    "blessingID": 4
+  },
+  {
+    "spotID": 21,
+    "blessingID": 8
+  },
+  {
+    "spotID": 22,
+    "blessingID": 1
+  },
+  {
+    "spotID": 22,
+    "blessingID": 12
+  },
+  {
+    "spotID": 22,
+    "blessingID": 11
+  },
+  {
+    "spotID": 22,
+    "blessingID": 4
+  },
+  {
+    "spotID": 22,
+    "blessingID": 8
+  },
+  {
+    "spotID": 23,
+    "blessingID": 1
+  },
+  {
+    "spotID": 23,
+    "blessingID": 2
+  },
+  {
+    "spotID": 23,
+    "blessingID": 8
+  },
+  {
+    "spotID": 24,
+    "blessingID": 2
+  },
+  {
+    "spotID": 24,
+    "blessingID": 1
+  },
+  {
+    "spotID": 24,
+    "blessingID": 9
+  },
+  {
+    "spotID": 25,
+    "blessingID": 9
+  },
+  {
+    "spotID": 25,
+    "blessingID": 12
+  },
+  {
+    "spotID": 26,
+    "blessingID": 3
+  },
+  {
+    "spotID": 26,
+    "blessingID": 12
+  },
+  {
+    "spotID": 26,
+    "blessingID": 5
+  },
+  {
+    "spotID": 27,
+    "blessingID": 8
+  },
+  {
+    "spotID": 27,
+    "blessingID": 3
+  },
+  {
+    "spotID": 28,
+    "blessingID": 2
+  },
+  {
+    "spotID": 28,
+    "blessingID": 4
+  },
+  {
+    "spotID": 28,
+    "blessingID": 6
+  },
+  {
+    "spotID": 28,
+    "blessingID": 8
+  },
+  {
+    "spotID": 28,
+    "blessingID": 9
+  },
+  {
+    "spotID": 28,
+    "blessingID": 12
+  },
+  {
+    "spotID": 29,
+    "blessingID": 3
+  },
+  {
+    "spotID": 29,
+    "blessingID": 12
+  },
+  {
+    "spotID": 29,
+    "blessingID": 7
+  },
+  {
+    "spotID": 30,
+    "blessingID": 9
+  },
+  {
+    "spotID": 30,
+    "blessingID": 2
+  },
+  {
+    "spotID": 30,
+    "blessingID": 1
+  },
+  {
+    "spotID": 31,
+    "blessingID": 9
+  },
+  {
+    "spotID": 31,
+    "blessingID": 4
+  },
+  {
+    "spotID": 31,
+    "blessingID": 5
+  },
+  {
+    "spotID": 31,
+    "blessingID": 2
+  },
+  {
+    "spotID": 32,
+    "blessingID": 4
+  },
+  {
+    "spotID": 32,
+    "blessingID": 3
+  },
+  {
+    "spotID": 32,
+    "blessingID": 2
+  },
+  {
+    "spotID": 32,
+    "blessingID": 6
+  },
+  {
+    "spotID": 33,
+    "blessingID": 5
+  },
+  {
+    "spotID": 33,
+    "blessingID": 8
+  },
+  {
+    "spotID": 33,
+    "blessingID": 10
+  },
+  {
+    "spotID": 33,
+    "blessingID": 9
+  },
+  {
+    "spotID": 33,
+    "blessingID": 7
+  },
+  {
+    "spotID": 34,
+    "blessingID": 12
+  },
+  {
+    "spotID": 34,
+    "blessingID": 9
+  },
+  {
+    "spotID": 35,
+    "blessingID": 2
+  },
+  {
+    "spotID": 35,
+    "blessingID": 4
+  },
+  {
+    "spotID": 35,
+    "blessingID": 10
+  },
+  {
+    "spotID": 35,
+    "blessingID": 5
+  },
+  {
+    "spotID": 35,
+    "blessingID": 3
+  },
+  {
+    "spotID": 35,
+    "blessingID": 1
+  },
+  {
+    "spotID": 35,
+    "blessingID": 9
+  },
+  {
+    "spotID": 35,
+    "blessingID": 8
+  },
+  {
+    "spotID": 36,
+    "blessingID": 2
+  },
+  {
+    "spotID": 36,
+    "blessingID": 9
+  },
+  {
+    "spotID": 36,
+    "blessingID": 8
+  },
+  {
+    "spotID": 36,
+    "blessingID": 7
+  },
+  {
+    "spotID": 37,
+    "blessingID": 11
+  },
+  {
+    "spotID": 38,
+    "blessingID": 8
+  },
+  {
+    "spotID": 38,
+    "blessingID": 9
+  },
+  {
+    "spotID": 38,
+    "blessingID": 11
+  },
+  {
+    "spotID": 39,
+    "blessingID": 9
+  },
+  {
+    "spotID": 39,
+    "blessingID": 5
+  },
+  {
+    "spotID": 39,
+    "blessingID": 4
+  },
+  {
+    "spotID": 39,
+    "blessingID": 6
+  },
+  {
+    "spotID": 39,
+    "blessingID": 11
+  },
+  {
+    "spotID": 40,
+    "blessingID": 9
+  },
+  {
+    "spotID": 40,
+    "blessingID": 8
+  },
+  {
+    "spotID": 40,
+    "blessingID": 6
+  },
+  {
+    "spotID": 41,
+    "blessingID": 6
+  },
+  {
+    "spotID": 41,
+    "blessingID": 5
+  },
+  {
+    "spotID": 41,
+    "blessingID": 9
+  },
+  {
+    "spotID": 42,
+    "blessingID": 9
+  },
+  {
+    "spotID": 42,
+    "blessingID": 4
+  },
+  {
+    "spotID": 43,
+    "blessingID": 3
+  },
+  {
+    "spotID": 43,
+    "blessingID": 12
+  },
+  {
+    "spotID": 44,
+    "blessingID": 8
+  },
+  {
+    "spotID": 44,
+    "blessingID": 9
+  },
+  {
+    "spotID": 44,
+    "blessingID": 6
+  },
+  {
+    "spotID": 45,
+    "blessingID": 8
+  },
+  {
+    "spotID": 45,
+    "blessingID": 9
+  },
+  {
+    "spotID": 45,
+    "blessingID": 12
+  },
+  {
+    "spotID": 45,
+    "blessingID": 6
+  },
+  {
+    "spotID": 46,
+    "blessingID": 8
+  },
+  {
+    "spotID": 46,
+    "blessingID": 5
+  },
+  {
+    "spotID": 46,
+    "blessingID": 2
+  }
+]

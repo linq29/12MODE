@@ -14,123 +14,25 @@
 </head>
 
 <body>
-    <div class="en1"><img src="images/en1.png"></div>
-    <div class="en2"><img src="images/en2.png"></div>
-    <div class="cloud1"><img src="images/cloud1.png"></div>
-    <div class="cloud2"><img src="images/cloud2.png"></div>
-    <div class="logo"><a href="index.html"><img src="images/nav-top.png" alt="トップ"></a></div>
+    <site-decorations></site-decorations>
+    <site-logo></site-logo>
 
     <div class="body-wrapper">
-        <div class="left-column">
-            <div class="page-title">
-                <img src="images/title-jinjasagashi.png">
-            </div>
-        </div>
+        <site-left-column class="left-column" title-image="images/title-jinjasagashi.png" title-alt="神社探し"></site-left-column>
 
         <div class="center-column">
             <main class="whole">
-                <div class="page-icon">
-                    <img src="images/icon-torii.png">
-                </div>
-                <h1 class="jinjasagashi">干支を選んでね！</h1>
-                <div class="select-step1 justify-wrapper">
-                    <div class="select-step1-item">
-                        <a href="jinjasagashi1.html"><img src="images/zodiacA1.png" alt="子"></a>
-                    </div>
-                    <div class="select-step1-item">
-                        <a href="jinjasagashi2.html"><img src="images/zodiacA2.png" alt="丑"></a>
-                    </div>
-                    <div class="select-step1-item">
-                        <a href="#.html"><img src="images/zodiacA3.png" alt="寅"></a>
-                    </div>
-                    <div class="select-step1-item">
-                        <a href="#.html"><img src="images/zodiacA4.png" alt="卯"></a>
-                    </div>
-                    <div class="select-step1-item">
-                        <a href="#.html"><img src="images/zodiacA5.png" alt="辰"></a>
-                    </div>
-                    <div class="select-step1-item">
-                        <a href="#.html"><img src="images/zodiacA6.png" alt="巳"></a>
-                    </div>
-                    <div class="select-step1-item">
-                        <a href="#.html"><img src="images/zodiacA7.png" alt="午"></a>
-                    </div>
-                    <div class="select-step1-item">
-                        <a href="#.html"><img src="images/zodiacA8.png" alt="未"></a>
-                    </div>
-                    <div class="select-step1-item">
-                        <a href="#.html"><img src="images/zodiacA9.png" alt="申"></a>
-                    </div>
-                    <div class="select-step1-item">
-                        <a href="#.html"><img src="images/zodiacA10.png" alt="酉"></a>
-                    </div>
-                    <div class="select-step1-item">
-                        <a href="#.html"><img src="images/zodiacA11.png" alt="戌"></a>
-                    </div>
-                    <div class="select-step1-item">
-                        <a href="#.html"><img src="images/zodiacA12.png" alt="亥"></a>
-                    </div>
-                </div><!--/.step1-->
-                <button id="randomShrineBtn" class="random-btn">気ままに行こう！</button>
+                <div id="jinjasagashi-spa-root"></div>
             </main>
         </div>
 
-        <div class="right-column">
-            <div class="nav-area">
-                <nav class="nav-area-items">
-                    <ul>
-                        <li><a href="jinjasagashi.html">神社探し</a>
-                            <br /><span class="nav-small">あなたに縁のある一社を</span>
-                        </li>
-                        <li><a href="jyunishi.html">十二支診断</a>
-                            <br /><span class="nav-small">特定年の十二支をチェック</span>
-                        </li>
-                        <li><a href="#">バーチャル参拝</a>
-                            <br /><span class="nav-small">距離を越えて祈りを届ける</span>
-                        </li>
-                        <li><a href="kotowaza.html">ことわざくじ</a>
-                            <br /><span class="nav-small">動物に関する一語</span>
-                        </li>
-                        <li><a href="about.html">サイト紹介</a>
-                            <br /><span class="nav-small">用語集・サイトについて</span>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+        <site-right-column class="right-column"></site-right-column>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Existing hover effect script
-            const items = document.querySelectorAll('.select-step1-item img');
-            items.forEach((item) => {
-                const originalSrc = item.src;
-                const hoverSrc = originalSrc.replace('zodiacA', 'zodiacB');
-                item.addEventListener('mouseenter', () => {
-                    item.style.opacity = '0';
-                    setTimeout(() => {
-                        item.src = hoverSrc;
-                        item.style.opacity = '1';
-                    }, 200);
-                });
-                item.addEventListener('mouseleave', () => {
-                    item.style.opacity = '0';
-                    setTimeout(() => {
-                        item.src = originalSrc;
-                        item.style.opacity = '1';
-                    }, 200);
-                });
-            });
-
-            // Random shrine button functionality
-            const randomBtn = document.getElementById('randomShrineBtn');
-            randomBtn.addEventListener('click', () => {
-                const randomSpotID = Math.floor(Math.random() * 24) + 1;
-                window.location.href = `jinja${randomSpotID}.html`;
-            });
-        });
-    </script>
+    <script src="js/layout-components.js"></script>
+    <script src="node_modules/react/umd/react.production.min.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="js/jinjasagashi.js"></script>
 </body>
 
 </html>

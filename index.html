@@ -10,41 +10,20 @@
         @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Kosugi+Maru&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap&family=Kaisei+Decol:wght@400;500;700');
     </style>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/favicon.webp">
+    <link rel="icon" href="images/favicon.png">
 </head>
 
 <body class="page-index">
-    <!-- Existing decorative elements -->
-    <div class="en1">
-        <img src="images/en1.webp">
-    </div>
-    <div class="en2">
-        <img src="images/en2.webp">
-    </div>
-    <div class="cloud1">
-        <img src="images/cloud1.webp">
-    </div>
-    <div class="cloud2">
-        <img src="images/cloud2.webp">
-    </div>
-
-    <div class="logo">
-        <a href="index.html">
-            <img src="images/nav-top.webp" alt="トップ">
-        </a>
-    </div>
+    <site-decorations></site-decorations>
+    <site-logo></site-logo>
 
     <div class="body-wrapper">
-        <div class="left-column">
-            <div class="page-title">
-                <img src="images/logo-v.webp" alt="十二支詣">
-            </div>
-        </div><!--/.left-column-->
+        <site-left-column class="left-column" title-image="images/logo-v.png" title-alt="十二支詣"></site-left-column>
 
         <div class="center-column">
             <div class="main-area">
                 <div class="top-visual">
-                    <img src="images/top-visual.webp">
+                    <img src="images/top-visual.png">
                 </div>
                 <main class="index">
                     <div class="index-p1 vertical">
@@ -63,29 +42,29 @@
                     </div>
 
                     <div class="ruby-gold">
-                        <img src="images/ruby-gold1.webp">
+                        <img src="images/ruby-gold1.png">
                     </div>
 
                     <div class="carousel">
                         <div class="carousel-track">
-                            <img src="images/carousel/c1.webp">
-                            <img src="images/carousel/c2.webp">
-                            <img src="images/carousel/c3.webp">
-                            <img src="images/carousel/c4.webp">
-                            <img src="images/carousel/c5.webp">
+                            <img src="images/carousel/c1.jpg">
+                            <img src="images/carousel/c2.jpg">
+                            <img src="images/carousel/c3.jpg">
+                            <img src="images/carousel/c4.jpg">
+                            <img src="images/carousel/c5.jpg">
                             
-                            <img src="images/carousel/c1.webp">
-                            <img src="images/carousel/c2.webp">
-                            <img src="images/carousel/c3.webp">
-                            <img src="images/carousel/c4.webp">
-                            <img src="images/carousel/c5.webp">
+                            <img src="images/carousel/c1.jpg">
+                            <img src="images/carousel/c2.jpg">
+                            <img src="images/carousel/c3.jpg">
+                            <img src="images/carousel/c4.jpg">
+                            <img src="images/carousel/c5.jpg">
                         </div>
                     </div>
 
                     <div class="index-func">
                         <div class="inline-wrapper">
                             <div class="h2-icon">
-                                <img src="images/icon-torii.webp">
+                                <img src="images/icon-torii.png">
                             </div>
                             <h2><a href="jinjasagashi.html">神社探し</a></h2>
                         </div>
@@ -96,7 +75,7 @@
                     <div class="index-func">
                         <div class="inline-wrapper">
                             <div class="h2-icon">
-                                <img src="images/icon-jyunishi.webp">
+                                <img src="images/icon-jyunishi.png">
                             </div>
                             <h2><a href="jyunishi.html">十二支診断</a></h2>
                         </div>
@@ -106,7 +85,7 @@
                     <div class="index-func">
                         <div class="inline-wrapper">
                             <div class="h2-icon">
-                                <img src="images/icon-kuji.webp">
+                                <img src="images/icon-kuji.png">
                             </div>
                             <h2><a href="kotowaza.html">ことわざくじ</a></h2>
                         </div>
@@ -119,31 +98,10 @@
             </div><!--/.main-area-->
         </div><!--/.center-column-->
 
-        <div class="right-column">
-            <div class="nav-area">
-                <nav class="nav-area-items">
-                    <ul>
-                        <li><a href="jinjasagashi.html">神社探し</a>
-                            <br /><span class="nav-small">あなたに縁のある一社を</span>
-                        </li>
-                        <li><a href="jyunishi.html">十二支診断</a>
-                            <br /><span class="nav-small">特定年の十二支をチェック</span>
-                        </li>
-                        <li><a href="#">バーチャル参拝</a>
-                            <br /><span class="nav-small">距離を越えて祈りを届ける</span>
-                        </li>
-                        <li><a href="kotowaza.html">ことわざくじ</a>
-                            <br /><span class="nav-small">動物に関する一語</span>
-                        </li>
-                        <li><a href="about.html">サイト紹介</a>
-                            <br /><span class="nav-small">用語集・サイトについて</span>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div><!--/.right-column-->
+        <site-right-column class="right-column"></site-right-column>
     </div><!--/.body-wrapper-->
 
+    <script src="js/layout-components.js"></script>
 </body>
 
 </html>
