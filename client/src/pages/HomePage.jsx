@@ -16,7 +16,7 @@ export default function HomePage() {
           <img src="/images/top-visual.png" alt="トップビジュアル" />
         </ViewportBlurReveal>
         <main className="index">
-          <ViewportBlurReveal className="index-p1 vertical">
+          {/* <ViewportBlurReveal className="index-p1 vertical">
             <h1>
               <ruby>
                 十二支詣<rt>じゅうにしもうで</rt>
@@ -38,7 +38,7 @@ export default function HomePage() {
               <br />縁の深い神社を見つけるのを
               <br />お手伝いをします。
             </p>
-          </ViewportBlurReveal>
+          </ViewportBlurReveal> */}
 
           <ViewportBlurReveal className="ruby-gold">
             <img src="/images/ruby-gold1.png" alt="飾り" />

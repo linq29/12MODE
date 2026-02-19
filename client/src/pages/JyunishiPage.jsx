@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import BlurReveal from "../components/common/BlurReveal";
 import GoldenButton from "../components/common/GoldenButton";
 import SpinRevealImage from "../components/common/SpinRevealImage";
@@ -161,6 +162,7 @@ export default function JyunishiPage() {
   const [zodiacs, setZodiacs] = useState([]);
   const [blessingMap, setBlessingMap] = useState(new Map());
   const [spotMap, setSpotMap] = useState(new Map());
+  const [spotIdByName, setSpotIdByName] = useState(new Map());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const years = useMemo(() => {
@@ -222,10 +224,25 @@ export default function JyunishiPage() {
         if (Array.isArray(data?.spots)) {
           const nextSpotMap = new Map(
             data.spots
-              .map((item) => [Number(item?.spotID), normalizeText(item?.spot)])
+              .map((item) => {
+                const id = Number(item?.spotID);
+                const spot = normalizeText(item?.spot);
+                return [id, spot];
+              })
               .filter(([id, spot]) => Number.isFinite(id) && Boolean(spot))
           );
           setSpotMap(nextSpotMap);
+
+          const nextSpotIdByName = new Map();
+          for (const item of data.spots) {
+            const name = normalizeText(item?.spot);
+            const id = Number(item?.spotID);
+            if (!name || !Number.isFinite(id) || nextSpotIdByName.has(name)) {
+              continue;
+            }
+            nextSpotIdByName.set(name, id);
+          }
+          setSpotIdByName(nextSpotIdByName);
         }
       })
       .catch(() => {
@@ -234,6 +251,7 @@ export default function JyunishiPage() {
         }
         setBlessingMap(new Map());
         setSpotMap(new Map());
+        setSpotIdByName(new Map());
       });
 
     return () => {
@@ -346,15 +364,47 @@ export default function JyunishiPage() {
       })
     : EMPTY_TEXT;
 
-  const relatedSpotText = result
-    ? joinList(currentRelatedSpots, (value) => {
-        const normalized = Number(value);
-        if (Number.isFinite(normalized) && spotMap.has(normalized)) {
-          return spotMap.get(normalized);
-        }
-        return normalizeText(value);
-      })
-    : EMPTY_TEXT;
+  const relatedSpotItems = result
+    ? currentRelatedSpots
+        .map((value) => {
+          const normalized = Number(value);
+          if (Number.isFinite(normalized) && spotMap.has(normalized)) {
+            return {
+              label: normalizeText(spotMap.get(normalized)),
+              spotId: normalized,
+            };
+          }
+
+          const label = normalizeText(value);
+          return {
+            label,
+            spotId: Number(spotIdByName.get(label)),
+          };
+        })
+        .filter((item) => Boolean(item.label))
+    : [];
+
+  const relatedSpotContent = relatedSpotItems.length ? (
+    <>
+      {relatedSpotItems.map((item, index) => (
+        <span key={`${item.label}-${index}`}>
+          {Number.isFinite(item.spotId) ? (
+            <Link
+              className="jyunishi-spot-link"
+              to={`/jinja/${item.spotId}`}
+            >
+              {item.label}
+            </Link>
+          ) : (
+            item.label
+          )}
+          {index < relatedSpotItems.length - 1 ? "、" : ""}
+        </span>
+      ))}
+    </>
+  ) : (
+    EMPTY_TEXT
+  );
 
   return (
     <PageLayout
@@ -432,7 +482,7 @@ export default function JyunishiPage() {
                     </tr>
                     <tr>
                       <th scope="row">まつわる神社</th>
-                      <td>{relatedSpotText}</td>
+                      <td>{relatedSpotContent}</td>
                     </tr>
                   </tbody>
                 </table>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import BlurReveal from "../components/common/BlurReveal";
 import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
 
@@ -63,13 +64,13 @@ export default function ShrineDetailPage() {
             <p className="jinja-step-note">{error}</p>
           ) : (
             <>
-              <div className="deco">
+              <BlurReveal className="deco" key={`detail-deco-${spot.spotID}`}>
                 <img src="/images/deco.png" alt="飾り" />
-              </div>
-              <div className="spot-image">
+              </BlurReveal>
+              <BlurReveal className="spot-image" key={`detail-image-${spot.spotID}`}>
                 <SpotImage spotId={spot.spotID} alt={spot.spot} />
-              </div>
-              <div className="spot-info">
+              </BlurReveal>
+              <BlurReveal className="spot-info" key={`detail-info-${spot.spotID}`}>
                 <div className="spot-name-items">
                   <h1 className="spot-id">{spot.spot}</h1>
                   <p className="spot-hiragana">{spot.spotHiragana}</p>
@@ -85,7 +86,7 @@ export default function ShrineDetailPage() {
                     </a>
                   ) : null}
                 </div>
-              </div>
+              </BlurReveal>
             </>
           )}
         </main>

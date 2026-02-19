@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
+import BlurReveal from "../components/common/BlurReveal";
 import FlipImage from "../components/common/FlipImage";
 import GoldenButton from "../components/common/GoldenButton";
 import PageLayout from "../layouts/PageLayout";
@@ -432,8 +433,8 @@ function JinjaSagashiApp(props) {
       .join("、");
 
     return e(
-      "div",
-      { className: "index jinja-result-main" },
+      BlurReveal,
+      { className: "index jinja-result-main", key: `step3-${selectedSpot.spotID}` },
       e("div", { className: "deco" }, e("img", { src: "/images/deco.png", alt: "" })),
       e(
         "div",

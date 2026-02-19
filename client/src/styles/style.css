@@ -826,6 +826,16 @@ hr {
     padding: 0.5rem 0rem 0.5rem 0.5rem;
 }
 
+.jyunishi-spot-link {
+    color: var(--secondary-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+
+.jyunishi-spot-link:hover {
+    color: var(--primary-accent);
+}
+
 @media (max-width: 768px) {
     .jyunishi-detail-table th,
     .jyunishi-detail-table td {
