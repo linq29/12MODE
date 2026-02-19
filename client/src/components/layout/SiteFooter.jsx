@@ -1,6 +1,6 @@
 export default function SiteFooter({
   siteName = "JYUNISHI MODE",
-  copyright = "(C) 東京PI006 LIN QIUJING",
+  copyright = "(C) TOKYOU PI006 LIN QIUJING",
 }) {
   return (
     <footer>

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import FlipImage from "../components/common/FlipImage";
 import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
@@ -62,10 +63,12 @@ function SpotImage(props) {
   });
 }
 
-function JinjaSagashiApp() {
+function JinjaSagashiApp(props) {
+  const { presetBlessingId } = props;
   const [loading, setLoading] = useState(true);
   const [stepLoading, setStepLoading] = useState(false);
   const [error, setError] = useState("");
+  const [stepNotice, setStepNotice] = useState("");
   const [db, setDb] = useState(null);
   const [step, setStep] = useState(1);
   const [selectedZodiac, setSelectedZodiac] = useState(null);
@@ -153,7 +156,22 @@ function JinjaSagashiApp() {
   function prepareBlessingStep(zodiacId, withTransition) {
     const pool = getBlessingPoolForZodiac(zodiacId);
     const next = () => {
-      setBlessingChoices(pickRandomItems(pool, 4));
+      const presetBlessing = presetBlessingId
+        ? pool.find((blessing) => getBlessingId(blessing) === presetBlessingId)
+        : null;
+
+      if (presetBlessingId && !presetBlessing) {
+        setStepNotice("指定されたご利益はこの干支に対応していないため、候補を再抽選しました。");
+      } else {
+        setStepNotice(
+          presetBlessingId ? "旧ルート指定のご利益で絞り込み中です。" : ""
+        );
+      }
+
+      setError("");
+      setBlessingChoices(
+        presetBlessing ? [presetBlessing] : pickRandomItems(pool, 4)
+      );
       setSelectedBlessing(null);
       setSelectedSpot(null);
       setSelectedZodiac(zodiacId);
@@ -177,6 +195,8 @@ function JinjaSagashiApp() {
     const randomSpot = db.spots[randomIndex];
 
     runStepTransition(() => {
+      setError("");
+      setStepNotice("");
       setSelectedSpot(randomSpot);
       setSelectedZodiac(null);
       setSelectedBlessing(null);
@@ -224,6 +244,8 @@ function JinjaSagashiApp() {
 
   function resetSearch() {
     runStepTransition(() => {
+      setError("");
+      setStepNotice("");
       setSelectedZodiac(null);
       setBlessingChoices([]);
       setSelectedBlessing(null);
@@ -334,6 +356,13 @@ function JinjaSagashiApp() {
             "この干支に対応するご利益データが見つかりません。"
           )
         : null,
+      stepNotice
+        ? e(
+            "p",
+            { className: "jinja-step-note" },
+            stepNotice
+          )
+        : null,
       e(
         "div",
         { className: "jinja-step-actions" },
@@ -402,7 +431,7 @@ function JinjaSagashiApp() {
                   target: "_blank",
                   rel: "noopener noreferrer",
                 },
-                spotSite
+                `公式サイトへ`
               )
             : null
         )
@@ -451,6 +480,21 @@ function JinjaSagashiApp() {
 }
 
 export default function JinjaSagashiPage() {
+  const location = useLocation();
+  const presetBlessingId = React.useMemo(() => {
+    const raw = new URLSearchParams(location.search).get("blessing");
+    if (!raw) {
+      return null;
+    }
+
+    const parsed = Number(raw);
+    if (!Number.isInteger(parsed) || parsed <= 0) {
+      return null;
+    }
+
+    return parsed;
+  }, [location.search]);
+
   return (
     <PageLayout
       pageTitle="神社探し | 十二支詣"
@@ -458,7 +502,7 @@ export default function JinjaSagashiPage() {
       titleAlt="神社探し"
     >
       <main className="whole">
-        <JinjaSagashiApp />
+        <JinjaSagashiApp presetBlessingId={presetBlessingId} />
       </main>
     </PageLayout>
   );

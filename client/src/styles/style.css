@@ -349,11 +349,19 @@ h1 {
     padding: 2rem;
 }
 
+.index-func-link {
+    display: block;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
 .index-func h2 {
     font-family: "Kaisei Decol", serif;
+    color: #950303;
     font-weight: 700;
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    transition: transform 0.5s ease, color 0.3s ease;
 }
 
 .index-func h3 {
@@ -364,12 +372,17 @@ h1 {
     margin-bottom: 0.5rem;
 }
 
-.index-func a {
-    color: #950303;
+.index-func-link:hover {
+    transform: translateY(-4px);
 }
 
-.index-func a:hover {
+.index-func-link:hover .index-func {
+    box-shadow: 0 8px 20px rgba(177, 139, 9, 0.18);
+}
+
+.index-func-link:hover h2 {
     color: #b18b09;
+    transform: translateX(6px);
 }
 
 .h2-icon {

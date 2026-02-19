@@ -77,19 +77,8 @@ function buildDatabase() {
     sortOrder: Number(item.sortOrder),
   }));
 
-  const featuredBlessings = (source.featured_blessings || []).map((item) => ({
-    sortOrder: Number(item.sortOrder),
-    toPath: item.toPath || item.to || "",
-    image: item.image || "",
-    alt: item.alt || "",
-  }));
-
   if (!aboutTerms.length) {
     throw new Error("`about_terms` is missing or empty in client/public/data/database.json");
-  }
-
-  if (!featuredBlessings.length) {
-    throw new Error("`featured_blessings` is missing or empty in client/public/data/database.json");
   }
 
   fs.mkdirSync(dbDir, { recursive: true });
@@ -101,7 +90,6 @@ function buildDatabase() {
 
     DROP TABLE IF EXISTS spot_blessing;
     DROP TABLE IF EXISTS zodiac_proverb;
-    DROP TABLE IF EXISTS featured_blessings;
     DROP TABLE IF EXISTS about_terms;
     DROP TABLE IF EXISTS spots;
     DROP TABLE IF EXISTS blessings;
@@ -161,13 +149,6 @@ function buildDatabase() {
       sortOrder INTEGER NOT NULL
     );
 
-    CREATE TABLE featured_blessings (
-      sortOrder INTEGER PRIMARY KEY,
-      toPath TEXT NOT NULL,
-      image TEXT NOT NULL,
-      alt TEXT NOT NULL
-    );
-
     CREATE INDEX idx_spots_zodiac ON spots(zodiacID);
     CREATE INDEX idx_spot_blessing_blessing ON spot_blessing(blessingID);
     CREATE INDEX idx_zodiac_proverb_proverb ON zodiac_proverb(proverbID);
@@ -195,9 +176,6 @@ function buildDatabase() {
   );
   const insertAboutTerm = db.prepare(
     "INSERT INTO about_terms (term, ruby, termDesc, sortOrder) VALUES (?, ?, ?, ?)"
-  );
-  const insertFeaturedBlessing = db.prepare(
-    "INSERT INTO featured_blessings (sortOrder, toPath, image, alt) VALUES (?, ?, ?, ?)"
   );
 
   db.exec("BEGIN");
@@ -239,10 +217,6 @@ function buildDatabase() {
       insertAboutTerm.run(item.term, item.ruby, item.termDesc, item.sortOrder);
     }
 
-    for (const item of featuredBlessings) {
-      insertFeaturedBlessing.run(item.sortOrder, item.toPath, item.image, item.alt);
-    }
-
     db.exec("COMMIT");
   } catch (error) {
     db.exec("ROLLBACK");
@@ -262,7 +236,6 @@ function buildDatabase() {
       proverbs: proverbs.length,
       zodiac_proverb: zodiacProverb.length,
       about_terms: aboutTerms.length,
-      featured_blessings: featuredBlessings.length,
     },
   };
 }

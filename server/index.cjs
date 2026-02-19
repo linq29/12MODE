@@ -54,9 +54,6 @@ const qRandomProverb = db.prepare(
 const qAboutTerms = db.prepare(
   "SELECT term, ruby, termDesc FROM about_terms ORDER BY sortOrder"
 );
-const qFeaturedBlessings = db.prepare(
-  "SELECT toPath, image, alt FROM featured_blessings ORDER BY sortOrder"
-);
 
 function handleApi(req, res, pathname) {
   if (req.method === "OPTIONS") {
@@ -81,11 +78,6 @@ function handleApi(req, res, pathname) {
 
   if (pathname === "/api/zodiacs") {
     sendJson(res, 200, qAllZodiacs.all());
-    return;
-  }
-
-  if (pathname === "/api/featured-blessings") {
-    sendJson(res, 200, qFeaturedBlessings.all());
     return;
   }
 
