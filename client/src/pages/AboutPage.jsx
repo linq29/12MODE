@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SiteFooter from "../components/layout/SiteFooter";
 import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
 
@@ -44,13 +45,7 @@ export default function AboutPage() {
             ))
           )}
         </main>
-        <footer>
-          <p className="footer">
-            JYUNISHI MODE
-            <br />
-            (C) IT41-601 LIN QIUJING
-          </p>
-        </footer>
+        <SiteFooter />
       </div>
     </PageLayout>
   );

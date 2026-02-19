@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: 0.3s;
+    /* transition: 0.3s; */
 }
 
 a {
@@ -139,7 +139,8 @@ h1 {
 .body-wrapper {
     display: flex;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    height: auto;
     justify-content: space-between;
 }
 
@@ -172,17 +173,26 @@ h1 {
     right: 8vw;
     width: 18vw;
     max-width: 250px;
+    min-width: 150px;
     z-index: 1000;
 }
 
-.logo a {
+.logo-home {
     display: block;
     transform: translateY(0);
     transition: transform 0.5s ease;
 }
 
-.logo a:hover {
+.logo-home:hover {
     transform: translateY(0.8rem);
+}
+
+.logo-menu-trigger {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
 }
 
 .page-title {
@@ -201,7 +211,8 @@ h1 {
 
 .center-column {
     width: 35%;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     margin: 0 auto auto;
     z-index: 1;
 }
@@ -239,6 +250,15 @@ h1 {
     font-family: "Shippori Mincho", serif;
     font-weight: 400;
     font-size: 1rem;
+}
+
+.nav-area-items.is-centered ul {
+    align-items: center;
+    text-align: center;
+}
+
+.nav-area-items.is-centered li {
+    text-align: center;
 }
 
 .inline-wrapper {
@@ -544,18 +564,15 @@ h1 {
     width: 100%;
     height: auto;
     display: block;
-    animation: none;
-    transform: none;
-    transition: none;
+    transition: transform 0.5s ease, filter 0.5s ease;
 }
 
-.blessing-pick-btn:hover {
-    transform: none;
-}
-
-.blessing-pick-btn:hover img {
-    animation: none;
-    transform: none;
+.blessing-pick-btn:hover img,
+.blessing-pick-btn:focus-visible img,
+.select-step2-item a:hover img,
+.select-step2-item a:focus-visible img {
+    transform: translateY(-10px);
+    filter: drop-shadow(0 6px 12px rgba(149, 3, 3, 0.18));
 }
 
 .select-step2-item img {
@@ -763,7 +780,38 @@ hr {
 #zodiacImage {
     width: 150px;
     margin: 3rem auto 0;
-    display: none;
+}
+
+.spin-reveal-image {
+    display: block;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
+    will-change: transform, opacity;
+}
+
+.spin-reveal-image.is-revealing {
+    animation: zodiacSpinReveal 0.80s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes zodiacSpinReveal {
+    from {
+        opacity: 0;
+        transform: perspective(900px) rotateY(-260deg) scale(0.58);
+        filter: blur(4px);
+    }
+
+    70% {
+        opacity: 1;
+        transform: perspective(900px) rotateY(18deg) scale(1.04);
+        filter: blur(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(900px) rotateY(0deg) scale(1);
+        filter: blur(0);
+    }
 }
 
 #zodiacResult {
@@ -783,7 +831,8 @@ hr {
 main.whole {
     border-left: 2px solid #b18b09;
     border-right: 2px solid #b18b09;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     padding: 3rem;
 }
 
@@ -799,19 +848,6 @@ main.whole {
     margin: 0 auto;
 }
 
-
-/* for about.html */
-.about {
-    margin-top: -1rem;
-    padding-top: 2rem;
-}
-
-h1 {
-    color: #950303;
-    font-size: 2rem;
-    font-weight: 800;
-    margin: 2rem 0;
-}
 
 /* for kotowaza.html */
 .proverb-area {
@@ -841,11 +877,11 @@ h1 {
     font-weight: 400;
 }
 
-.proverb-area.is-revealing {
-    animation: proverbReveal 0.5s ease-out;
+.blur-reveal.is-revealing {
+    animation: blurReveal 0.5s ease-out;
 }
 
-@keyframes proverbReveal {
+@keyframes blurReveal {
     from {
         opacity: 0;
         filter: blur(10px);
@@ -872,8 +908,154 @@ h1 {
     text-align: center;
 }
 
+/* for about.html */
+.about {
+    margin-top: -1rem;
+    padding-top: 2rem;
+}
+
+h1 {
+    color: #950303;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 2rem 0;
+}
+
 /* others */
 .demonote {
     font-size: 0.5em;
     font-weight: normal;
+}
+
+@media (max-width: 960px) {
+    body {
+        min-width: 0;
+    }
+
+    .en1,
+    .en2,
+    .cloud1,
+    .cloud2,
+    .left-column,
+    .right-column {
+        display: none;
+    }
+
+    .body-wrapper {
+        display: block;
+        height: auto;
+    }
+
+    .center-column {
+        width: min(100%, 760px);
+        height: auto;
+        margin: 0 auto;
+        padding: 0 1rem 2rem;
+    }
+
+    .main-area {
+        border-left: none;
+        border-right: none;
+    }
+
+    .logo {
+        top: -0.8rem;
+        right: 1rem;
+        width: 88px;
+        max-width: none;
+        z-index: 1400;
+    }
+
+    .logo-home {
+        display: none;
+    }
+
+    .logo-menu-trigger {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        width: 100%;
+        padding: 0;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .logo-menu-trigger img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+
+    .logo-menu-trigger img:hover {
+        transform: translateY(0.5rem);
+    }
+
+    .logo-menu-trigger span {
+        color: #950303;
+        font-family: "Dela Gothic One", sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        line-height: 1;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        background: rgba(246, 239, 229, 0.97);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: 1300;
+    }
+
+    .mobile-menu.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .mobile-menu-panel {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-menu .nav-area-items ul {
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .mobile-menu .nav-area-items li {
+        text-align: center;
+    }
+
+    .mobile-menu .nav-area-items li a {
+        font-size: clamp(1.9rem, 7vw, 2.4rem);
+    }
+
+    .mobile-menu .nav-area-items li .nav-small {
+        display: inline-block;
+        margin-top: 0.35rem;
+        font-size: 0.95rem;
+    }
+
+    .top-visual {
+        padding-top: 6.4rem;
+    }
+
+    main.whole {
+        border-left: none;
+        border-right: none;
+        height: auto;
+        padding: 2rem 1rem;
+    }
 }

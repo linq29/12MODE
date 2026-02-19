@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SiteFooter from "../components/layout/SiteFooter";
 import PageLayout from "../layouts/PageLayout";
 
 export default function HomePage() {
@@ -100,13 +101,7 @@ export default function HomePage() {
             <p>動物の関する一語をランダムに引く。</p>
           </div>
         </main>
-        <footer>
-          <p className="footer">
-            JYUNISHI MODE
-            <br />
-            (C) IT41-601 LIN QIUJING
-          </p>
-        </footer>
+        <SiteFooter />
       </div>
     </PageLayout>
   );

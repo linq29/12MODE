@@ -1,6 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import BlurReveal from "../components/common/BlurReveal";
+import SpinRevealImage from "../components/common/SpinRevealImage";
 import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
+
+const RESULT_TEXT_DELAY_MS = 820;
 
 export default function JyunishiPage() {
   const [zodiacs, setZodiacs] = useState([]);
@@ -16,6 +20,11 @@ export default function JyunishiPage() {
 
   const [year, setYear] = useState(2026);
   const [result, setResult] = useState(null);
+  const [zodiacImageTrigger, setZodiacImageTrigger] = useState(0);
+  const [showResultText, setShowResultText] = useState(false);
+  const [animateResultText, setAnimateResultText] = useState(false);
+  const [blurRevealPlayed, setBlurRevealPlayed] = useState(false);
+  const resultRevealTimerRef = useRef(null);
 
   useEffect(() => {
     getJson("/api/zodiacs")
@@ -29,6 +38,15 @@ export default function JyunishiPage() {
       });
   }, []);
 
+  useEffect(
+    () => () => {
+      if (resultRevealTimerRef.current) {
+        clearTimeout(resultRevealTimerRef.current);
+      }
+    },
+    []
+  );
+
   const handleConfirm = () => {
     const zodiacId = ((Number(year) - 1924) % 12 + 12) % 12 + 1;
     const zodiacData = zodiacs.find((item) => Number(item.zodiacID) === zodiacId);
@@ -41,6 +59,31 @@ export default function JyunishiPage() {
       ruby: zodiacData.ruby,
       image: `/images/jinjasagashi/zodiacA${zodiacId}.png`,
     });
+    setZodiacImageTrigger((value) => value + 1);
+    setShowResultText(false);
+
+    if (resultRevealTimerRef.current) {
+      clearTimeout(resultRevealTimerRef.current);
+    }
+
+    resultRevealTimerRef.current = setTimeout(() => {
+      const shouldAnimate = !blurRevealPlayed;
+      setAnimateResultText(shouldAnimate);
+      setShowResultText(true);
+      if (shouldAnimate) {
+        setBlurRevealPlayed(true);
+      }
+      resultRevealTimerRef.current = null;
+    }, RESULT_TEXT_DELAY_MS);
+  };
+
+  const handleRetry = () => {
+    if (resultRevealTimerRef.current) {
+      clearTimeout(resultRevealTimerRef.current);
+      resultRevealTimerRef.current = null;
+    }
+    setResult(null);
+    setShowResultText(false);
   };
 
   return (
@@ -77,25 +120,26 @@ export default function JyunishiPage() {
         </div>
 
         <div id="resultArea">
-          <img
+          <SpinRevealImage
             id="zodiacImage"
             src={result ? result.image : ""}
             alt="Zodiac"
-            style={{ display: result ? "block" : "none" }}
+            visible={Boolean(result)}
+            triggerKey={zodiacImageTrigger}
           />
-          <div id="zodiacResult">
-            {result ? (
+          <BlurReveal id="zodiacResult" reveal={showResultText} animate={animateResultText}>
+            {showResultText && result ? (
               <ruby>
                 {result.zodiac}
                 <rt>{result.ruby}</rt>
               </ruby>
             ) : null}
-            {result ? "年です！" : ""}
-          </div>
+            {showResultText && result ? "年です！" : ""}
+          </BlurReveal>
           <button
             id="retryBtn"
             type="button"
-            onClick={() => setResult(null)}
+            onClick={handleRetry}
             style={{ display: result ? "block" : "none" }}
             disabled={loading}
           >
