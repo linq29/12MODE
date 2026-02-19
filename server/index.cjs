@@ -35,7 +35,15 @@ if (!fs.existsSync(DB_PATH)) {
 
 const db = new DatabaseSync(DB_PATH);
 
-const qAllZodiacs = db.prepare("SELECT zodiacID, name, animal, ruby FROM zodiacs ORDER BY zodiacID");
+const qAllZodiacs = db.prepare(
+  "SELECT zodiacID, name, animal, ruby, symbol, messenger, personality FROM zodiacs ORDER BY zodiacID"
+);
+const qAllZodiacBlessing = db.prepare(
+  "SELECT zodiacID, blessingID, sortOrder FROM zodiac_blessing ORDER BY zodiacID, sortOrder, blessingID"
+);
+const qAllZodiacSpot = db.prepare(
+  "SELECT zs.zodiacID, zs.spotID, zs.sortOrder, zs.isFeatured, s.spot FROM zodiac_spot zs JOIN spots s ON s.spotID = zs.spotID ORDER BY zs.zodiacID, zs.sortOrder, zs.spotID"
+);
 const qAllBlessings = db.prepare(
   "SELECT blessingID, blessing, blessingEn FROM blessings ORDER BY blessingID"
 );
@@ -54,6 +62,52 @@ const qRandomProverb = db.prepare(
 const qAboutTerms = db.prepare(
   "SELECT term, ruby, termDesc FROM about_terms ORDER BY sortOrder"
 );
+
+function parseJsonArray(raw) {
+  if (typeof raw !== "string" || !raw) return [];
+  try {
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function hydrateZodiacs(rows) {
+  const blessingRows = qAllZodiacBlessing.all();
+  const spotRows = qAllZodiacSpot.all();
+  const blessingIdsByZodiac = new Map();
+  const featuredSpotsByZodiac = new Map();
+  const fallbackSpotsByZodiac = new Map();
+
+  for (const item of blessingRows) {
+    const zodiacID = Number(item.zodiacID);
+    if (!blessingIdsByZodiac.has(zodiacID)) blessingIdsByZodiac.set(zodiacID, []);
+    blessingIdsByZodiac.get(zodiacID).push(Number(item.blessingID));
+  }
+
+  for (const item of spotRows) {
+    const zodiacID = Number(item.zodiacID);
+    if (!fallbackSpotsByZodiac.has(zodiacID)) fallbackSpotsByZodiac.set(zodiacID, []);
+    fallbackSpotsByZodiac.get(zodiacID).push(item.spot);
+    if (Number(item.isFeatured) === 1) {
+      if (!featuredSpotsByZodiac.has(zodiacID)) featuredSpotsByZodiac.set(zodiacID, []);
+      featuredSpotsByZodiac.get(zodiacID).push(item.spot);
+    }
+  }
+
+  return rows.map((row) => {
+    const zodiacID = Number(row.zodiacID);
+    const featuredSpots = featuredSpotsByZodiac.get(zodiacID) || [];
+    const fallbackSpots = fallbackSpotsByZodiac.get(zodiacID) || [];
+    return {
+      ...row,
+      symbol: parseJsonArray(row.symbol),
+      related_blessings: blessingIdsByZodiac.get(zodiacID) || [],
+      related_spots: featuredSpots.length ? featuredSpots : fallbackSpots.slice(0, 2),
+    };
+  });
+}
 
 function handleApi(req, res, pathname) {
   if (req.method === "OPTIONS") {
@@ -77,7 +131,7 @@ function handleApi(req, res, pathname) {
   }
 
   if (pathname === "/api/zodiacs") {
-    sendJson(res, 200, qAllZodiacs.all());
+    sendJson(res, 200, hydrateZodiacs(qAllZodiacs.all()));
     return;
   }
 
@@ -98,9 +152,11 @@ function handleApi(req, res, pathname) {
 
   if (pathname === "/api/jinja-sagashi/bootstrap") {
     sendJson(res, 200, {
-      zodiacs: qAllZodiacs.all(),
+      zodiacs: hydrateZodiacs(qAllZodiacs.all()),
       blessings: qAllBlessings.all(),
       spots: qAllSpots.all(),
+      zodiac_blessing: qAllZodiacBlessing.all(),
+      zodiac_spot: qAllZodiacSpot.all(),
       spot_blessing: qAllSpotBlessing.all(),
     });
     return;

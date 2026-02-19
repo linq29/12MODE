@@ -421,9 +421,13 @@ h1 {
 
 .jinja-loading-text {
     margin: 0;
-    color: #302833;
-    font-family: "Shippori Mincho", serif;
+    color: #950303;
+    font-family: "Kaisei Decol", serif;
+    font-weight: 500;
     font-size: 1rem;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    line-height: 1.2;
 }
 
 @keyframes jinjaStepSpin {
@@ -508,8 +512,7 @@ h1 {
     margin: 2rem auto;
 }
 
-.random-btn,
-.retry-btn {
+.golden-btn {
     display: block;
     margin: 3rem auto;
     padding: 0.8rem 2rem;
@@ -522,10 +525,11 @@ h1 {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
 
-.random-btn:hover,
-.retry-btn:hover {
+.golden-btn:hover,
+.golden-btn:focus-visible {
     background-color: #e09e00;
     transform: translateY(-2px);
 }
@@ -601,15 +605,22 @@ h1 {
     color: #302833;
 }
 
+.jinja-step-note-blessing {
+    text-align: center;
+    margin: 0 auto 1rem;
+    color: #950303;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
 .jinja-step-actions {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin: 1.5rem 0 2rem;
+    margin: 1.5rem 0;
 }
 
-.jinja-step-actions .random-btn,
-.jinja-step-actions .retry-btn {
+.jinja-step-actions .golden-btn {
     margin: 0;
 }
 
@@ -646,7 +657,7 @@ main.index {
 
 .spot-info {
     margin-top: 2rem;
-    padding: 0 1rem;
+    padding: 0;
 }
 
 .spot-name-items {
@@ -761,28 +772,66 @@ hr {
     background-color: #fff;
 }
 
-#confirmBtn,
-#retryBtn {
-    padding: 0.8rem 2rem;
-    font-family: "Kaisei Decol", serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #fff;
-    background-color: #b18b09;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.selection-wrapper .golden-btn {
+    margin: 0;
 }
 
-.page-jyunishi #retryBtn {
+.page-jyunishi #resultArea .golden-btn {
     margin: auto;
     display: block;
 }
 
-#confirmBtn:hover {
-    background-color: #e09e00;
-    transform: translateY(-2px);
+.jyunishi-detail-table-wrap {
+    max-width: 900px;
+    margin: 1.4rem auto 0;
+    text-align: left;
+}
+
+.jyunishi-detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #b18b09;
+    background-color: #fffaf2;
+}
+
+.jyunishi-detail-table th,
+.jyunishi-detail-table td {
+    border: 1px solid rgba(177, 139, 9, 0.45);
+    padding: 0.9rem 1rem;
+    font-family: "Shippori Mincho", serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #302833;
+    vertical-align: top;
+}
+
+.jyunishi-detail-table th {
+    width: 35%;
+    color: #950303;
+    background-color: #f6efe5;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .jyunishi-detail-table th,
+    .jyunishi-detail-table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .jyunishi-detail-table th {
+        border-bottom: none;
+    }
+
+    .jyunishi-detail-table tr {
+        display: block;
+        border-bottom: 1px solid rgba(177, 139, 9, 0.45);
+    }
+
+    .jyunishi-detail-table tr:last-child {
+        border-bottom: none;
+    }
 }
 
 #resultArea {
@@ -791,7 +840,7 @@ hr {
 }
 
 #zodiacImage {
-    width: 150px;
+    width: 120px;
     margin: 3rem auto 0;
 }
 

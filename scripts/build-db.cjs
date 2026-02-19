@@ -17,6 +17,77 @@ const ZODIAC_RUBY_BY_ID = {
   12: "い",
 };
 
+const BLESSING_ALIAS = {
+  健康: "健康祈願",
+  仕事運: "勝運・仕事運",
+};
+
+function normalizeRelatedBlessingRefs(relatedBlessings, zodiacName, blessingIdByName) {
+  const refs = Array.isArray(relatedBlessings) ? relatedBlessings : [];
+  return refs.map((value) => {
+    if (typeof value === "number" && Number.isFinite(value)) return Number(value);
+    if (typeof value === "string") {
+      const maybeId = Number(value);
+      if (Number.isFinite(maybeId) && maybeId > 0) return maybeId;
+      const normalized = BLESSING_ALIAS[value] || value;
+      const id = blessingIdByName.get(normalized);
+      if (id) return id;
+    }
+    throw new Error(
+      `Unknown related_blessings value for zodiac ${zodiacName}: ${JSON.stringify(value)}`
+    );
+  });
+}
+
+function buildZodiacSpotRows(zodiac, spotsByZodiacId, spotIdsByNameByZodiacId) {
+  const zodiacID = Number(zodiac.zodiacID);
+  const allSpots = spotsByZodiacId.get(zodiacID) || [];
+  const refs = Array.isArray(zodiac.related_spots) ? zodiac.related_spots : [];
+  const usedSpotIds = new Set();
+  const featuredSpotIds = [];
+  const idByName = spotIdsByNameByZodiacId.get(zodiacID) || new Map();
+
+  for (const value of refs) {
+    let resolvedSpotId = null;
+
+    if (typeof value === "number" && Number.isFinite(value)) {
+      resolvedSpotId = Number(value);
+    } else if (typeof value === "string") {
+      const maybeId = Number(value);
+      if (Number.isFinite(maybeId) && maybeId > 0) {
+        resolvedSpotId = maybeId;
+      } else {
+        const candidates = idByName.get(value) || [];
+        resolvedSpotId = candidates.find((spotID) => !usedSpotIds.has(spotID)) ?? null;
+      }
+    }
+
+    if (resolvedSpotId == null || !allSpots.some((spot) => spot.spotID === resolvedSpotId)) {
+      throw new Error(
+        `Unknown related_spots value for zodiac ${zodiac.name}: ${JSON.stringify(value)}`
+      );
+    }
+
+    if (!usedSpotIds.has(resolvedSpotId)) {
+      usedSpotIds.add(resolvedSpotId);
+      featuredSpotIds.push(resolvedSpotId);
+    }
+  }
+
+  const featuredSpotIdSet = new Set(featuredSpotIds);
+  const orderedSpotIds = [
+    ...featuredSpotIds,
+    ...allSpots.map((spot) => spot.spotID).filter((spotID) => !featuredSpotIdSet.has(spotID)),
+  ];
+
+  return orderedSpotIds.map((spotID, index) => ({
+    zodiacID,
+    spotID,
+    sortOrder: index + 1,
+    isFeatured: featuredSpotIdSet.has(spotID) ? 1 : 0,
+  }));
+}
+
 function buildDatabase() {
   const rootDir = path.resolve(__dirname, "..");
   const sourcePath = path.join(rootDir, "client", "public", "data", "database.json");
@@ -29,18 +100,12 @@ function buildDatabase() {
 
   const source = JSON.parse(fs.readFileSync(sourcePath, "utf8"));
 
-  const zodiacs = (source.zodiacs || []).map((item) => ({
-    zodiacID: Number(item.zodiacID),
-    name: item.name,
-    animal: item.animal,
-    ruby: item.ruby || ZODIAC_RUBY_BY_ID[Number(item.zodiacID)] || "",
-  }));
-
   const blessings = (source.blessings || []).map((item) => ({
     blessingID: Number(item.blessingID || item.bleesingID),
     blessing: item.blessing,
     blessingEn: item.blessingEn || "",
   }));
+  const blessingIdByName = new Map(blessings.map((item) => [item.blessing, item.blessingID]));
 
   const spots = (source.spots || []).map((item) => ({
     spotID: Number(item.spotID),
@@ -52,6 +117,52 @@ function buildDatabase() {
     spotDesc: item.spotDesc || "",
     spotSite: item.spotSite || item["Unnamed: 7"] || "",
   }));
+  const spotsByZodiacId = new Map();
+  const spotIdsByNameByZodiacId = new Map();
+  for (const item of spots) {
+    const zodiacID = Number(item.zodiacID);
+    if (!spotsByZodiacId.has(zodiacID)) spotsByZodiacId.set(zodiacID, []);
+    spotsByZodiacId.get(zodiacID).push(item);
+
+    if (!spotIdsByNameByZodiacId.has(zodiacID)) spotIdsByNameByZodiacId.set(zodiacID, new Map());
+    const byName = spotIdsByNameByZodiacId.get(zodiacID);
+    if (!byName.has(item.spot)) byName.set(item.spot, []);
+    byName.get(item.spot).push(item.spotID);
+  }
+  for (const list of spotsByZodiacId.values()) {
+    list.sort((a, b) => a.spotID - b.spotID);
+  }
+  for (const byName of spotIdsByNameByZodiacId.values()) {
+    for (const list of byName.values()) {
+      list.sort((a, b) => a - b);
+    }
+  }
+
+  const zodiacs = (source.zodiacs || []).map((item) => ({
+    zodiacID: Number(item.zodiacID),
+    name: item.name,
+    animal: item.animal,
+    ruby: item.ruby || ZODIAC_RUBY_BY_ID[Number(item.zodiacID)] || "",
+    symbol: JSON.stringify(Array.isArray(item.symbol) ? item.symbol : []),
+    messenger: item.messenger || "",
+    personality: item.personality || "",
+    related_blessings: Array.isArray(item.related_blessings) ? item.related_blessings : [],
+    related_spots: Array.isArray(item.related_spots) ? item.related_spots : [],
+  }));
+
+  const zodiacBlessing = zodiacs.flatMap((item) =>
+    normalizeRelatedBlessingRefs(item.related_blessings, item.name, blessingIdByName).map(
+      (blessingID, index) => ({
+        zodiacID: Number(item.zodiacID),
+        blessingID: Number(blessingID),
+        sortOrder: index + 1,
+      })
+    )
+  );
+
+  const zodiacSpot = zodiacs.flatMap((item) =>
+    buildZodiacSpotRows(item, spotsByZodiacId, spotIdsByNameByZodiacId)
+  );
 
   const spotBlessing = (source.spot_blessing || []).map((item) => ({
     spotID: Number(item.spotID),
@@ -88,6 +199,8 @@ function buildDatabase() {
   db.exec(`
     PRAGMA foreign_keys = OFF;
 
+    DROP TABLE IF EXISTS zodiac_spot;
+    DROP TABLE IF EXISTS zodiac_blessing;
     DROP TABLE IF EXISTS spot_blessing;
     DROP TABLE IF EXISTS zodiac_proverb;
     DROP TABLE IF EXISTS about_terms;
@@ -100,7 +213,10 @@ function buildDatabase() {
       zodiacID INTEGER PRIMARY KEY,
       name TEXT NOT NULL,
       animal TEXT NOT NULL,
-      ruby TEXT NOT NULL
+      ruby TEXT NOT NULL,
+      symbol TEXT NOT NULL,
+      messenger TEXT NOT NULL,
+      personality TEXT NOT NULL
     );
 
     CREATE TABLE blessings (
@@ -121,10 +237,34 @@ function buildDatabase() {
       FOREIGN KEY (zodiacID) REFERENCES zodiacs(zodiacID)
     );
 
+    CREATE TABLE zodiac_blessing (
+      zodiacID INTEGER NOT NULL,
+      blessingID INTEGER NOT NULL,
+      sortOrder INTEGER NOT NULL,
+      PRIMARY KEY (zodiacID, blessingID),
+      FOREIGN KEY (zodiacID) REFERENCES zodiacs(zodiacID),
+      FOREIGN KEY (blessingID) REFERENCES blessings(blessingID),
+      UNIQUE (zodiacID, sortOrder)
+    );
+
+    CREATE TABLE zodiac_spot (
+      zodiacID INTEGER NOT NULL,
+      spotID INTEGER NOT NULL,
+      sortOrder INTEGER NOT NULL,
+      isFeatured INTEGER NOT NULL,
+      PRIMARY KEY (zodiacID, spotID),
+      FOREIGN KEY (zodiacID) REFERENCES zodiacs(zodiacID),
+      FOREIGN KEY (spotID) REFERENCES spots(spotID),
+      UNIQUE (zodiacID, sortOrder),
+      CHECK (isFeatured IN (0, 1))
+    );
+
     CREATE TABLE spot_blessing (
       spotID INTEGER NOT NULL,
       blessingID INTEGER NOT NULL,
-      PRIMARY KEY (spotID, blessingID)
+      PRIMARY KEY (spotID, blessingID),
+      FOREIGN KEY (spotID) REFERENCES spots(spotID),
+      FOREIGN KEY (blessingID) REFERENCES blessings(blessingID)
     );
 
     CREATE TABLE proverbs (
@@ -150,6 +290,9 @@ function buildDatabase() {
     );
 
     CREATE INDEX idx_spots_zodiac ON spots(zodiacID);
+    CREATE INDEX idx_zodiac_blessing_blessing ON zodiac_blessing(blessingID);
+    CREATE INDEX idx_zodiac_spot_spot ON zodiac_spot(spotID);
+    CREATE INDEX idx_zodiac_spot_featured ON zodiac_spot(zodiacID, isFeatured, sortOrder);
     CREATE INDEX idx_spot_blessing_blessing ON spot_blessing(blessingID);
     CREATE INDEX idx_zodiac_proverb_proverb ON zodiac_proverb(proverbID);
 
@@ -157,7 +300,13 @@ function buildDatabase() {
   `);
 
   const insertZodiac = db.prepare(
-    "INSERT INTO zodiacs (zodiacID, name, animal, ruby) VALUES (?, ?, ?, ?)"
+    "INSERT INTO zodiacs (zodiacID, name, animal, ruby, symbol, messenger, personality) VALUES (?, ?, ?, ?, ?, ?, ?)"
+  );
+  const insertZodiacBlessing = db.prepare(
+    "INSERT INTO zodiac_blessing (zodiacID, blessingID, sortOrder) VALUES (?, ?, ?)"
+  );
+  const insertZodiacSpot = db.prepare(
+    "INSERT INTO zodiac_spot (zodiacID, spotID, sortOrder, isFeatured) VALUES (?, ?, ?, ?)"
   );
   const insertBlessing = db.prepare(
     "INSERT INTO blessings (blessingID, blessing, blessingEn) VALUES (?, ?, ?)"
@@ -181,7 +330,15 @@ function buildDatabase() {
   db.exec("BEGIN");
   try {
     for (const item of zodiacs) {
-      insertZodiac.run(item.zodiacID, item.name, item.animal, item.ruby);
+      insertZodiac.run(
+        item.zodiacID,
+        item.name,
+        item.animal,
+        item.ruby,
+        item.symbol,
+        item.messenger,
+        item.personality
+      );
     }
 
     for (const item of blessings) {
@@ -199,6 +356,14 @@ function buildDatabase() {
         item.spotDesc,
         item.spotSite
       );
+    }
+
+    for (const item of zodiacBlessing) {
+      insertZodiacBlessing.run(item.zodiacID, item.blessingID, item.sortOrder);
+    }
+
+    for (const item of zodiacSpot) {
+      insertZodiacSpot.run(item.zodiacID, item.spotID, item.sortOrder, item.isFeatured);
     }
 
     for (const item of spotBlessing) {
@@ -232,6 +397,8 @@ function buildDatabase() {
       zodiacs: zodiacs.length,
       blessings: blessings.length,
       spots: spots.length,
+      zodiac_blessing: zodiacBlessing.length,
+      zodiac_spot: zodiacSpot.length,
       spot_blessing: spotBlessing.length,
       proverbs: proverbs.length,
       zodiac_proverb: zodiacProverb.length,

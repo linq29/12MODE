@@ -7,24 +7,12 @@ function getSpotSite(spot) {
   return spot.spotSite || spot["Unnamed: 7"] || "";
 }
 
+function getSpotImage(spotId) {
+  return `/images/spot/spot${spotId}.webp`;
+}
+
 function SpotImage({ spotId, alt }) {
-  const [src, setSrc] = useState(`/images/spot${spotId}.jpg`);
-
-  useEffect(() => {
-    setSrc(`/images/spot${spotId}.jpg`);
-  }, [spotId]);
-
-  return (
-    <img
-      src={src}
-      alt={alt}
-      onError={() => {
-        if (src.endsWith(".jpg")) {
-          setSrc(`/images/spot${spotId}.png`);
-        }
-      }}
-    />
-  );
+  return <img src={getSpotImage(spotId)} alt={alt} />;
 }
 
 export default function ShrineDetailPage() {

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import BlurReveal from "../components/common/BlurReveal";
+import GoldenButton from "../components/common/GoldenButton";
 import SpinRevealImage from "../components/common/SpinRevealImage";
 import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
@@ -8,6 +9,7 @@ const RESULT_TEXT_DELAY_MS = 820;
 
 export default function JyunishiPage() {
   const [zodiacs, setZodiacs] = useState([]);
+  const [blessingMap, setBlessingMap] = useState(new Map());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const years = useMemo(() => {
@@ -39,6 +41,37 @@ export default function JyunishiPage() {
       });
   }, []);
 
+  useEffect(() => {
+    let mounted = true;
+
+    getJson("/api/jinja-sagashi/bootstrap")
+      .then((data) => {
+        if (!mounted || !Array.isArray(data?.blessings)) {
+          return;
+        }
+
+        const nextMap = new Map(
+          data.blessings
+            .map((item) => [
+              Number(item?.blessingID ?? item?.bleesingID),
+              item?.blessing,
+            ])
+            .filter(([id, blessing]) => Number.isFinite(id) && Boolean(blessing))
+        );
+        setBlessingMap(nextMap);
+      })
+      .catch(() => {
+        if (!mounted) {
+          return;
+        }
+        setBlessingMap(new Map());
+      });
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
   useEffect(
     () => () => {
       if (resultRevealTimerRef.current) {
@@ -57,7 +90,13 @@ export default function JyunishiPage() {
 
     setResult({
       zodiac: zodiacData.name,
+      name: zodiacData.name,
+      animal: zodiacData.animal,
       ruby: zodiacData.ruby,
+      messenger: zodiacData.messenger,
+      personality: zodiacData.personality,
+      relatedBlessings: zodiacData.related_blessings || zodiacData.blessings || [],
+      relatedSpots: zodiacData.related_spots || [],
       image: `/images/jinjasagashi/zodiacA${zodiacId}.png`,
     });
     setZodiacImageTrigger((value) => value + 1);
@@ -90,6 +129,34 @@ export default function JyunishiPage() {
     setShowRetryBtn(false);
   };
 
+  const joinList = (items, mapItem) => {
+    if (!Array.isArray(items) || !items.length) {
+      return "—";
+    }
+
+    const text = items
+      .map((item) => mapItem(item))
+      .filter(Boolean)
+      .join("、");
+
+    return text || "—";
+  };
+
+  const blessingText = result
+    ? joinList(result.relatedBlessings, (value) => {
+        const normalized = Number(value);
+        if (Number.isFinite(normalized) && blessingMap.has(normalized)) {
+          return blessingMap.get(normalized);
+        }
+
+        return String(value || "").trim();
+      })
+    : "—";
+
+  const relatedSpotText = result
+    ? joinList(result.relatedSpots, (value) => String(value || "").trim())
+    : "—";
+
   return (
     <PageLayout
       bodyClass="page-jyunishi"
@@ -116,9 +183,9 @@ export default function JyunishiPage() {
                 </option>
               ))}
             </select>
-            <button id="confirmBtn" type="button" onClick={handleConfirm} disabled={loading}>
+            <GoldenButton id="confirmBtn" onClick={handleConfirm} disabled={loading}>
               OK！
-            </button>
+            </GoldenButton>
           </div>
           {error ? <p className="jinja-step-note">{error}</p> : null}
         </div>
@@ -141,10 +208,39 @@ export default function JyunishiPage() {
             {showResultText && result ? "年です！" : ""}
           </BlurReveal>
           <BlurReveal reveal={showRetryBtn}>
-            <button id="retryBtn" type="button" onClick={handleRetry} disabled={loading}>
+            <GoldenButton id="retryBtn" onClick={handleRetry} disabled={loading}>
               もう一回
-            </button>
+            </GoldenButton>
           </BlurReveal>
+          {showRetryBtn && result ? (
+            <BlurReveal reveal={showRetryBtn}>
+              <div className="jyunishi-detail-table-wrap">
+                <table className="jyunishi-detail-table">
+                  <tbody>
+                    <tr>
+                      <th scope="row">神使いとしての{result.animal}</th>
+                      <td>{result.messenger || "—"}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        {result.name}
+                        {result.animal}年生まれの特徴
+                      </th>
+                      <td>{result.personality || "—"}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">まつわるご利益</th>
+                      <td>{blessingText}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">{result.animal}とまつわる神社</th>
+                      <td>{relatedSpotText}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </BlurReveal>
+          ) : null}
         </div>
       </main>
     </PageLayout>
