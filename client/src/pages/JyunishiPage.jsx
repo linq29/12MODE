@@ -5,7 +5,7 @@ import SpinRevealImage from "../components/common/SpinRevealImage";
 import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
 
-const RESULT_TEXT_DELAY_MS = 1000;
+const RESULT_TEXT_DELAY_MS = 800;
 const EMPTY_TEXT = "—";
 
 function normalizeText(value) {
@@ -20,39 +20,147 @@ function normalizeText(value) {
   return String(value).trim();
 }
 
-function getZodiacId(item) {
-  return Number(item?.zodiacID ?? item?.zodiacId ?? item?.id);
+function pickFirstText(source, keys) {
+  if (!source || typeof source !== "object") {
+    return "";
+  }
+
+  for (const key of keys) {
+    const text = normalizeText(source[key]);
+    if (text) {
+      return text;
+    }
+  }
+
+  return "";
 }
 
-function formatRawFieldValue(value) {
-  if (value === null || value === undefined) {
-    return EMPTY_TEXT;
+function normalizeList(value) {
+  if (Array.isArray(value)) {
+    return value;
   }
 
   if (typeof value === "string") {
-    const text = value.trim();
-    return text || EMPTY_TEXT;
-  }
-
-  if (Array.isArray(value)) {
-    if (!value.length) {
-      return EMPTY_TEXT;
+    const trimmed = value.trim();
+    if (!trimmed) {
+      return [];
     }
-    return JSON.stringify(value);
-  }
 
-  if (typeof value === "object") {
-    if (!Object.keys(value).length) {
-      return EMPTY_TEXT;
+    try {
+      const parsed = JSON.parse(trimmed);
+      if (Array.isArray(parsed)) {
+        return parsed;
+      }
+    } catch {
+      // Not JSON, continue with separator split.
     }
-    return JSON.stringify(value);
+
+    return trimmed
+      .split(/[、,]/)
+      .map((item) => item.trim())
+      .filter(Boolean);
   }
 
-  return String(value);
+  return [];
+}
+
+function getLegacyRawField(result, key) {
+  if (!result || typeof result !== "object") {
+    return "";
+  }
+  const raw = result.rawFields;
+  if (!raw || typeof raw !== "object") {
+    return "";
+  }
+  return normalizeText(raw[key]);
+}
+
+function normalizeZodiacRow(item) {
+  if (!item || typeof item !== "object") {
+    return null;
+  }
+
+  const zodiacID = Number(item.zodiacID ?? item.zodiacId ?? item.id);
+  if (!Number.isFinite(zodiacID)) {
+    return null;
+  }
+
+  return {
+    ...item,
+    zodiacID,
+    name: pickFirstText(item, ["name", "zodiac", "zodiacName"]),
+    animal: pickFirstText(item, ["animal", "animalName"]),
+    ruby: pickFirstText(item, ["ruby", "read", "furigana"]),
+    messenger: pickFirstText(item, [
+      "messenger",
+      "messanger",
+      "messengerDesc",
+      "messengerText",
+    ]),
+    personality: pickFirstText(item, [
+      "personality",
+      "character",
+      "characteristic",
+      "personalityDesc",
+      "personalityText",
+    ]),
+    related_blessings: normalizeList(
+      item.related_blessings ?? item.relatedBlessings ?? item.blessings
+    ),
+    related_spots: normalizeList(item.related_spots ?? item.relatedSpots ?? item.spots),
+  };
+}
+
+function mergeZodiacs(primary, secondary) {
+  const map = new Map();
+
+  const appendRows = (rows) => {
+    if (!Array.isArray(rows)) {
+      return;
+    }
+
+    for (const row of rows) {
+      const normalized = normalizeZodiacRow(row);
+      if (!normalized) {
+        continue;
+      }
+
+      const existing = map.get(normalized.zodiacID);
+      if (!existing) {
+        map.set(normalized.zodiacID, normalized);
+        continue;
+      }
+
+      map.set(normalized.zodiacID, {
+        ...existing,
+        ...normalized,
+        name: normalized.name || existing.name || "",
+        animal: normalized.animal || existing.animal || "",
+        ruby: normalized.ruby || existing.ruby || "",
+        messenger: normalized.messenger || existing.messenger || "",
+        personality: normalized.personality || existing.personality || "",
+        related_blessings:
+          normalized.related_blessings.length > 0
+            ? normalized.related_blessings
+            : existing.related_blessings || [],
+        related_spots:
+          normalized.related_spots.length > 0
+            ? normalized.related_spots
+            : existing.related_spots || [],
+      });
+    }
+  };
+
+  appendRows(primary);
+  appendRows(secondary);
+
+  return [...map.values()].sort((a, b) => a.zodiacID - b.zodiacID);
 }
 
 export default function JyunishiPage() {
   const [zodiacs, setZodiacs] = useState([]);
+  const [blessingMap, setBlessingMap] = useState(new Map());
+  const [spotMap, setSpotMap] = useState(new Map());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const years = useMemo(() => {
@@ -73,49 +181,60 @@ export default function JyunishiPage() {
   const resultRevealTimerRef = useRef(null);
 
   useEffect(() => {
+    getJson("/api/zodiacs")
+      .then((data) => {
+        setZodiacs(mergeZodiacs(data, []));
+        setLoading(false);
+      })
+      .catch(() => {
+        setError("干支データの読み込みに失敗しました。");
+        setLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
     let mounted = true;
 
-    async function loadZodiacs() {
-      try {
-        const apiRows = await getJson("/api/zodiacs");
+    getJson("/api/jinja-sagashi/bootstrap")
+      .then((data) => {
         if (!mounted) {
           return;
         }
 
-        if (Array.isArray(apiRows) && apiRows.length) {
-          setZodiacs(apiRows);
-          setLoading(false);
+        if (Array.isArray(data?.zodiacs)) {
+          setZodiacs((prev) => mergeZodiacs(prev, data.zodiacs));
+        }
+
+        if (!Array.isArray(data?.blessings)) {
           return;
         }
-      } catch {
-        // Fallback to static JSON.
-      }
 
-      try {
-        const localDb = await getJson("/data/database.json");
+        const nextMap = new Map(
+          data.blessings
+            .map((item) => [
+              Number(item?.blessingID ?? item?.bleesingID),
+              normalizeText(item?.blessing),
+            ])
+            .filter(([id, blessing]) => Number.isFinite(id) && Boolean(blessing))
+        );
+        setBlessingMap(nextMap);
+
+        if (Array.isArray(data?.spots)) {
+          const nextSpotMap = new Map(
+            data.spots
+              .map((item) => [Number(item?.spotID), normalizeText(item?.spot)])
+              .filter(([id, spot]) => Number.isFinite(id) && Boolean(spot))
+          );
+          setSpotMap(nextSpotMap);
+        }
+      })
+      .catch(() => {
         if (!mounted) {
           return;
         }
-
-        const fallbackRows = Array.isArray(localDb?.zodiacs) ? localDb.zodiacs : [];
-        if (fallbackRows.length) {
-          setZodiacs(fallbackRows);
-          setLoading(false);
-          return;
-        }
-
-        setError("干支データの読み込みに失敗しました。");
-        setLoading(false);
-      } catch {
-        if (!mounted) {
-          return;
-        }
-        setError("干支データの読み込みに失敗しました。");
-        setLoading(false);
-      }
-    }
-
-    loadZodiacs();
+        setBlessingMap(new Map());
+        setSpotMap(new Map());
+      });
 
     return () => {
       mounted = false;
@@ -133,20 +252,21 @@ export default function JyunishiPage() {
 
   const handleConfirm = () => {
     const zodiacId = ((Number(year) - 1924) % 12 + 12) % 12 + 1;
-    const zodiacData = zodiacs.find((item) => getZodiacId(item) === zodiacId);
+    const zodiacData = zodiacs.find((item) => Number(item.zodiacID) === zodiacId);
     if (!zodiacData) {
       return;
     }
 
     setResult({
-      zodiac: normalizeText(zodiacData.name ?? zodiacData.zodiac),
-      ruby: normalizeText(zodiacData.ruby),
-      rawFields: {
-        messenger: zodiacData.messenger,
-        personality: zodiacData.personality,
-        related_blessings: zodiacData.related_blessings,
-        related_spots: zodiacData.related_spots,
-      },
+      zodiacID: zodiacId,
+      zodiac: zodiacData.name || "",
+      name: zodiacData.name || "",
+      animal: zodiacData.animal || "",
+      ruby: zodiacData.ruby || "",
+      messenger: zodiacData.messenger || "",
+      personality: zodiacData.personality || "",
+      relatedBlessings: normalizeList(zodiacData.related_blessings || zodiacData.blessings),
+      relatedSpots: normalizeList(zodiacData.related_spots),
       image: `/images/jinjasagashi/zodiacA${zodiacId}.png`,
     });
     setZodiacImageTrigger((value) => value + 1);
@@ -178,6 +298,63 @@ export default function JyunishiPage() {
     setShowResultText(false);
     setShowRetryBtn(false);
   };
+
+  const joinList = (items, mapItem) => {
+    if (!Array.isArray(items) || !items.length) {
+      return EMPTY_TEXT;
+    }
+
+    const text = items
+      .map((item) => normalizeText(mapItem(item)))
+      .filter(Boolean)
+      .join("、");
+
+    return text || EMPTY_TEXT;
+  };
+
+  const currentZodiac = result
+    ? zodiacs.find(
+        (item) =>
+          Number(item.zodiacID) === Number(result.zodiacID) ||
+          normalizeText(item.name) === normalizeText(result.zodiac)
+      )
+    : null;
+
+  const currentMessenger = normalizeText(
+    currentZodiac?.messenger || result?.messenger || getLegacyRawField(result, "messenger")
+  );
+  const currentPersonality = normalizeText(
+    currentZodiac?.personality || result?.personality || getLegacyRawField(result, "personality")
+  );
+  const currentRelatedBlessings = normalizeList(
+    currentZodiac?.related_blessings ??
+      result?.relatedBlessings ??
+      result?.rawFields?.related_blessings
+  );
+  const currentRelatedSpots = normalizeList(
+    currentZodiac?.related_spots ?? result?.relatedSpots ?? result?.rawFields?.related_spots
+  );
+
+  const blessingText = result
+    ? joinList(currentRelatedBlessings, (value) => {
+        const normalized = Number(value);
+        if (Number.isFinite(normalized) && blessingMap.has(normalized)) {
+          return blessingMap.get(normalized);
+        }
+
+        return normalizeText(value);
+      })
+    : EMPTY_TEXT;
+
+  const relatedSpotText = result
+    ? joinList(currentRelatedSpots, (value) => {
+        const normalized = Number(value);
+        if (Number.isFinite(normalized) && spotMap.has(normalized)) {
+          return spotMap.get(normalized);
+        }
+        return normalizeText(value);
+      })
+    : EMPTY_TEXT;
 
   return (
     <PageLayout
@@ -223,8 +400,8 @@ export default function JyunishiPage() {
           <BlurReveal id="zodiacResult" reveal={showResultText} animate={animateResultText}>
             {showResultText && result ? (
               <ruby>
-                {result.zodiac || EMPTY_TEXT}
-                <rt>{result.ruby || EMPTY_TEXT}</rt>
+                {result.zodiac}
+                <rt>{result.ruby}</rt>
               </ruby>
             ) : null}
             {showResultText && result ? "年です！" : ""}
@@ -240,20 +417,22 @@ export default function JyunishiPage() {
                 <table className="jyunishi-detail-table">
                   <tbody>
                     <tr>
-                      <th scope="row">messenger</th>
-                      <td>{formatRawFieldValue(result.rawFields.messenger)}</td>
+                      <th scope="row">神使いとしての{result.animal}</th>
+                      <td>{currentMessenger || EMPTY_TEXT}</td>
                     </tr>
                     <tr>
-                      <th scope="row">personality</th>
-                      <td>{formatRawFieldValue(result.rawFields.personality)}</td>
+                      <th scope="row">
+                        {result.name}年生まれの特徴
+                      </th>
+                      <td>{currentPersonality || EMPTY_TEXT}</td>
                     </tr>
                     <tr>
-                      <th scope="row">related_blessings</th>
-                      <td>{formatRawFieldValue(result.rawFields.related_blessings)}</td>
+                      <th scope="row">まつわるご利益</th>
+                      <td>{blessingText}</td>
                     </tr>
                     <tr>
-                      <th scope="row">related_spots</th>
-                      <td>{formatRawFieldValue(result.rawFields.related_spots)}</td>
+                      <th scope="row">まつわる神社</th>
+                      <td>{relatedSpotText}</td>
                     </tr>
                   </tbody>
                 </table>
