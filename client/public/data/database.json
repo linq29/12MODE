@@ -62,66 +62,66 @@
     }
   ],
   "blessings": [
-  {
-    "blessingID": 1,
-    "blessing": "金運",
-    "blessingEn": "kinun"
-  },
-  {
-    "blessingID": 2,
-    "blessing": "商売繁盛",
-    "blessingEn": "shobai_hanjo"
-  },
-  {
-    "blessingID": 3,
-    "blessing": "勝運・仕事運",
-    "blessingEn": "shoun_shigotoun"
-  },
-  {
-    "blessingID": 4,
-    "blessing": "縁結び",
-    "blessingEn": "enmusubi"
-  },
-  {
-    "blessingID": 5,
-    "blessing": "家内安全",
-    "blessingEn": "kanai_anzen"
-  },
-  {
-    "blessingID": 6,
-    "blessing": "子宝",
-    "blessingEn": "kodakara"
-  },
-  {
-    "blessingID": 7,
-    "blessing": "学業成就",
-    "blessingEn": "gakugyo_joju"
-  },
-  {
-    "blessingID": 8,
-    "blessing": "健康祈願",
-    "blessingEn": "kenko_kigan"
-  },
-  {
-    "blessingID": 9,
-    "blessing": "厄除け",
-    "blessingEn": "yakuyoke"
-  },
-  {
-    "blessingID": 10,
-    "blessing": "交通安全",
-    "blessingEn": "kotsu_anzen"
-  },
-  {
-    "blessingID": 11,
-    "blessing": "心願成就",
-    "blessingEn": "shingan_joju"
-  },
-  {
-    "blessingID": 12,
-    "blessing": "開運",
-    "blessingEn": "kaiun"
-  }
+    {
+      "blessingID": 1,
+      "blessing": "金運",
+      "blessingEn": "kinun"
+    },
+    {
+      "blessingID": 2,
+      "blessing": "商売繁盛",
+      "blessingEn": "shobai_hanjo"
+    },
+    {
+      "blessingID": 3,
+      "blessing": "勝運・仕事運",
+      "blessingEn": "shoun_shigotoun"
+    },
+    {
+      "blessingID": 4,
+      "blessing": "縁結び",
+      "blessingEn": "enmusubi"
+    },
+    {
+      "blessingID": 5,
+      "blessing": "家内安全",
+      "blessingEn": "kanai_anzen"
+    },
+    {
+      "blessingID": 6,
+      "blessing": "子宝",
+      "blessingEn": "kodakara"
+    },
+    {
+      "blessingID": 7,
+      "blessing": "学業成就",
+      "blessingEn": "gakugyo_joju"
+    },
+    {
+      "blessingID": 8,
+      "blessing": "健康祈願",
+      "blessingEn": "kenko_kigan"
+    },
+    {
+      "blessingID": 9,
+      "blessing": "厄除け",
+      "blessingEn": "yakuyoke"
+    },
+    {
+      "blessingID": 10,
+      "blessing": "交通安全",
+      "blessingEn": "kotsu_anzen"
+    },
+    {
+      "blessingID": 11,
+      "blessing": "心願成就",
+      "blessingEn": "shingan_joju"
+    },
+    {
+      "blessingID": 12,
+      "blessing": "開運",
+      "blessingEn": "kaiun"
+    }
   ],
   "spots": [
     {
@@ -132,7 +132,7 @@
       "addr": "京都府京都市左京区鹿ケ谷宮ノ前町1",
       "spotCatch": "狛ねずみが迎える哲学の道の社",
       "spotDesc": "平安時代に創建された歴史ある神社。鹿ケ谷の静かな地に鎮座し、四季折々の自然が美しい。豊穣や学問の神として知られる大己貴命を祀る。境内は落ち着いた雰囲気で、地元の人々に親しまれている。",
-      "Unnamed: 7": "https://ootoyojinja.jp/"
+      "spotSite": "https://ootoyojinja.jp/"
     },
     {
       "spotID": 2,
@@ -142,7 +142,7 @@
       "addr": "神奈川県横浜市西区中央1-13-1",
       "spotCatch": "横浜最古の歴史ある神社",
       "spotDesc": "横浜の古社で、源頼朝が創建したと伝わる。杉山明神を祀り、厄除けや健康祈願で信仰を集める。都会の中の静寂な空間として、訪れる人を癒す。春には桜が咲き、見事な景観が楽しめる。",
-      "Unnamed: 7": "https://www.kanagawa-jinja.or.jp/shrine/1204011-000/"
+      "spotSite": "https://www.kanagawa-jinja.or.jp/shrine/1204011-000/"
     },
     {
       "spotID": 3,
@@ -152,7 +152,7 @@
       "addr": "大阪府大阪市浪速区敷津西1-2-12",
       "spotCatch": "米俵を抱える狛ねずみの社",
       "spotDesc": "大国主大神を祀る神社で、縁結びや商売繁盛のご利益で知られる。大阪の喧騒から離れた場所にあり、参拝者に穏やかなひと時を提供。シンプルながらも温かみのある境内が特徴。",
-      "Unnamed: 7": "https://www.city.osaka.lg.jp/naniwa/page/0000001078.html"
+      "spotSite": "https://www.city.osaka.lg.jp/naniwa/page/0000001078.html"
     },
     {
       "spotID": 4,
@@ -162,7 +162,7 @@
       "addr": "青森県弘前市桜庭字外山948",
       "spotCatch": "津軽一代様のひとつ",
       "spotDesc": "弘前の山間に佇む神社で、多賀大神を祀る。清水観音堂として知られ、子育てや長寿の祈願に訪れる人が多い。自然に囲まれた静寂な環境で、心が洗われるような場所。",
-      "Unnamed: 7": "https://www.trip-tsugaru.com/special/ichidaisama/"
+      "spotSite": "https://www.trip-tsugaru.com/special/ichidaisama/"
     },
     {
       "spotID": 5,
@@ -172,17 +172,17 @@
       "addr": "京都府京都市上京区馬喰町",
       "spotCatch": "撫牛で学問成就・病気平癒",
       "spotDesc": "菅原道真を祀る学問の神様として有名。京都の名所の一つで、梅の名所としても知られる。歴史的な建造物と美しい庭園が魅力。受験生や学業成就を願う参拝者で賑わう。",
-      "Unnamed: 7": "https://kitanotenmangu.or.jp/"
+      "spotSite": "https://kitanotenmangu.or.jp/"
     },
     {
       "spotID": 6,
       "zodiacID": 2,
       "spot": "牛嶋神社",
-      "spotHiragana": "うしじまじんじゃ",
+      "spotHiragana": "たかなわがんしょうじ",
       "addr": "東京都墨田区向島1-4-5",
       "spotCatch": "三ツ鳥居が特徴の牛の社",
       "spotDesc": "隅田川近くに位置し、牛頭天王を祀る。江戸時代から続く伝統ある神社で、厄除けや健康祈願に訪れる人が多い。こぢんまりとした境内は地域の憩いの場として親しまれている。",
-      "Unnamed: 7": "https://gansho-ji.net/"
+      "spotSite": "https://gansho-ji.net/"
     },
     {
       "spotID": 7,
@@ -192,7 +192,7 @@
       "addr": "東京都文京区春日1-5-2",
       "spotCatch": "願いを叶える「ねがい牛」",
       "spotDesc": "文京区の隠れた名所で、学問の神・菅原道真を祀る。牛にまつわる伝説が残り、境内には牛の像が特徴的。静かな住宅街にあり、落ち着いた雰囲気の中で参拝できる。",
-      "Unnamed: 7": "http://www.ushitenjin.jp/"
+      "spotSite": "http://www.ushitenjin.jp/"
     },
     {
       "spotID": 8,
@@ -202,7 +202,7 @@
       "addr": "岡山県備前市吉永町福満994-1",
       "spotCatch": "牛神信仰が残る神社",
       "spotDesc": "備前焼の里近くに鎮座し、牛の神を祀る珍しい神社。農耕や家畜の守護として信仰され、地域の歴史を感じさせる。素朴で穏やかな境内は、心安らぐスポットとして知られる。",
-      "Unnamed: 7": "http://bizen-kanko.com/spot/spot_detail/index/113.html"
+      "spotSite": "http://bizen-kanko.com/spot/spot_detail/index/113.html"
     },
     {
       "spotID": 9,
@@ -212,7 +212,7 @@
       "addr": "愛知県新城市門谷鳳来寺4",
       "spotCatch": "徳川家ゆかりの霊験あらたか社",
       "spotDesc": "徳川家康を祀る東照宮で、鳳来寺山の自然に囲まれた場所にある。歴史的な建築と厳かな雰囲気が魅力。山道を登る参拝は、心身を清める体験として人気。",
-      "Unnamed: 7": "https://www.horaisantoshogu.com/"
+      "spotSite": "https://www.horaisantoshogu.com/"
     },
     {
       "spotID": 10,
@@ -222,7 +222,7 @@
       "addr": "熊本県熊本市中央区本丸2-1",
       "spotCatch": "厄除けの虎くぐりが名物",
       "spotDesc": "熊本城内にあり、加藤清正を祀る。武将の魂が宿る場所として、勝負事や開運を願う参拝者が多い。城と一体となった景観は壮観で、歴史好きにもおすすめ。",
-      "Unnamed: 7": "http://www.kato-jinja.or.jp/"
+      "spotSite": "http://www.kato-jinja.or.jp/"
     },
     {
       "spotID": 11,
@@ -232,7 +232,7 @@
       "addr": "鳥取市賀露町北1-21-8",
       "spotCatch": "なでると強くなる虎の狛犬",
       "spotDesc": "鳥取港近くに鎮座し、海の安全と豊漁を祈願する神社。素朴ながらも地域に根付いた信仰が感じられる。周辺の海風を感じながら、穏やかな参拝が楽しめる。",
-      "Unnamed: 7": "http://karojinjya.jp/"
+      "spotSite": "http://karojinjya.jp/"
     },
     {
       "spotID": 12,
@@ -242,7 +242,7 @@
       "addr": "鹿児島県鹿児島市犬迫町3453-1",
       "spotCatch": "地球一の大虎が鎮座する社",
       "spotDesc": "自然豊かな場所にあり、八房龍王を祀る。地域の守護神として崇敬され、雨乞いや豊作を願う伝統が残る。静かな山間にあるため、心落ち着く場所として知られる。",
-      "Unnamed: 7": "https://www.pref.kagoshima.jp/ab27/yafusa-jinja.html"
+      "spotSite": "https://www.pref.kagoshima.jp/ab27/yafusa-jinja.html"
     },
     {
       "spotID": 13,
@@ -252,7 +252,7 @@
       "addr": "埼玉県さいたま市浦和区岸町3-17-25",
       "spotCatch": "鳥居のない珍しい神社",
       "spotDesc": "「つきのみや」と呼ばれ、兎がシンボルの珍しい神社。月読命を祀り、縁結びや安産祈願で人気。境内には兎の像が多く、訪れる人を和ませる。",
-      "Unnamed: 7": "https://visitsaitamacity.jp/spots/20"
+      "spotSite": "https://visitsaitamacity.jp/spots/20"
     },
     {
       "spotID": 14,
@@ -262,7 +262,7 @@
       "addr": "鳥取県鳥取市白兎603",
       "spotCatch": "因幡の白兎伝説の神社",
       "spotDesc": "日本神話「因幡の白兎」に由来する神社。縁結びや皮膚病治癒のご利益で知られ、海辺の風光明媚な場所にある。白兎伝説を感じながら参拝できるロマンチックなスポット。",
-      "Unnamed: 7": "https://jbpress.ismedia.jp/articles/-/73338"
+      "spotSite": "https://jbpress.ismedia.jp/articles/-/73338"
     },
     {
       "spotID": 15,
@@ -272,7 +272,7 @@
       "addr": "京都府京都市左京区岡崎東天王町51",
       "spotCatch": "うさぎが神使の子授け神社",
       "spotDesc": "兎を神使とする神社で、安産や子宝祈願に多くの人が訪れる。境内には兎の像が点在し、愛らしい雰囲気。京都の風情ある街並みの中にある隠れた名所。",
-      "Unnamed: 7": "https://okazakijinja.jp/"
+      "spotSite": "https://okazakijinja.jp/"
     },
     {
       "spotID": 16,
@@ -282,7 +282,7 @@
       "addr": "大阪府大阪市住吉区住吉2-9-89",
       "spotCatch": "全国の住吉神社の総本社",
       "spotDesc": "全国の住吉神社の総本社で、海の神を祀る。航海安全や商売繁盛のご利益で知られ、太鼓橋がシンボル。歴史深い境内は、大阪を代表するパワースポット。",
-      "Unnamed: 7": "https://www.sumiyoshitaisha.net/"
+      "spotSite": "https://www.sumiyoshitaisha.net/"
     },
     {
       "spotID": 17,
@@ -292,7 +292,7 @@
       "addr": "山形県南陽市宮内3707-1",
       "spotCatch": "九つの龍神が守る社",
       "spotDesc": "九頭龍大神を祀り、水や龍神信仰で有名。自然豊かな環境にあり、開運や縁結びを願う参拝者が訪れる。神秘的な雰囲気の中で、心が浄化される場所。",
-      "Unnamed: 7": "https://www.city.nanyo.yamagata.jp/kanko/shrines-temples/198.html"
+      "spotSite": "https://www.city.nanyo.yamagata.jp/kanko/shrines-temples/198.html"
     },
     {
       "spotID": 18,
@@ -302,7 +302,7 @@
       "addr": "静岡県熱海市伊豆山708-1",
       "spotCatch": "赤白二龍が宿る名社",
       "spotDesc": "熱海を見下ろす高台にあり、縁結びと開運のご利益で知られる。源頼朝と北条政子のロマンスゆかりの地としても有名。海と山の絶景が楽しめる。",
-      "Unnamed: 7": "https://izusanjinjya.jp/"
+      "spotSite": "https://izusanjinjya.jp/"
     },
     {
       "spotID": 19,
@@ -312,7 +312,7 @@
       "addr": "神奈川県藤沢市江の島2-3-8",
       "spotCatch": "天女と五頭龍伝説の地",
       "spotDesc": "江の島のシンボルで、弁財天を祀る。縁結びや芸能上達のご利益で人気。島全体が神聖な雰囲気で、観光と参拝を兼ねて訪れる人が多い。",
-      "Unnamed: 7": "http://enoshimajinja.or.jp/"
+      "spotSite": "http://enoshimajinja.or.jp/"
     },
     {
       "spotID": 20,
@@ -322,7 +322,7 @@
       "addr": "東京都品川区北品川2-30-28",
       "spotCatch": "品川の龍神を祀る社",
       "spotDesc": "平安時代から続く古社で、天皇の勅使が訪れた歴史を持つ。地域の守護神として信仰され、穏やかな境内は都会の中のオアシス。夏祭りも盛大。",
-      "Unnamed: 7": "http://ebarajinja.org/top.html"
+      "spotSite": "http://ebarajinja.org/top.html"
     },
     {
       "spotID": 21,
@@ -332,7 +332,7 @@
       "addr": "奈良県桜井市三輪1422",
       "spotCatch": "日本最古の神社のひとつ",
       "spotDesc": "日本最古の神社の一つで、大物主大神を祀る。三輪山を神体とし、自然と調和した神秘的な空間。縁結びや国家安泰を願う参拝者が絶えない。",
-      "Unnamed: 7": "https://oomiwa.or.jp/"
+      "spotSite": "https://oomiwa.or.jp/"
     },
     {
       "spotID": 22,
@@ -342,7 +342,7 @@
       "addr": "東京都品川区二葉4-4-12",
       "spotCatch": "白蛇伝説の残る開運神社",
       "spotDesc": "白蛇を神使とする珍しい神社で、金運や厄除けのご利益が人気。地域に愛されるこぢんまりとした境内は、静かで心落ち着く場所として知られる。",
-      "Unnamed: 7": "https://hebikubo.jp/"
+      "spotSite": "https://hebikubo.jp/"
     },
     {
       "spotID": 23,
@@ -352,7 +352,7 @@
       "addr": "山口県岩国市今津町6-4-2",
       "spotCatch": "白蛇を祀る縁起の良い社",
       "spotDesc": "白蛇を祀る神社で、金運や商売繁盛のご利益が期待される。岩国の天然記念物・白蛇にちなみ、神秘的な雰囲気が漂う。参拝者に穏やかな癒しを。",
-      "Unnamed: 7": "https://yamaguchi-tourism.jp/spot/detail_17961.html"
+      "spotSite": "https://yamaguchi-tourism.jp/spot/detail_17961.html"
     },
     {
       "spotID": 24,
@@ -362,18 +362,230 @@
       "addr": "宮城県岩沼市三色吉水神7",
       "spotCatch": "水と財運のご利益ある社",
       "spotDesc": "金蛇大神を祀り、水と金運のご利益で有名。美しい庭園と池が特徴で、四季折々の風景が楽しめる。商売繁盛を願う人々が遠方からも訪れる。",
-      "Unnamed: 7": "https://kanahebi.cdx.jp/"
+      "spotSite": "https://kanahebi.cdx.jp/"
+    },
+    {
+      "spotID": 25,
+      "zodiacID": 7,
+      "spot": "上賀茂神社",
+      "spotHiragana": "かみがもじんじゃ",
+      "addr": "京都府京都市北区上賀茂本山339",
+      "spotCatch": "世界遺産の古社",
+      "spotDesc": "賀茂別雷大神を祀る山城国一宮で、平安京以前から続く古社として世界遺産にも登録される。",
+      "spotSite": "https://www.kamigamojinja.jp/"
+    },
+    {
+      "spotID": 26,
+      "zodiacID": 7,
+      "spot": "千束八幡神社",
+      "spotHiragana": "せんぞくはちまんじんじゃ",
+      "addr": "東京都大田区南千束2-23-10",
+      "spotCatch": "池月伝承が残る社",
+      "spotDesc": "洗足池畔に鎮座し、源頼朝の名馬・池月の伝承で知られる八幡神を祀る鎮守。",
+      "spotSite": "http://www.tokyo-jinjacho.or.jp/ota/5395"
+    },
+    {
+      "spotID": 27,
+      "zodiacID": 7,
+      "spot": "勝馬神社",
+      "spotHiragana": "かちうまじんじゃ",
+      "addr": "茨城県稲敷市阿波958",
+      "spotCatch": "勝運を祈る馬の社",
+      "spotDesc": "大杉神社境内の末社で、勝馬の名のとおり勝運や仕事運を願う参拝者が訪れる馬ゆかりの社。",
+      "spotSite": "http://oosugi-jinja.or.jp/?page_id=49"
+    },
+    {
+      "spotID": 28,
+      "zodiacID": 7,
+      "spot": "長等神社",
+      "spotHiragana": "ながらじんじゃ",
+      "addr": "滋賀県大津市三井寺町4-1",
+      "spotCatch": "三井寺鎮守の古社",
+      "spotDesc": "大津の守り神として古くから信仰され、三井寺周辺を見守る長等山麓の歴史ある神社。",
+      "spotSite": "http://nagarajinja.net/index.shtml"
+    },
+    {
+      "spotID": 29,
+      "zodiacID": 8,
+      "spot": "羊神社（安中市）",
+      "spotHiragana": "ひつじじんじゃ",
+      "addr": "群馬県安中市中野谷1751",
+      "spotCatch": "羊守り神を祀る社",
+      "spotDesc": "群馬県安中市中野谷に鎮座し、干支の未にちなみ勝運・開運・学業成就を願う参拝者が訪れる。",
+      "spotSite": "https://www.sakisaki.net/pages/45/"
+    },
+    {
+      "spotID": 30,
+      "zodiacID": 8,
+      "spot": "羊神社（名古屋市）",
+      "spotHiragana": "ひつじじんじゃ",
+      "addr": "愛知県名古屋市北区辻町5-26",
+      "spotCatch": "名古屋の未年ゆかり社",
+      "spotDesc": "奈良時代創建と伝わり、名古屋で未年の守護として親しまれる全国的にも珍しい羊の神社。",
+      "spotSite": "https://www.city.nagoya.jp/kita/miryoku/1020066/1020067/1020068/1020077.html"
+    },
+    {
+      "spotID": 33,
+      "zodiacID": 9,
+      "spot": "日吉大社",
+      "spotHiragana": "ひよしたいしゃ",
+      "addr": "滋賀県大津市坂本5-1-1",
+      "spotCatch": "比叡山麓の総本宮",
+      "spotDesc": "約2100年の歴史を持つ全国の日吉・日枝・山王神社の総本宮で、比叡山の麓に広大な社殿群を構える。",
+      "spotSite": "https://hiyoshitaisha.jp/"
+    },
+    {
+      "spotID": 34,
+      "zodiacID": 9,
+      "spot": "日枝神社",
+      "spotHiragana": "ひえじんじゃ",
+      "addr": "東京都千代田区永田町2-10-5",
+      "spotCatch": "都心を守る山王さま",
+      "spotDesc": "江戸城の鎮守として崇敬された都心の古社で、山王祭でも知られ仕事運や縁結びの祈願を集める。",
+      "spotSite": "https://www.hiejinja.net/"
+    },
+    {
+      "spotID": 35,
+      "zodiacID": 9,
+      "spot": "猿丸神社",
+      "spotHiragana": "さるまるじんじゃ",
+      "addr": "京都府綴喜郡宇治田原町禅定寺粽谷44",
+      "spotCatch": "癌封じ祈願の古社",
+      "spotDesc": "百人一首で知られる猿丸大夫を祀り、古くから癌封じ・こぶとりの祈願で信仰を集める宇治田原の社。",
+      "spotSite": "https://www.sarumarujinja.jp/"
+    },
+    {
+      "spotID": 36,
+      "zodiacID": 9,
+      "spot": "本折日吉神社",
+      "spotHiragana": "もとおりひよしじんじゃ",
+      "addr": "石川県小松市本折町1",
+      "spotCatch": "小松鎮護の日吉社",
+      "spotDesc": "富樫家ゆかりの社として創建され、小松の総鎮守として厄除けと開運を祈る人々に親しまれる。",
+      "spotSite": "https://sanno-hiyoshi.org/"
+    },
+    {
+      "spotID": 37,
+      "zodiacID": 10,
+      "spot": "鷲宮神社",
+      "spotHiragana": "わしのみやじんじゃ",
+      "addr": "埼玉県久喜市鷲宮1-6-1",
+      "spotCatch": "関東最古級の大社",
+      "spotDesc": "関東最古級の神社と伝わり、武運長久の信仰とともに地域の総鎮守として長く崇敬されてきた。",
+      "spotSite": "http://www.washinomiyajinja.or.jp/"
+    },
+    {
+      "spotID": 38,
+      "zodiacID": 10,
+      "spot": "長田神社",
+      "spotHiragana": "ながたじんじゃ",
+      "addr": "兵庫県神戸市長田区長田町3-1-1",
+      "spotCatch": "神功皇后創建の社",
+      "spotDesc": "神功皇后創建と伝わる神戸屈指の古社で、開運招福や厄除けを願う参拝者が絶えない。",
+      "spotSite": "https://nagatajinja.jp/"
+    },
+    {
+      "spotID": 39,
+      "zodiacID": 10,
+      "spot": "鶏石神社",
+      "spotHiragana": "けいせきじんじゃ",
+      "addr": "福岡県福岡市東区香椎4-16-1",
+      "spotCatch": "香椎宮境内の鶏石社",
+      "spotDesc": "香椎宮境内に鎮座し、鶏石信仰に基づく心願成就の祈願所として地元で大切に守られている。",
+      "spotSite": "https://keisekijinja.com/"
+    },
+    {
+      "spotID": 40,
+      "zodiacID": 10,
+      "spot": "石上神宮",
+      "spotHiragana": "いそのかみじんぐう",
+      "addr": "奈良県天理市布留町384",
+      "spotCatch": "神剣を祀る古宮",
+      "spotDesc": "日本最古級の神宮の一つで、神剣・布都御魂剣を祀る物部氏ゆかりの武門信仰の聖地。",
+      "spotSite": "https://www.isonokami.jp/"
+    },
+    {
+      "spotID": 41,
+      "zodiacID": 11,
+      "spot": "武蔵御嶽神社",
+      "spotHiragana": "むさしみたけじんじゃ",
+      "addr": "東京都青梅市御岳山176",
+      "spotCatch": "御岳山頂の霊験社",
+      "spotDesc": "創建二千年以上と伝わる御岳山頂の古社で、おいぬ様信仰と厄除け祈願で関東一円から参拝を集める。",
+      "spotSite": "http://musashimitakejinja.jp/"
+    },
+    {
+      "spotID": 42,
+      "zodiacID": 11,
+      "spot": "霊犬神社",
+      "spotHiragana": "れいけんじんじゃ",
+      "addr": "静岡県磐田市見付1010-2",
+      "spotCatch": "しっぺい太郎の霊社",
+      "spotDesc": "見付天神境内にある霊犬悉平太郎を祀る社で、災難除けや健康祈願の守り神として親しまれる。",
+      "spotSite": "https://www.mitsuke-tenjin.com/reikenjinja_reisai/"
+    },
+    {
+      "spotID": 43,
+      "zodiacID": 11,
+      "spot": "伊奴神社",
+      "spotHiragana": "いぬじんじゃ",
+      "addr": "愛知県名古屋市西区稲生町2-12",
+      "spotCatch": "安産祈願で名高い社",
+      "spotDesc": "名古屋西部の古社で、犬にちなむ安産・子授けの神徳により家内安全や厄除けの祈願を集める。",
+      "spotSite": "https://inu-jinjya.or.jp/"
+    },
+    {
+      "spotID": 44,
+      "zodiacID": 11,
+      "spot": "三峯神社",
+      "spotHiragana": "みつみねじんじゃ",
+      "addr": "埼玉県秩父市三峰298-1",
+      "spotCatch": "狼信仰の霊峰神社",
+      "spotDesc": "秩父三峰山に鎮座し、神使の狼信仰と強い厄除けで知られる関東屈指の山岳信仰の社。",
+      "spotSite": "https://www.mitsuminejinja.or.jp/"
+    },
+    {
+      "spotID": 45,
+      "zodiacID": 12,
+      "spot": "馬見岡綿向神社",
+      "spotHiragana": "うまみおかわたむき",
+      "addr": "滋賀県蒲生郡日野町村井711",
+      "spotCatch": "近江日野の総鎮守",
+      "spotDesc": "千年超の歴史を持つ近江日野の総鎮守で、馬と綿向山の名を受け継ぎ地域の開運祈願を支える。",
+      "spotSite": "http://www.ex.biwa.ne.jp/~j-watamuki/"
+    },
+    {
+      "spotID": 46,
+      "zodiacID": 12,
+      "spot": "護王神社",
+      "spotHiragana": "ごおうじんじゃ",
+      "addr": "京都府京都市上京区烏丸通下長者町下ル桜鶴圓町385",
+      "spotCatch": "足腰守護と狛いのしし",
+      "spotDesc": "和気清麻呂公を祀り、狛いのししで知られる京都の社として足腰健康と厄除け祈願で名高い。",
+      "spotSite": "https://www.gooujinja.or.jp/"
+    },
+    {
+      "spotID": 47,
+      "zodiacID": 12,
+      "spot": "和氣神社",
+      "spotHiragana": "わけじんじゃ",
+      "addr": "岡山県和気郡和気町藤野1385",
+      "spotCatch": "和気清麻呂公ゆかり社",
+      "spotDesc": "和気清麻呂公の出生地近くに鎮座し、猪ゆかりの伝承とともに健康祈願・厄除けで信仰される。",
+      "spotSite": "https://wake-jinjya.com/"
+    },
+    {
+      "spotID": 48,
+      "zodiacID": 12,
+      "spot": "足立山妙見宮",
+      "spotHiragana": "あだちやまみょうけんぐう",
+      "addr": "福岡県北九州市小倉北区妙見町17-2",
+      "spotCatch": "北斗信仰の妙見宮",
+      "spotDesc": "足立山中腹に鎮座する北斗妙見信仰の古社で、家内安全や商売繁盛、健康祈願の参拝が続く。",
+      "spotSite": "https://myouken.or.jp/"
     }
   ],
   "spot_blessing": [
-    {
-      "spotID": 1,
-      "blessingID": 8
-    },
-    {
-      "spotID": 1,
-      "blessingID": 7
-    },
     {
       "spotID": 1,
       "blessingID": 4
@@ -383,8 +595,12 @@
       "blessingID": 6
     },
     {
-      "spotID": 2,
-      "blessingID": 4
+      "spotID": 1,
+      "blessingID": 7
+    },
+    {
+      "spotID": 1,
+      "blessingID": 8
     },
     {
       "spotID": 2,
@@ -392,11 +608,15 @@
     },
     {
       "spotID": 2,
-      "blessingID": 8
+      "blessingID": 3
     },
     {
       "spotID": 2,
-      "blessingID": 3
+      "blessingID": 4
+    },
+    {
+      "spotID": 2,
+      "blessingID": 8
     },
     {
       "spotID": 3,
@@ -416,7 +636,19 @@
     },
     {
       "spotID": 4,
-      "blessingID": 12
+      "blessingID": 4
+    },
+    {
+      "spotID": 4,
+      "blessingID": 5
+    },
+    {
+      "spotID": 4,
+      "blessingID": 6
+    },
+    {
+      "spotID": 4,
+      "blessingID": 8
     },
     {
       "spotID": 4,
@@ -428,19 +660,7 @@
     },
     {
       "spotID": 4,
-      "blessingID": 8
-    },
-    {
-      "spotID": 4,
-      "blessingID": 5
-    },
-    {
-      "spotID": 4,
-      "blessingID": 4
-    },
-    {
-      "spotID": 4,
-      "blessingID": 6
+      "blessingID": 12
     },
     {
       "spotID": 5,
@@ -452,7 +672,7 @@
     },
     {
       "spotID": 6,
-      "blessingID": 7
+      "blessingID": 3
     },
     {
       "spotID": 6,
@@ -460,7 +680,7 @@
     },
     {
       "spotID": 6,
-      "blessingID": 3
+      "blessingID": 7
     },
     {
       "spotID": 7,
@@ -468,11 +688,11 @@
     },
     {
       "spotID": 8,
-      "blessingID": 5
+      "blessingID": 2
     },
     {
       "spotID": 8,
-      "blessingID": 2
+      "blessingID": 5
     },
     {
       "spotID": 8,
@@ -480,11 +700,7 @@
     },
     {
       "spotID": 9,
-      "blessingID": 5
-    },
-    {
-      "spotID": 9,
-      "blessingID": 3
+      "blessingID": 1
     },
     {
       "spotID": 9,
@@ -492,15 +708,7 @@
     },
     {
       "spotID": 9,
-      "blessingID": 9
-    },
-    {
-      "spotID": 9,
-      "blessingID": 7
-    },
-    {
-      "spotID": 9,
-      "blessingID": 1
+      "blessingID": 3
     },
     {
       "spotID": 9,
@@ -508,7 +716,23 @@
     },
     {
       "spotID": 9,
+      "blessingID": 5
+    },
+    {
+      "spotID": 9,
+      "blessingID": 7
+    },
+    {
+      "spotID": 9,
+      "blessingID": 9
+    },
+    {
+      "spotID": 9,
       "blessingID": 12
+    },
+    {
+      "spotID": 10,
+      "blessingID": 2
     },
     {
       "spotID": 10,
@@ -516,15 +740,7 @@
     },
     {
       "spotID": 10,
-      "blessingID": 10
-    },
-    {
-      "spotID": 10,
       "blessingID": 5
-    },
-    {
-      "spotID": 10,
-      "blessingID": 2
     },
     {
       "spotID": 10,
@@ -535,8 +751,12 @@
       "blessingID": 8
     },
     {
-      "spotID": 11,
+      "spotID": 10,
       "blessingID": 10
+    },
+    {
+      "spotID": 11,
+      "blessingID": 6
     },
     {
       "spotID": 11,
@@ -544,7 +764,7 @@
     },
     {
       "spotID": 11,
-      "blessingID": 6
+      "blessingID": 10
     },
     {
       "spotID": 12,
@@ -568,35 +788,35 @@
     },
     {
       "spotID": 14,
-      "blessingID": 8
-    },
-    {
-      "spotID": 14,
       "blessingID": 4
-    },
-    {
-      "spotID": 14,
-      "blessingID": 12
-    },
-    {
-      "spotID": 14,
-      "blessingID": 9
     },
     {
       "spotID": 14,
       "blessingID": 5
     },
     {
+      "spotID": 14,
+      "blessingID": 8
+    },
+    {
+      "spotID": 14,
+      "blessingID": 9
+    },
+    {
+      "spotID": 14,
+      "blessingID": 12
+    },
+    {
       "spotID": 15,
       "blessingID": 4
     },
     {
       "spotID": 15,
-      "blessingID": 9
+      "blessingID": 6
     },
     {
       "spotID": 15,
-      "blessingID": 6
+      "blessingID": 9
     },
     {
       "spotID": 16,
@@ -608,11 +828,11 @@
     },
     {
       "spotID": 16,
-      "blessingID": 6
+      "blessingID": 5
     },
     {
       "spotID": 16,
-      "blessingID": 5
+      "blessingID": 6
     },
     {
       "spotID": 16,
@@ -624,10 +844,6 @@
     },
     {
       "spotID": 17,
-      "blessingID": 12
-    },
-    {
-      "spotID": 17,
       "blessingID": 2
     },
     {
@@ -635,15 +851,15 @@
       "blessingID": 4
     },
     {
+      "spotID": 17,
+      "blessingID": 12
+    },
+    {
       "spotID": 18,
       "blessingID": 3
     },
     {
       "spotID": 18,
-      "blessingID": 4
-    },
-    {
-      "spotID": 19,
       "blessingID": 4
     },
     {
@@ -653,10 +869,26 @@
     {
       "spotID": 19,
       "blessingID": 3
+    },
+    {
+      "spotID": 19,
+      "blessingID": 4
+    },
+    {
+      "spotID": 20,
+      "blessingID": 2
     },
     {
       "spotID": 20,
       "blessingID": 3
+    },
+    {
+      "spotID": 20,
+      "blessingID": 4
+    },
+    {
+      "spotID": 20,
+      "blessingID": 5
     },
     {
       "spotID": 20,
@@ -664,23 +896,11 @@
     },
     {
       "spotID": 20,
-      "blessingID": 2
-    },
-    {
-      "spotID": 20,
-      "blessingID": 10
-    },
-    {
-      "spotID": 20,
       "blessingID": 8
     },
     {
       "spotID": 20,
-      "blessingID": 5
-    },
-    {
-      "spotID": 20,
-      "blessingID": 4
+      "blessingID": 10
     },
     {
       "spotID": 21,
@@ -688,10 +908,6 @@
     },
     {
       "spotID": 21,
-      "blessingID": 10
-    },
-    {
-      "spotID": 21,
       "blessingID": 4
     },
     {
@@ -699,12 +915,20 @@
       "blessingID": 8
     },
     {
+      "spotID": 21,
+      "blessingID": 10
+    },
+    {
       "spotID": 22,
       "blessingID": 1
     },
     {
       "spotID": 22,
-      "blessingID": 12
+      "blessingID": 4
+    },
+    {
+      "spotID": 22,
+      "blessingID": 8
     },
     {
       "spotID": 22,
@@ -712,11 +936,7 @@
     },
     {
       "spotID": 22,
-      "blessingID": 4
-    },
-    {
-      "spotID": 22,
-      "blessingID": 8
+      "blessingID": 12
     },
     {
       "spotID": 23,
@@ -732,11 +952,11 @@
     },
     {
       "spotID": 24,
-      "blessingID": 2
+      "blessingID": 1
     },
     {
       "spotID": 24,
-      "blessingID": 1
+      "blessingID": 2
     },
     {
       "spotID": 24,
@@ -753,22 +973,22 @@
     {
       "spotID": 26,
       "blessingID": 3
-    },
-    {
-      "spotID": 26,
-      "blessingID": 12
     },
     {
       "spotID": 26,
       "blessingID": 5
     },
     {
-      "spotID": 27,
-      "blessingID": 8
+      "spotID": 26,
+      "blessingID": 12
     },
     {
       "spotID": 27,
       "blessingID": 3
+    },
+    {
+      "spotID": 27,
+      "blessingID": 8
     },
     {
       "spotID": 28,
@@ -800,15 +1020,15 @@
     },
     {
       "spotID": 29,
-      "blessingID": 12
-    },
-    {
-      "spotID": 29,
       "blessingID": 7
     },
     {
+      "spotID": 29,
+      "blessingID": 12
+    },
+    {
       "spotID": 30,
-      "blessingID": 9
+      "blessingID": 1
     },
     {
       "spotID": 30,
@@ -816,11 +1036,11 @@
     },
     {
       "spotID": 30,
-      "blessingID": 1
+      "blessingID": 9
     },
     {
       "spotID": 31,
-      "blessingID": 9
+      "blessingID": 2
     },
     {
       "spotID": 31,
@@ -832,11 +1052,11 @@
     },
     {
       "spotID": 31,
-      "blessingID": 2
+      "blessingID": 9
     },
     {
       "spotID": 32,
-      "blessingID": 4
+      "blessingID": 2
     },
     {
       "spotID": 32,
@@ -844,7 +1064,7 @@
     },
     {
       "spotID": 32,
-      "blessingID": 2
+      "blessingID": 4
     },
     {
       "spotID": 32,
@@ -852,43 +1072,35 @@
     },
     {
       "spotID": 33,
-      "blessingID": 5
-    },
-    {
-      "spotID": 33,
-      "blessingID": 8
-    },
-    {
-      "spotID": 33,
-      "blessingID": 10
-    },
-    {
-      "spotID": 33,
-      "blessingID": 9
-    },
-    {
-      "spotID": 33,
-      "blessingID": 7
-    },
-    {
-      "spotID": 34,
-      "blessingID": 12
-    },
-    {
-      "spotID": 34,
-      "blessingID": 9
-    },
-    {
-      "spotID": 35,
       "blessingID": 2
     },
     {
-      "spotID": 35,
+      "spotID": 33,
       "blessingID": 4
     },
     {
-      "spotID": 35,
-      "blessingID": 10
+      "spotID": 33,
+      "blessingID": 5
+    },
+    {
+      "spotID": 33,
+      "blessingID": 9
+    },
+    {
+      "spotID": 34,
+      "blessingID": 2
+    },
+    {
+      "spotID": 34,
+      "blessingID": 3
+    },
+    {
+      "spotID": 34,
+      "blessingID": 4
+    },
+    {
+      "spotID": 34,
+      "blessingID": 6
     },
     {
       "spotID": 35,
@@ -896,151 +1108,191 @@
     },
     {
       "spotID": 35,
-      "blessingID": 3
-    },
-    {
-      "spotID": 35,
-      "blessingID": 1
-    },
-    {
-      "spotID": 35,
-      "blessingID": 9
-    },
-    {
-      "spotID": 35,
-      "blessingID": 8
-    },
-    {
-      "spotID": 36,
-      "blessingID": 2
-    },
-    {
-      "spotID": 36,
-      "blessingID": 9
-    },
-    {
-      "spotID": 36,
-      "blessingID": 8
-    },
-    {
-      "spotID": 36,
       "blessingID": 7
+    },
+    {
+      "spotID": 35,
+      "blessingID": 8
+    },
+    {
+      "spotID": 35,
+      "blessingID": 9
+    },
+    {
+      "spotID": 35,
+      "blessingID": 10
+    },
+    {
+      "spotID": 36,
+      "blessingID": 9
+    },
+    {
+      "spotID": 36,
+      "blessingID": 12
     },
     {
       "spotID": 37,
-      "blessingID": 11
+      "blessingID": 1
     },
     {
-      "spotID": 38,
-      "blessingID": 8
+      "spotID": 37,
+      "blessingID": 2
     },
     {
-      "spotID": 38,
-      "blessingID": 9
-    },
-    {
-      "spotID": 38,
-      "blessingID": 11
-    },
-    {
-      "spotID": 39,
-      "blessingID": 9
-    },
-    {
-      "spotID": 39,
-      "blessingID": 5
-    },
-    {
-      "spotID": 39,
-      "blessingID": 4
-    },
-    {
-      "spotID": 39,
-      "blessingID": 6
-    },
-    {
-      "spotID": 39,
-      "blessingID": 11
-    },
-    {
-      "spotID": 40,
-      "blessingID": 9
-    },
-    {
-      "spotID": 40,
-      "blessingID": 8
-    },
-    {
-      "spotID": 40,
-      "blessingID": 6
-    },
-    {
-      "spotID": 41,
-      "blessingID": 6
-    },
-    {
-      "spotID": 41,
-      "blessingID": 5
-    },
-    {
-      "spotID": 41,
-      "blessingID": 9
-    },
-    {
-      "spotID": 42,
-      "blessingID": 9
-    },
-    {
-      "spotID": 42,
-      "blessingID": 4
-    },
-    {
-      "spotID": 43,
+      "spotID": 37,
       "blessingID": 3
     },
     {
-      "spotID": 43,
-      "blessingID": 12
+      "spotID": 37,
+      "blessingID": 4
     },
     {
-      "spotID": 44,
-      "blessingID": 8
-    },
-    {
-      "spotID": 44,
-      "blessingID": 9
-    },
-    {
-      "spotID": 44,
-      "blessingID": 6
-    },
-    {
-      "spotID": 45,
-      "blessingID": 8
-    },
-    {
-      "spotID": 45,
-      "blessingID": 9
-    },
-    {
-      "spotID": 45,
-      "blessingID": 12
-    },
-    {
-      "spotID": 45,
-      "blessingID": 6
-    },
-    {
-      "spotID": 46,
-      "blessingID": 8
-    },
-    {
-      "spotID": 46,
+      "spotID": 37,
       "blessingID": 5
     },
     {
-      "spotID": 46,
+      "spotID": 37,
+      "blessingID": 8
+    },
+    {
+      "spotID": 37,
+      "blessingID": 9
+    },
+    {
+      "spotID": 37,
+      "blessingID": 10
+    },
+    {
+      "spotID": 38,
       "blessingID": 2
+    },
+    {
+      "spotID": 38,
+      "blessingID": 7
+    },
+    {
+      "spotID": 38,
+      "blessingID": 8
+    },
+    {
+      "spotID": 38,
+      "blessingID": 9
+    },
+    {
+      "spotID": 39,
+      "blessingID": 11
+    },
+    {
+      "spotID": 40,
+      "blessingID": 8
+    },
+    {
+      "spotID": 40,
+      "blessingID": 9
+    },
+    {
+      "spotID": 40,
+      "blessingID": 11
+    },
+    {
+      "spotID": 41,
+      "blessingID": 4
+    },
+    {
+      "spotID": 41,
+      "blessingID": 5
+    },
+    {
+      "spotID": 41,
+      "blessingID": 6
+    },
+    {
+      "spotID": 41,
+      "blessingID": 9
+    },
+    {
+      "spotID": 41,
+      "blessingID": 11
+    },
+    {
+      "spotID": 42,
+      "blessingID": 6
+    },
+    {
+      "spotID": 42,
+      "blessingID": 8
+    },
+    {
+      "spotID": 42,
+      "blessingID": 9
+    },
+    {
+      "spotID": 43,
+      "blessingID": 5
+    },
+    {
+      "spotID": 43,
+      "blessingID": 6
+    },
+    {
+      "spotID": 43,
+      "blessingID": 9
+    },
+    {
+      "spotID": 44,
+      "blessingID": 4
+    },
+    {
+      "spotID": 44,
+      "blessingID": 9
+    },
+    {
+      "spotID": 45,
+      "blessingID": 3
+    },
+    {
+      "spotID": 45,
+      "blessingID": 12
+    },
+    {
+      "spotID": 46,
+      "blessingID": 6
+    },
+    {
+      "spotID": 46,
+      "blessingID": 8
+    },
+    {
+      "spotID": 46,
+      "blessingID": 9
+    },
+    {
+      "spotID": 47,
+      "blessingID": 6
+    },
+    {
+      "spotID": 47,
+      "blessingID": 8
+    },
+    {
+      "spotID": 47,
+      "blessingID": 9
+    },
+    {
+      "spotID": 47,
+      "blessingID": 12
+    },
+    {
+      "spotID": 48,
+      "blessingID": 2
+    },
+    {
+      "spotID": 48,
+      "blessingID": 5
+    },
+    {
+      "spotID": 48,
+      "blessingID": 8
     }
   ],
   "proverbs": [
@@ -1413,6 +1665,70 @@
     {
       "zodiacID": 12,
       "proverbID": 36
+    }
+  ],
+  "about_terms": [
+    {
+      "term": "御利益",
+      "ruby": "ごりえき",
+      "termDesc": "神社や仏閣で神仏から授かる加護や恩恵のこと。参拝したり、お守りを持ったりすることで、健康・商売繁盛・学業成就などの御利益が得られるとされる。",
+      "sortOrder": 1
+    },
+    {
+      "term": "狛犬",
+      "ruby": "こまいぬ",
+      "termDesc": "神社の入口などに対で置かれる獅子のような像。口を開けた阿形（あぎょう）と、口を閉じた吽形（うんぎょう）が対になっており、邪気を払う役割を持つ。狛犬と呼ばれるが、犬の形に限らない。",
+      "sortOrder": 2
+    },
+    {
+      "term": "十二支",
+      "ruby": "じゅうにし",
+      "termDesc": "子・丑・寅など12の動物で構成される干支の一部。年や方角、性格占いなどに用いられる。",
+      "sortOrder": 3
+    },
+    {
+      "term": "神社",
+      "ruby": "じんじゃ",
+      "termDesc": "神道の神々を祀る施設。鳥居をくぐり、参道を進んで参拝する。祭りや祈願が行われる場所。",
+      "sortOrder": 4
+    },
+    {
+      "term": "神使",
+      "ruby": "しんし",
+      "termDesc": "神の使いとされる動物。稲荷神社の狐、天満宮の牛、八幡神社の鳩など、神ごとに異なる動物が定められている。",
+      "sortOrder": 5
+    },
+    {
+      "term": "生肖",
+      "ruby": "せいしょう",
+      "termDesc": "中国の十二支を指し、日本の十二支と同様に、年ごとの動物で人の性格や運勢を占う文化がある。",
+      "sortOrder": 6
+    }
+  ],
+  "featured_blessings": [
+    {
+      "toPath": "/jinja/1",
+      "image": "/images/jinjasagashi/blessing_gakugyo_joju.png",
+      "alt": "学業成就",
+      "sortOrder": 1
+    },
+    {
+      "toPath": "/jinja/2",
+      "image": "/images/jinjasagashi/blessing_enmusubi.png",
+      "alt": "縁結び",
+      "sortOrder": 2
+    },
+    {
+      "toPath": "/jinja/3",
+      "image": "/images/jinjasagashi/blessing_kinun.png",
+      "alt": "金運",
+      "sortOrder": 3
+    },
+    {
+      "toPath": "/jinja/4",
+      "image": "/images/jinjasagashi/blessing_kaiun.png",
+      "alt": "開運",
+      "sortOrder": 4
     }
   ]
 }

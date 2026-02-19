@@ -59,7 +59,7 @@ export default function ShrineDetailPage() {
     };
   }, [spotId]);
 
-  const pageTitle = spot ? `${spot.spot} | 十二支詣` : "神社詳細 | 十二支詣";
+  const pageTitle = spot ? spot.spot : "神社詳細";
 
   return (
     <PageLayout

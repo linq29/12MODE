@@ -22,6 +22,7 @@ export default function JyunishiPage() {
   const [result, setResult] = useState(null);
   const [zodiacImageTrigger, setZodiacImageTrigger] = useState(0);
   const [showResultText, setShowResultText] = useState(false);
+  const [showRetryBtn, setShowRetryBtn] = useState(false);
   const [animateResultText, setAnimateResultText] = useState(false);
   const [blurRevealPlayed, setBlurRevealPlayed] = useState(false);
   const resultRevealTimerRef = useRef(null);
@@ -61,6 +62,7 @@ export default function JyunishiPage() {
     });
     setZodiacImageTrigger((value) => value + 1);
     setShowResultText(false);
+    setShowRetryBtn(false);
 
     if (resultRevealTimerRef.current) {
       clearTimeout(resultRevealTimerRef.current);
@@ -70,6 +72,7 @@ export default function JyunishiPage() {
       const shouldAnimate = !blurRevealPlayed;
       setAnimateResultText(shouldAnimate);
       setShowResultText(true);
+      setShowRetryBtn(true);
       if (shouldAnimate) {
         setBlurRevealPlayed(true);
       }
@@ -84,6 +87,7 @@ export default function JyunishiPage() {
     }
     setResult(null);
     setShowResultText(false);
+    setShowRetryBtn(false);
   };
 
   return (
@@ -136,15 +140,11 @@ export default function JyunishiPage() {
             ) : null}
             {showResultText && result ? "年です！" : ""}
           </BlurReveal>
-          <button
-            id="retryBtn"
-            type="button"
-            onClick={handleRetry}
-            style={{ display: result ? "block" : "none" }}
-            disabled={loading}
-          >
-            もう一回
-          </button>
+          <BlurReveal reveal={showRetryBtn}>
+            <button id="retryBtn" type="button" onClick={handleRetry} disabled={loading}>
+              もう一回
+            </button>
+          </BlurReveal>
         </div>
       </main>
     </PageLayout>

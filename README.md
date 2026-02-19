@@ -7,7 +7,8 @@
 
 - `client/`: React + Vite フロントエンド（現行）
 - `server/`: SQLite を読む API サーバー（`/api/*`）
-- `data/`: JSON ソースと SQLite DB
+- `client/public/data/database.json`: コンテンツの唯一ソース
+- `data/db/`: SQLite DB（`database.json` から生成）
 
 ## 起動方法
 
