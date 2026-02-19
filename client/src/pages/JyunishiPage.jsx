@@ -5,11 +5,54 @@ import SpinRevealImage from "../components/common/SpinRevealImage";
 import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
 
-const RESULT_TEXT_DELAY_MS = 820;
+const RESULT_TEXT_DELAY_MS = 1000;
+const EMPTY_TEXT = "—";
+
+function normalizeText(value) {
+  if (typeof value === "string") {
+    return value.trim();
+  }
+
+  if (value === null || value === undefined) {
+    return "";
+  }
+
+  return String(value).trim();
+}
+
+function getZodiacId(item) {
+  return Number(item?.zodiacID ?? item?.zodiacId ?? item?.id);
+}
+
+function formatRawFieldValue(value) {
+  if (value === null || value === undefined) {
+    return EMPTY_TEXT;
+  }
+
+  if (typeof value === "string") {
+    const text = value.trim();
+    return text || EMPTY_TEXT;
+  }
+
+  if (Array.isArray(value)) {
+    if (!value.length) {
+      return EMPTY_TEXT;
+    }
+    return JSON.stringify(value);
+  }
+
+  if (typeof value === "object") {
+    if (!Object.keys(value).length) {
+      return EMPTY_TEXT;
+    }
+    return JSON.stringify(value);
+  }
+
+  return String(value);
+}
 
 export default function JyunishiPage() {
   const [zodiacs, setZodiacs] = useState([]);
-  const [blessingMap, setBlessingMap] = useState(new Map());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const years = useMemo(() => {
@@ -30,42 +73,49 @@ export default function JyunishiPage() {
   const resultRevealTimerRef = useRef(null);
 
   useEffect(() => {
-    getJson("/api/zodiacs")
-      .then((data) => {
-        setZodiacs(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setError("干支データの読み込みに失敗しました。");
-        setLoading(false);
-      });
-  }, []);
-
-  useEffect(() => {
     let mounted = true;
 
-    getJson("/api/jinja-sagashi/bootstrap")
-      .then((data) => {
-        if (!mounted || !Array.isArray(data?.blessings)) {
-          return;
-        }
-
-        const nextMap = new Map(
-          data.blessings
-            .map((item) => [
-              Number(item?.blessingID ?? item?.bleesingID),
-              item?.blessing,
-            ])
-            .filter(([id, blessing]) => Number.isFinite(id) && Boolean(blessing))
-        );
-        setBlessingMap(nextMap);
-      })
-      .catch(() => {
+    async function loadZodiacs() {
+      try {
+        const apiRows = await getJson("/api/zodiacs");
         if (!mounted) {
           return;
         }
-        setBlessingMap(new Map());
-      });
+
+        if (Array.isArray(apiRows) && apiRows.length) {
+          setZodiacs(apiRows);
+          setLoading(false);
+          return;
+        }
+      } catch {
+        // Fallback to static JSON.
+      }
+
+      try {
+        const localDb = await getJson("/data/database.json");
+        if (!mounted) {
+          return;
+        }
+
+        const fallbackRows = Array.isArray(localDb?.zodiacs) ? localDb.zodiacs : [];
+        if (fallbackRows.length) {
+          setZodiacs(fallbackRows);
+          setLoading(false);
+          return;
+        }
+
+        setError("干支データの読み込みに失敗しました。");
+        setLoading(false);
+      } catch {
+        if (!mounted) {
+          return;
+        }
+        setError("干支データの読み込みに失敗しました。");
+        setLoading(false);
+      }
+    }
+
+    loadZodiacs();
 
     return () => {
       mounted = false;
@@ -83,20 +133,20 @@ export default function JyunishiPage() {
 
   const handleConfirm = () => {
     const zodiacId = ((Number(year) - 1924) % 12 + 12) % 12 + 1;
-    const zodiacData = zodiacs.find((item) => Number(item.zodiacID) === zodiacId);
+    const zodiacData = zodiacs.find((item) => getZodiacId(item) === zodiacId);
     if (!zodiacData) {
       return;
     }
 
     setResult({
-      zodiac: zodiacData.name,
-      name: zodiacData.name,
-      animal: zodiacData.animal,
-      ruby: zodiacData.ruby,
-      messenger: zodiacData.messenger,
-      personality: zodiacData.personality,
-      relatedBlessings: zodiacData.related_blessings || zodiacData.blessings || [],
-      relatedSpots: zodiacData.related_spots || [],
+      zodiac: normalizeText(zodiacData.name ?? zodiacData.zodiac),
+      ruby: normalizeText(zodiacData.ruby),
+      rawFields: {
+        messenger: zodiacData.messenger,
+        personality: zodiacData.personality,
+        related_blessings: zodiacData.related_blessings,
+        related_spots: zodiacData.related_spots,
+      },
       image: `/images/jinjasagashi/zodiacA${zodiacId}.png`,
     });
     setZodiacImageTrigger((value) => value + 1);
@@ -128,34 +178,6 @@ export default function JyunishiPage() {
     setShowResultText(false);
     setShowRetryBtn(false);
   };
-
-  const joinList = (items, mapItem) => {
-    if (!Array.isArray(items) || !items.length) {
-      return "—";
-    }
-
-    const text = items
-      .map((item) => mapItem(item))
-      .filter(Boolean)
-      .join("、");
-
-    return text || "—";
-  };
-
-  const blessingText = result
-    ? joinList(result.relatedBlessings, (value) => {
-        const normalized = Number(value);
-        if (Number.isFinite(normalized) && blessingMap.has(normalized)) {
-          return blessingMap.get(normalized);
-        }
-
-        return String(value || "").trim();
-      })
-    : "—";
-
-  const relatedSpotText = result
-    ? joinList(result.relatedSpots, (value) => String(value || "").trim())
-    : "—";
 
   return (
     <PageLayout
@@ -201,8 +223,8 @@ export default function JyunishiPage() {
           <BlurReveal id="zodiacResult" reveal={showResultText} animate={animateResultText}>
             {showResultText && result ? (
               <ruby>
-                {result.zodiac}
-                <rt>{result.ruby}</rt>
+                {result.zodiac || EMPTY_TEXT}
+                <rt>{result.ruby || EMPTY_TEXT}</rt>
               </ruby>
             ) : null}
             {showResultText && result ? "年です！" : ""}
@@ -218,23 +240,20 @@ export default function JyunishiPage() {
                 <table className="jyunishi-detail-table">
                   <tbody>
                     <tr>
-                      <th scope="row">神使いとしての{result.animal}</th>
-                      <td>{result.messenger || "—"}</td>
+                      <th scope="row">messenger</th>
+                      <td>{formatRawFieldValue(result.rawFields.messenger)}</td>
                     </tr>
                     <tr>
-                      <th scope="row">
-                        {result.name}
-                        {result.animal}年生まれの特徴
-                      </th>
-                      <td>{result.personality || "—"}</td>
+                      <th scope="row">personality</th>
+                      <td>{formatRawFieldValue(result.rawFields.personality)}</td>
                     </tr>
                     <tr>
-                      <th scope="row">まつわるご利益</th>
-                      <td>{blessingText}</td>
+                      <th scope="row">related_blessings</th>
+                      <td>{formatRawFieldValue(result.rawFields.related_blessings)}</td>
                     </tr>
                     <tr>
-                      <th scope="row">{result.animal}とまつわる神社</th>
-                      <td>{relatedSpotText}</td>
+                      <th scope="row">related_spots</th>
+                      <td>{formatRawFieldValue(result.rawFields.related_spots)}</td>
                     </tr>
                   </tbody>
                 </table>

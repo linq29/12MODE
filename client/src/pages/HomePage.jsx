@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ViewportBlurReveal from "../components/common/ViewportBlurReveal";
 import SiteFooter from "../components/layout/SiteFooter";
 import PageLayout from "../layouts/PageLayout";
 
@@ -11,11 +12,11 @@ export default function HomePage() {
       titleAlt="十二支詣"
     >
       <div className="main-area">
-        <div className="top-visual">
+        <ViewportBlurReveal className="top-visual">
           <img src="/images/top-visual.png" alt="トップビジュアル" />
-        </div>
+        </ViewportBlurReveal>
         <main className="index">
-          <div className="index-p1 vertical">
+          <ViewportBlurReveal className="index-p1 vertical">
             <h1>
               <ruby>
                 十二支詣<rt>じゅうにしもうで</rt>
@@ -37,13 +38,13 @@ export default function HomePage() {
               <br />縁の深い神社を見つけるのを
               <br />お手伝いをします。
             </p>
-          </div>
+          </ViewportBlurReveal>
 
-          <div className="ruby-gold">
+          <ViewportBlurReveal className="ruby-gold">
             <img src="/images/ruby-gold1.png" alt="飾り" />
-          </div>
+          </ViewportBlurReveal>
 
-          <div className="carousel">
+          <ViewportBlurReveal className="carousel">
             <div className="carousel-track">
               <img src="/images/carousel/c1.jpg" alt="神社写真1" />
               <img src="/images/carousel/c2.jpg" alt="神社写真2" />
@@ -57,9 +58,9 @@ export default function HomePage() {
               <img src="/images/carousel/c4.jpg" alt="神社写真4" />
               <img src="/images/carousel/c5.jpg" alt="神社写真5" />
             </div>
-          </div>
+          </ViewportBlurReveal>
 
-          <Link to="/jinjasagashi" className="index-func-link">
+          <ViewportBlurReveal as={Link} to="/jinjasagashi" className="index-func-link">
             <div className="index-func">
               <div className="inline-wrapper">
                 <div className="h2-icon">
@@ -75,9 +76,9 @@ export default function HomePage() {
                 、それぞれが持つ歴史やご利益、そして動物との結びつきも紹介します。
               </p>
             </div>
-          </Link>
+          </ViewportBlurReveal>
 
-          <Link to="/jyunishi" className="index-func-link">
+          <ViewportBlurReveal as={Link} to="/jyunishi" className="index-func-link">
             <div className="index-func">
               <div className="inline-wrapper">
                 <div className="h2-icon">
@@ -87,9 +88,9 @@ export default function HomePage() {
               </div>
               <p>自分の生まれ年や、特定年の十二支を確認したい人のためのツール。</p>
             </div>
-          </Link>
+          </ViewportBlurReveal>
 
-          <Link to="/kotowaza" className="index-func-link">
+          <ViewportBlurReveal as={Link} to="/kotowaza" className="index-func-link">
             <div className="index-func">
               <div className="inline-wrapper">
                 <div className="h2-icon">
@@ -99,7 +100,7 @@ export default function HomePage() {
               </div>
               <p>動物の関する一語をランダムに引く。</p>
             </div>
-          </Link>
+          </ViewportBlurReveal>
         </main>
         <SiteFooter />
       </div>

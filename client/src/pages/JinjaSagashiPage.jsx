@@ -6,7 +6,7 @@ import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
 
 const e = React.createElement;
-const STEP_TRANSITION_MS = 420;
+const STEP_TRANSITION_MS = 1200;
 
 function getZodiacImage(zodiacId, face) {
   return `/images/jinjasagashi/zodiac${face}${zodiacId}.png`;
@@ -190,7 +190,7 @@ function JinjaSagashiApp(props) {
     return replacedChoices;
   }
 
-  function prepareBlessingStep(zodiacId, withTransition) {
+  function prepareBlessingStep(zodiacId) {
     const scopeSpots = getSpotScope(zodiacId);
     const scopeSpotIdSet = new Set(scopeSpots.map((spot) => Number(spot.spotID)));
     const pool = getBlessingPoolForSpotScope(scopeSpotIdSet);
@@ -219,11 +219,6 @@ function JinjaSagashiApp(props) {
       setSelectedZodiac(zodiacId || null);
       setStep(2);
     };
-
-    if (withTransition) {
-      runStepTransition(next);
-      return;
-    }
 
     next();
   }
@@ -276,16 +271,14 @@ function JinjaSagashiApp(props) {
   }
 
   function resetSearch() {
-    runStepTransition(() => {
-      setFatalError("");
-      setStepNotice("");
-      setSelectedZodiac(null);
-      setCandidateSpotIds(new Set());
-      setBlessingChoices([]);
-      setSelectedBlessing(null);
-      setSelectedSpot(null);
-      setStep(1);
-    });
+    setFatalError("");
+    setStepNotice("");
+    setSelectedZodiac(null);
+    setCandidateSpotIds(new Set());
+    setBlessingChoices([]);
+    setSelectedBlessing(null);
+    setSelectedSpot(null);
+    setStep(1);
   }
 
   function renderStepLoading() {
@@ -293,7 +286,7 @@ function JinjaSagashiApp(props) {
       "div",
       { className: "jinja-loading-screen", role: "status", "aria-live": "polite" },
       e("div", { className: "jinja-loading-spinner", "aria-hidden": "true" }),
-      e("p", { className: "jinja-loading-text blur-reveal is-revealing" }, "次の道へご案内中…")
+      e("p", { className: "jinja-loading-text blur-reveal is-revealing" }, "次の道へご案内中")
     );
   }
 
@@ -317,7 +310,7 @@ function JinjaSagashiApp(props) {
               className: "select-step1-item zodiac-pick-btn",
               onClick: () => {
                 const zodiacId = Number(zodiac.zodiacID);
-                prepareBlessingStep(zodiacId, true);
+                prepareBlessingStep(zodiacId);
               },
             },
             e(FlipImage, {
@@ -333,7 +326,7 @@ function JinjaSagashiApp(props) {
         {
           id: "randomShrineBtn",
           onClick: () => {
-            prepareBlessingStep(null, true);
+            prepareBlessingStep(null);
           },
         },
         "気ままに行こう！"
@@ -487,7 +480,7 @@ function JinjaSagashiApp(props) {
           {
             onClick: resetSearch,
           },
-          "最初から探す"
+          "もう一度探す"
         )
       )
     );
