@@ -5,7 +5,7 @@ const { URL } = require("node:url");
 const { DatabaseSync } = require("node:sqlite");
 
 const PORT = Number(process.env.PORT || 8787);
-const DB_PATH = process.env.DB_PATH || path.join(__dirname, "..", "data", "db", "content.sqlite");
+const DB_PATH = process.env.DB_PATH || path.join(__dirname, "..", "data", "db", "database.sqlite");
 
 function sendJson(res, statusCode, payload) {
   res.writeHead(statusCode, {

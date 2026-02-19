@@ -21,7 +21,7 @@ function buildDatabase() {
   const rootDir = path.resolve(__dirname, "..");
   const sourcePath = path.join(rootDir, "client", "public", "data", "database.json");
   const dbDir = path.join(rootDir, "data", "db");
-  const dbPath = path.join(dbDir, "content.sqlite");
+  const dbPath = path.join(dbDir, "database.sqlite");
 
   if (!fs.existsSync(sourcePath)) {
     throw new Error(`Source JSON not found: ${sourcePath}`);
