@@ -62,66 +62,66 @@
     }
   ],
   "blessings": [
-  {
-    "blessingID": 1,
-    "blessing": "金運",
-    "blessingEn": "kinun"
-  },
-  {
-    "blessingID": 2,
-    "blessing": "商売繁盛",
-    "blessingEn": "shobai_hanjo"
-  },
-  {
-    "blessingID": 3,
-    "blessing": "勝運・仕事運",
-    "blessingEn": "shoun_shigotoun"
-  },
-  {
-    "blessingID": 4,
-    "blessing": "縁結び",
-    "blessingEn": "enmusubi"
-  },
-  {
-    "blessingID": 5,
-    "blessing": "家内安全",
-    "blessingEn": "kanai_anzen"
-  },
-  {
-    "blessingID": 6,
-    "blessing": "子宝",
-    "blessingEn": "kodakara"
-  },
-  {
-    "blessingID": 7,
-    "blessing": "学業成就",
-    "blessingEn": "gakugyo_joju"
-  },
-  {
-    "blessingID": 8,
-    "blessing": "健康祈願",
-    "blessingEn": "kenko_kigan"
-  },
-  {
-    "blessingID": 9,
-    "blessing": "厄除け",
-    "blessingEn": "yakuyoke"
-  },
-  {
-    "blessingID": 10,
-    "blessing": "交通安全",
-    "blessingEn": "kotsu_anzen"
-  },
-  {
-    "blessingID": 11,
-    "blessing": "心願成就",
-    "blessingEn": "shingan_joju"
-  },
-  {
-    "blessingID": 12,
-    "blessing": "開運",
-    "blessingEn": "kaiun"
-  }
+    {
+      "blessingID": 1,
+      "blessing": "金運",
+      "blessingEn": "kinun"
+    },
+    {
+      "blessingID": 2,
+      "blessing": "商売繁盛",
+      "blessingEn": "shobai_hanjo"
+    },
+    {
+      "blessingID": 3,
+      "blessing": "勝運・仕事運",
+      "blessingEn": "shoun_shigotoun"
+    },
+    {
+      "blessingID": 4,
+      "blessing": "縁結び",
+      "blessingEn": "enmusubi"
+    },
+    {
+      "blessingID": 5,
+      "blessing": "家内安全",
+      "blessingEn": "kanai_anzen"
+    },
+    {
+      "blessingID": 6,
+      "blessing": "子宝",
+      "blessingEn": "kodakara"
+    },
+    {
+      "blessingID": 7,
+      "blessing": "学業成就",
+      "blessingEn": "gakugyo_joju"
+    },
+    {
+      "blessingID": 8,
+      "blessing": "健康祈願",
+      "blessingEn": "kenko_kigan"
+    },
+    {
+      "blessingID": 9,
+      "blessing": "厄除け",
+      "blessingEn": "yakuyoke"
+    },
+    {
+      "blessingID": 10,
+      "blessing": "交通安全",
+      "blessingEn": "kotsu_anzen"
+    },
+    {
+      "blessingID": 11,
+      "blessing": "心願成就",
+      "blessingEn": "shingan_joju"
+    },
+    {
+      "blessingID": 12,
+      "blessing": "開運",
+      "blessingEn": "kaiun"
+    }
   ],
   "spots": [
     {
@@ -1413,6 +1413,70 @@
     {
       "zodiacID": 12,
       "proverbID": 36
+    }
+  ],
+  "about_terms": [
+    {
+      "term": "御利益",
+      "ruby": "ごりえき",
+      "termDesc": "神社や仏閣で神仏から授かる加護や恩恵のこと。参拝したり、お守りを持ったりすることで、健康・商売繁盛・学業成就などの御利益が得られるとされる。",
+      "sortOrder": 1
+    },
+    {
+      "term": "狛犬",
+      "ruby": "こまいぬ",
+      "termDesc": "神社の入口などに対で置かれる獅子のような像。口を開けた阿形（あぎょう）と、口を閉じた吽形（うんぎょう）が対になっており、邪気を払う役割を持つ。狛犬と呼ばれるが、犬の形に限らない。",
+      "sortOrder": 2
+    },
+    {
+      "term": "十二支",
+      "ruby": "じゅうにし",
+      "termDesc": "子・丑・寅など12の動物で構成される干支の一部。年や方角、性格占いなどに用いられる。",
+      "sortOrder": 3
+    },
+    {
+      "term": "神社",
+      "ruby": "じんじゃ",
+      "termDesc": "神道の神々を祀る施設。鳥居をくぐり、参道を進んで参拝する。祭りや祈願が行われる場所。",
+      "sortOrder": 4
+    },
+    {
+      "term": "神使",
+      "ruby": "しんし",
+      "termDesc": "神の使いとされる動物。稲荷神社の狐、天満宮の牛、八幡神社の鳩など、神ごとに異なる動物が定められている。",
+      "sortOrder": 5
+    },
+    {
+      "term": "生肖",
+      "ruby": "せいしょう",
+      "termDesc": "中国の十二支を指し、日本の十二支と同様に、年ごとの動物で人の性格や運勢を占う文化がある。",
+      "sortOrder": 6
+    }
+  ],
+  "featured_blessings": [
+    {
+      "toPath": "/jinja/1",
+      "image": "/images/jinjasagashi/blessing_gakugyo_joju.png",
+      "alt": "学業成就",
+      "sortOrder": 1
+    },
+    {
+      "toPath": "/jinja/2",
+      "image": "/images/jinjasagashi/blessing_enmusubi.png",
+      "alt": "縁結び",
+      "sortOrder": 2
+    },
+    {
+      "toPath": "/jinja/3",
+      "image": "/images/jinjasagashi/blessing_kinun.png",
+      "alt": "金運",
+      "sortOrder": 3
+    },
+    {
+      "toPath": "/jinja/4",
+      "image": "/images/jinjasagashi/blessing_kaiun.png",
+      "alt": "開運",
+      "sortOrder": 4
     }
   ]
 }

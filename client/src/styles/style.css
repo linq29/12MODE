@@ -764,7 +764,7 @@ hr {
 
 .page-jyunishi #retryBtn {
     margin: auto;
-    display: none;
+    display: block;
 }
 
 #confirmBtn:hover {
