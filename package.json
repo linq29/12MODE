@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
+    "setup:client": "npm --prefix client install",
     "sync:data": "node scripts/sync-json-sources.cjs",
     "db:build": "node scripts/build-db.cjs",
     "predev": "npm run db:build",

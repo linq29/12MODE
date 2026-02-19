@@ -1,29 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
+import FlipImage from "../components/common/FlipImage";
 import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
 
 const e = React.createElement;
 const STEP_TRANSITION_MS = 420;
 
-function getSpotImage(spotId) {
-  return `/images/spot${spotId}.jpg`;
-}
-
 function getZodiacImage(zodiacId, face) {
   return `/images/jinjasagashi/zodiac${face}${zodiacId}.png`;
-}
-
-function runZodiacFlip(imgEl, zodiacId, toFace) {
-  if (imgEl.__flipTimer) {
-    clearTimeout(imgEl.__flipTimer);
-  }
-
-  imgEl.style.opacity = "0";
-  imgEl.__flipTimer = setTimeout(() => {
-    imgEl.src = getZodiacImage(zodiacId, toFace);
-    imgEl.style.opacity = "1";
-    imgEl.__flipTimer = null;
-  }, 200);
 }
 
 function pickRandomItems(items, count) {
@@ -49,6 +33,10 @@ function getBlessingImage(blessing) {
   }
 
   return `/images/blessing${getBlessingId(blessing)}.png`;
+}
+
+function getSpotImage(spotId) {
+  return `/images/spot${spotId}.jpg`;
 }
 
 function getSpotSite(spot) {
@@ -221,7 +209,7 @@ function JinjaSagashiApp() {
     );
 
     if (!candidateSpots.length) {
-      setError("この条件に合う神社が見つかりませんでした。");
+      setError("今はまだ、導かれるべき道が見つからないようです。");
       return;
     }
 
@@ -249,7 +237,7 @@ function JinjaSagashiApp() {
       "div",
       { className: "jinja-loading-screen", role: "status", "aria-live": "polite" },
       e("div", { className: "jinja-loading-spinner", "aria-hidden": "true" }),
-      e("p", { className: "jinja-loading-text" }, "次の神社へご案内中...")
+      e("p", { className: "jinja-loading-text" }, "次の道へご案内中…")
     );
   }
 
@@ -276,17 +264,10 @@ function JinjaSagashiApp() {
                 prepareBlessingStep(zodiacId, true);
               },
             },
-            e("img", {
-              src: getZodiacImage(zodiac.zodiacID, "A"),
+            e(FlipImage, {
+              frontSrc: getZodiacImage(zodiac.zodiacID, "A"),
+              backSrc: getZodiacImage(zodiac.zodiacID, "B"),
               alt: zodiac.name,
-              onMouseEnter: (event) => {
-                const img = event.currentTarget;
-                runZodiacFlip(img, zodiac.zodiacID, "B");
-              },
-              onMouseLeave: (event) => {
-                const img = event.currentTarget;
-                runZodiacFlip(img, zodiac.zodiacID, "A");
-              },
             })
           )
         )

@@ -22,6 +22,19 @@ export default function App() {
       <Route path="/jinja2" element={<Navigate to="/jinja/2" replace />} />
       <Route path="/jinja3" element={<Navigate to="/jinja/3" replace />} />
       <Route path="/jinja4" element={<Navigate to="/jinja/4" replace />} />
+      <Route path="/index.html" element={<Navigate to="/" replace />} />
+      <Route
+        path="/jinjasagashi.html"
+        element={<Navigate to="/jinjasagashi" replace />}
+      />
+      <Route path="/jyunishi.html" element={<Navigate to="/jyunishi" replace />} />
+      <Route path="/kotowaza.html" element={<Navigate to="/kotowaza" replace />} />
+      <Route path="/about.html" element={<Navigate to="/about" replace />} />
+      <Route path="/blessings.html" element={<Navigate to="/blessings" replace />} />
+      <Route path="/jinja1.html" element={<Navigate to="/jinja/1" replace />} />
+      <Route path="/jinja2.html" element={<Navigate to="/jinja/2" replace />} />
+      <Route path="/jinja3.html" element={<Navigate to="/jinja/3" replace />} />
+      <Route path="/jinja4.html" element={<Navigate to="/jinja/4" replace />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

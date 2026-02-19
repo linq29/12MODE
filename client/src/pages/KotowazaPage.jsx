@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import BlurReveal from "../components/common/BlurReveal";
 import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
 
@@ -43,13 +44,13 @@ export default function KotowazaPage() {
         ) : error ? (
           <p className="jinja-step-note">{error}</p>
         ) : (
-          <div key={animationKey} className="proverb-area is-revealing">
+          <BlurReveal key={animationKey} className="proverb-area">
             <div
               className="proverb-text"
               dangerouslySetInnerHTML={{ __html: proverb.hiragana }}
             />
             <div className="proverb-desc">{proverb.proverbDesc}</div>
-          </div>
+          </BlurReveal>
         )}
         <button
           id="retryBtn"
