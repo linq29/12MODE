@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
+import BlurReveal from "../components/common/BlurReveal";
 import FlipImage from "../components/common/FlipImage";
+import GoldenButton from "../components/common/GoldenButton";
 import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
 
 const e = React.createElement;
-const STEP_TRANSITION_MS = 420;
+const STEP_TRANSITION_MS = 1200;
 
 function getZodiacImage(zodiacId, face) {
   return `/images/jinjasagashi/zodiac${face}${zodiacId}.png`;
@@ -37,7 +39,7 @@ function getBlessingImage(blessing) {
 }
 
 function getSpotImage(spotId) {
-  return `/images/spot${spotId}.jpg`;
+  return `/images/spot/spot${spotId}.webp`;
 }
 
 function getSpotSite(spot) {
@@ -46,20 +48,9 @@ function getSpotSite(spot) {
 
 function SpotImage(props) {
   const { spotId, alt } = props;
-  const [src, setSrc] = useState(getSpotImage(spotId));
-
-  useEffect(() => {
-    setSrc(getSpotImage(spotId));
-  }, [spotId]);
-
   return e("img", {
-    src,
+    src: getSpotImage(spotId),
     alt,
-    onError: () => {
-      if (src.endsWith(".jpg")) {
-        setSrc(`/images/spot${spotId}.png`);
-      }
-    },
   });
 }
 
@@ -67,12 +58,14 @@ function JinjaSagashiApp(props) {
   const { presetBlessingId } = props;
   const [loading, setLoading] = useState(true);
   const [stepLoading, setStepLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [fatalError, setFatalError] = useState("");
   const [stepNotice, setStepNotice] = useState("");
   const [db, setDb] = useState(null);
   const [step, setStep] = useState(1);
   const [selectedZodiac, setSelectedZodiac] = useState(null);
+  const [candidateSpotIds, setCandidateSpotIds] = useState(new Set());
   const [blessingChoices, setBlessingChoices] = useState([]);
+  const [blessingRevealCycle, setBlessingRevealCycle] = useState(0);
   const [selectedBlessing, setSelectedBlessing] = useState(null);
   const [selectedSpot, setSelectedSpot] = useState(null);
   const transitionTimerRef = useRef(null);
@@ -94,7 +87,7 @@ function JinjaSagashiApp(props) {
           return;
         }
 
-        setError("データの読み込みに失敗しました。APIサーバーを確認してください。");
+        setFatalError("データの読み込みに失敗しました。APIサーバーを確認してください。");
         setLoading(false);
       });
 
@@ -133,18 +126,31 @@ function JinjaSagashiApp(props) {
     return db.spots.filter((spot) => Number(spot.zodiacID) === Number(zodiacId));
   }
 
-  function getBlessingPoolForZodiac(zodiacId) {
-    if (!db || !Array.isArray(db.spot_blessing)) {
+  function getSpotScope(zodiacId) {
+    if (!db || !Array.isArray(db.spots)) {
       return [];
     }
 
-    const zodiacSpotIds = new Set(
-      getZodiacSpots(zodiacId).map((spot) => Number(spot.spotID))
-    );
+    if (!zodiacId) {
+      return db.spots;
+    }
+
+    return getZodiacSpots(zodiacId);
+  }
+
+  function getBlessingPoolForSpotScope(spotIdSet) {
+    if (
+      !db ||
+      !Array.isArray(db.spot_blessing) ||
+      !spotIdSet ||
+      !spotIdSet.size
+    ) {
+      return [];
+    }
 
     const blessingIdSet = new Set(
       db.spot_blessing
-        .filter((row) => zodiacSpotIds.has(Number(row.spotID)))
+        .filter((row) => spotIdSet.has(Number(row.spotID)))
         .map((row) => Number(row.blessingID))
     );
 
@@ -153,89 +159,112 @@ function JinjaSagashiApp(props) {
     );
   }
 
-  function prepareBlessingStep(zodiacId, withTransition) {
-    const pool = getBlessingPoolForZodiac(zodiacId);
-    const next = () => {
-      const presetBlessing = presetBlessingId
-        ? pool.find((blessing) => getBlessingId(blessing) === presetBlessingId)
-        : null;
+  function pickBlessingChoices(pool) {
+    const randomChoices = pickRandomItems(pool, 4);
 
-      if (presetBlessingId && !presetBlessing) {
-        setStepNotice("指定されたご利益はこの干支に対応していないため、候補を再抽選しました。");
-      } else {
-        setStepNotice(
-          presetBlessingId ? "旧ルート指定のご利益で絞り込み中です。" : ""
+    if (!presetBlessingId || !randomChoices.length) {
+      return randomChoices;
+    }
+
+    const presetBlessing = pool.find(
+      (blessing) => getBlessingId(blessing) === presetBlessingId
+    );
+
+    if (!presetBlessing) {
+      return randomChoices;
+    }
+
+    if (
+      randomChoices.some(
+        (blessing) => getBlessingId(blessing) === getBlessingId(presetBlessing)
+      )
+    ) {
+      return randomChoices;
+    }
+
+    if (randomChoices.length < 4) {
+      return randomChoices.concat(presetBlessing);
+    }
+
+    const replacedChoices = randomChoices.slice();
+    replacedChoices[replacedChoices.length - 1] = presetBlessing;
+    return replacedChoices;
+  }
+
+  function prepareBlessingStep(zodiacId) {
+    const scopeSpots = getSpotScope(zodiacId);
+    const scopeSpotIdSet = new Set(scopeSpots.map((spot) => Number(spot.spotID)));
+    const pool = getBlessingPoolForSpotScope(scopeSpotIdSet);
+
+    const next = () => {
+      if (presetBlessingId) {
+        const hasPresetBlessing = pool.some(
+          (blessing) => getBlessingId(blessing) === presetBlessingId
         );
+
+        setStepNotice(
+          hasPresetBlessing
+            ? "旧ルート指定のご利益を候補に含めました。"
+            : "指定されたご利益はこの条件に対応していないため、候補を再抽選しました。"
+        );
+      } else {
+        setStepNotice("");
       }
 
-      setError("");
-      setBlessingChoices(
-        presetBlessing ? [presetBlessing] : pickRandomItems(pool, 4)
-      );
+      setFatalError("");
+      setCandidateSpotIds(scopeSpotIdSet);
+      setBlessingRevealCycle((prev) => prev + 1);
+      setBlessingChoices(pickBlessingChoices(pool));
       setSelectedBlessing(null);
       setSelectedSpot(null);
-      setSelectedZodiac(zodiacId);
+      setSelectedZodiac(zodiacId || null);
       setStep(2);
     };
-
-    if (withTransition) {
-      runStepTransition(next);
-      return;
-    }
 
     next();
   }
 
-  function pickRandom() {
-    if (!db || !Array.isArray(db.spots) || !db.spots.length) {
-      return;
-    }
-
-    const randomIndex = Math.floor(Math.random() * db.spots.length);
-    const randomSpot = db.spots[randomIndex];
-
-    runStepTransition(() => {
-      setError("");
-      setStepNotice("");
-      setSelectedSpot(randomSpot);
-      setSelectedZodiac(null);
-      setSelectedBlessing(null);
-      setStep(3);
-    });
+  function refreshBlessingChoices() {
+    const pool = getBlessingPoolForSpotScope(candidateSpotIds);
+    setBlessingRevealCycle((prev) => prev + 1);
+    setBlessingChoices(pickBlessingChoices(pool));
   }
 
   function selectBlessingAndPickShrine(blessing) {
-    if (!db || !selectedZodiac) {
+    if (
+      !db ||
+      !Array.isArray(db.spot_blessing) ||
+      !candidateSpotIds ||
+      !candidateSpotIds.size
+    ) {
       return;
     }
 
-    const zodiacSpots = getZodiacSpots(selectedZodiac);
-    const zodiacSpotIds = new Set(zodiacSpots.map((spot) => Number(spot.spotID)));
-
     const selectedBlessingId = getBlessingId(blessing);
 
-    const candidateSpotIds = new Set(
-      (db.spot_blessing || [])
+    const matchedSpotIdSet = new Set(
+      db.spot_blessing
         .filter(
           (row) =>
             Number(row.blessingID) === selectedBlessingId &&
-            zodiacSpotIds.has(Number(row.spotID))
+            candidateSpotIds.has(Number(row.spotID))
         )
         .map((row) => Number(row.spotID))
     );
 
-    const candidateSpots = zodiacSpots.filter((spot) =>
-      candidateSpotIds.has(Number(spot.spotID))
+    const matchedSpots = (db.spots || []).filter((spot) =>
+      matchedSpotIdSet.has(Number(spot.spotID))
     );
 
-    if (!candidateSpots.length) {
-      setError("今はまだ、導かれるべき道が見つからないようです。");
+    if (!matchedSpots.length) {
+      setStepNotice("今はまだ、導かれるべき道が見つからないようです。");
       return;
     }
 
-    const randomSpot = candidateSpots[Math.floor(Math.random() * candidateSpots.length)];
+    const randomSpot = matchedSpots[Math.floor(Math.random() * matchedSpots.length)];
 
     runStepTransition(() => {
+      setStepNotice("");
       setSelectedBlessing(blessing);
       setSelectedSpot(randomSpot);
       setStep(3);
@@ -243,15 +272,14 @@ function JinjaSagashiApp(props) {
   }
 
   function resetSearch() {
-    runStepTransition(() => {
-      setError("");
-      setStepNotice("");
-      setSelectedZodiac(null);
-      setBlessingChoices([]);
-      setSelectedBlessing(null);
-      setSelectedSpot(null);
-      setStep(1);
-    });
+    setFatalError("");
+    setStepNotice("");
+    setSelectedZodiac(null);
+    setCandidateSpotIds(new Set());
+    setBlessingChoices([]);
+    setSelectedBlessing(null);
+    setSelectedSpot(null);
+    setStep(1);
   }
 
   function renderStepLoading() {
@@ -259,7 +287,7 @@ function JinjaSagashiApp(props) {
       "div",
       { className: "jinja-loading-screen", role: "status", "aria-live": "polite" },
       e("div", { className: "jinja-loading-spinner", "aria-hidden": "true" }),
-      e("p", { className: "jinja-loading-text" }, "次の道へご案内中…")
+      e("p", { className: "jinja-loading-text blur-reveal is-revealing" }, "次の道へご案内中")
     );
   }
 
@@ -283,7 +311,7 @@ function JinjaSagashiApp(props) {
               className: "select-step1-item zodiac-pick-btn",
               onClick: () => {
                 const zodiacId = Number(zodiac.zodiacID);
-                prepareBlessingStep(zodiacId, true);
+                prepareBlessingStep(zodiacId);
               },
             },
             e(FlipImage, {
@@ -295,12 +323,12 @@ function JinjaSagashiApp(props) {
         )
       ),
       e(
-        "button",
+        GoldenButton,
         {
           id: "randomShrineBtn",
-          className: "random-btn",
-          type: "button",
-          onClick: pickRandom,
+          onClick: () => {
+            prepareBlessingStep(null);
+          },
         },
         "気ままに行こう！"
       )
@@ -308,13 +336,11 @@ function JinjaSagashiApp(props) {
   }
 
   function renderStep2() {
-    if (!selectedZodiac) {
-      return null;
-    }
-
-    const zodiacData = (db.zodiacs || []).find(
-      (zodiac) => Number(zodiac.zodiacID) === Number(selectedZodiac)
-    );
+    const zodiacData = selectedZodiac
+      ? (db.zodiacs || []).find(
+          (zodiac) => Number(zodiac.zodiacID) === Number(selectedZodiac)
+        )
+      : null;
 
     return e(
       React.Fragment,
@@ -323,7 +349,7 @@ function JinjaSagashiApp(props) {
         "div",
         { className: "page-icon" },
         e("img", {
-          src: getZodiacImage(selectedZodiac, "A"),
+          src: selectedZodiac ? getZodiacImage(selectedZodiac, "A") : "/images/icon-torii.png",
           alt: zodiacData ? zodiacData.name : "",
         })
       ),
@@ -335,7 +361,7 @@ function JinjaSagashiApp(props) {
           e(
             "button",
             {
-              key: getBlessingId(blessing),
+              key: `${getBlessingId(blessing)}-${blessingRevealCycle}`,
               type: "button",
               className: "select-step2-item blessing-pick-btn",
               onClick: () => {
@@ -345,6 +371,7 @@ function JinjaSagashiApp(props) {
             e("img", {
               src: getBlessingImage(blessing),
               alt: blessing.blessing || "",
+              className: "blur-reveal is-revealing",
             })
           )
         )
@@ -353,7 +380,7 @@ function JinjaSagashiApp(props) {
         ? e(
             "p",
             { className: "jinja-step-note" },
-            "この干支に対応するご利益データが見つかりません。"
+            "この条件に対応するご利益データが見つかりません。"
           )
         : null,
       stepNotice
@@ -367,26 +394,18 @@ function JinjaSagashiApp(props) {
         "div",
         { className: "jinja-step-actions" },
         e(
-          "button",
+          GoldenButton,
           {
-            className: "retry-btn",
-            type: "button",
-            onClick: () => {
-              prepareBlessingStep(selectedZodiac, false);
-            },
+            onClick: refreshBlessingChoices,
           },
-          "ご利益を引き直す"
+          "他のご利益を見る"
         ),
         e(
-          "button",
+          GoldenButton,
           {
-            className: "retry-btn",
-            type: "button",
-            onClick: () => {
-              resetSearch();
-            },
+            onClick: resetSearch,
           },
-          "干支選択に戻る"
+          "干支を選び直す"
         )
       )
     );
@@ -398,12 +417,30 @@ function JinjaSagashiApp(props) {
     }
 
     const spotSite = getSpotSite(selectedSpot);
+    const zodiacData = selectedZodiac
+      ? (db.zodiacs || []).find(
+          (zodiac) => Number(zodiac.zodiacID) === Number(selectedZodiac)
+        )
+      : null;
+    const blessingIdSetForSpot = new Set(
+      (db.spot_blessing || [])
+        .filter((row) => Number(row.spotID) === Number(selectedSpot.spotID))
+        .map((row) => Number(row.blessingID))
+    );
+    const blessingText = (db.blessings || [])
+      .filter((blessing) => blessingIdSetForSpot.has(getBlessingId(blessing)))
+      .map((blessing) => blessing.blessing)
+      .join("、");
 
     return e(
-      "div",
-      { className: "index jinja-result-main" },
+      BlurReveal,
+      { className: "index jinja-result-main", key: `step3-${selectedSpot.spotID}` },
       e("div", { className: "deco" }, e("img", { src: "/images/deco.png", alt: "" })),
-      e("div", { className: "spot-image" }, e(SpotImage, { spotId: selectedSpot.spotID, alt: selectedSpot.spot })),
+      e(
+        "div",
+        { className: "spot-image" },
+        e(SpotImage, { spotId: selectedSpot.spotID, alt: selectedSpot.spot })
+      ),
       e(
         "div",
         { className: "spot-info" },
@@ -414,8 +451,8 @@ function JinjaSagashiApp(props) {
           e("p", { className: "spot-hiragana" }, selectedSpot.spotHiragana)
         ),
         e("div", { className: "spot-catch" }, selectedSpot.spotCatch),
-        selectedBlessing
-          ? e("p", { className: "jinja-step-note" }, `ご利益：${selectedBlessing.blessing}`)
+        blessingText
+          ? e("p", { className: "jinja-step-note-blessing" }, `ご利益：${blessingText}`)
           : null,
         e("div", { className: "spot-desc" }, selectedSpot.spotDesc),
         e("hr", null),
@@ -431,7 +468,7 @@ function JinjaSagashiApp(props) {
                   target: "_blank",
                   rel: "noopener noreferrer",
                 },
-                `公式サイトへ`
+                "公式サイトへ"
               )
             : null
         )
@@ -440,28 +477,26 @@ function JinjaSagashiApp(props) {
         "div",
         { className: "jinja-step-actions" },
         e(
-          "button",
+          GoldenButton,
           {
-            className: "random-btn",
-            type: "button",
             onClick: resetSearch,
           },
-          "最初から探す"
+          "もう一度探す"
         )
       )
     );
   }
 
   if (loading) {
-    return e("h1", { className: "jinjasagashi" }, "読み込み中...");
+    return e("h1", { className: "jinjasagashi" }, "読み込み中…");
   }
 
   if (stepLoading) {
     return renderStepLoading();
   }
 
-  if (error) {
-    return e("p", { className: "jinja-step-note" }, error);
+  if (fatalError) {
+    return e("p", { className: "jinja-step-note" }, fatalError);
   }
 
   if (!db) {

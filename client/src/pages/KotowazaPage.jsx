@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import BlurReveal from "../components/common/BlurReveal";
+import GoldenButton from "../components/common/GoldenButton";
 import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
 
@@ -52,15 +53,13 @@ export default function KotowazaPage() {
             <div className="proverb-desc">{proverb.proverbDesc}</div>
           </BlurReveal>
         )}
-        <button
+        <GoldenButton
           id="retryBtn"
-          className="retry-btn"
-          type="button"
           onClick={drawAgain}
           disabled={loading}
         >
           もう一度引く
-        </button>
+        </GoldenButton>
       </main>
     </PageLayout>
   );

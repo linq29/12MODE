@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import GoldenButton from "../components/common/GoldenButton";
 import PageLayout from "../layouts/PageLayout";
 
 export default function NotFoundPage() {
@@ -11,9 +12,9 @@ export default function NotFoundPage() {
       <main className="whole">
         <h1 className="jyunishi">ページが見つかりませんでした。</h1>
         <div className="jinja-step-actions">
-          <Link className="random-btn" to="/">
+          <GoldenButton as={Link} to="/">
             トップへ戻る
-          </Link>
+          </GoldenButton>
         </div>
       </main>
     </PageLayout>
