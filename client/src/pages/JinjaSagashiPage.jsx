@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import BlurReveal from "../components/common/BlurReveal";
+import EmphasisLink from "../components/common/EmphasisLink";
 import FlipImage from "../components/common/FlipImage";
 import GoldenButton from "../components/common/GoldenButton";
 import PageLayout from "../layouts/PageLayout";
@@ -462,7 +463,7 @@ function JinjaSagashiApp(props) {
           { className: "spot-site" },
           spotSite
             ? e(
-                "a",
+                EmphasisLink,
                 {
                   href: spotSite,
                   target: "_blank",
