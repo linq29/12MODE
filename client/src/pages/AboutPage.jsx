@@ -59,7 +59,7 @@ export default function AboutPage() {
           </ViewportBlurReveal>
 
           {loading ? (
-            <p className="jinja-step-note">読み込み中...</p>
+            <p className="jinja-step-note">読み込み中…</p>
           ) : error ? (
             <p className="jinja-step-note">{error}</p>
           ) : (

@@ -60,7 +60,7 @@ export default function ShrineDetailPage() {
       <div className="main-area">
         <main className="index">
           {loading ? (
-            <h1 className="jinjasagashi">読み込み中...</h1>
+            <h1 className="jinjasagashi">読み込み中…</h1>
           ) : error ? (
             <p className="jinja-step-note">{error}</p>
           ) : (

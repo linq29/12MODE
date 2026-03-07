@@ -985,10 +985,18 @@ main.whole {
     animation-duration: 1.0s;
 }
 
+.blur-reveal-left.blur-reveal.is-revealing {
+    animation: blurRevealFromLeft 0.8s ease-out;
+}
+
 .blur-reveal.is-pending {
     opacity: 0;
     filter: blur(10px);
     transform: translateY(6px);
+}
+
+.blur-reveal-left.blur-reveal.is-pending {
+    transform: translateX(-24px);
 }
 
 @keyframes blurReveal {
@@ -1002,6 +1010,20 @@ main.whole {
         opacity: 1;
         filter: blur(0);
         transform: translateY(0);
+    }
+}
+
+@keyframes blurRevealFromLeft {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateX(-24px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
     }
 }
 

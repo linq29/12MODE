@@ -41,7 +41,7 @@ export default function KotowazaPage() {
 
         <h1 className="kotowaza">今日のことわざ</h1>
         {loading ? (
-          <p className="jinja-step-note">読み込み中...</p>
+          <p className="jinja-step-note">読み込み中…</p>
         ) : error ? (
           <p className="jinja-step-note">{error}</p>
         ) : (
