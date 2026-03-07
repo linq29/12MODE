@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
-import SiteFooter from "../components/layout/SiteFooter";
+
+import LoadingMessage from "../components/common/LoadingMessage";
 import ViewportBlurReveal from "../components/common/ViewportBlurReveal";
+import SiteFooter from "../components/layout/SiteFooter";
+
+import { ABOUT_TERMS_LOAD_ERROR_MESSAGE } from "../data/messageText";
+
 import PageLayout from "../layouts/PageLayout";
+
 import { getJson } from "../lib/api";
 
 export default function AboutPage() {
@@ -16,7 +22,7 @@ export default function AboutPage() {
         setLoading(false);
       })
       .catch(() => {
-        setError("サイト紹介データの読み込みに失敗しました。");
+        setError(ABOUT_TERMS_LOAD_ERROR_MESSAGE);
         setLoading(false);
       });
   }, []);
@@ -59,7 +65,7 @@ export default function AboutPage() {
           </ViewportBlurReveal>
 
           {loading ? (
-            <p className="jinja-step-note">読み込み中…</p>
+            <LoadingMessage />
           ) : error ? (
             <p className="jinja-step-note">{error}</p>
           ) : (

@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+
 import GoldenButton from "../components/common/GoldenButton";
+
 import PageLayout from "../layouts/PageLayout";
 
 export default function NotFoundPage() {

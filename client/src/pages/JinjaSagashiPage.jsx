@@ -1,11 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
+
 import BlurReveal from "../components/common/BlurReveal";
 import EmphasisLink from "../components/common/EmphasisLink";
 import FlipImage from "../components/common/FlipImage";
 import GoldenButton from "../components/common/GoldenButton";
-import LoadingScreen from "../components/common/LoadingScreen";
+import LoadingMessage from "../components/common/LoadingMessage";
+
+import { STEP_TRANSITION_LOADING_MESSAGE } from "../data/loadingMessageText";
+import { JINJA_BOOTSTRAP_LOAD_ERROR_MESSAGE } from "../data/messageText";
+
 import PageLayout from "../layouts/PageLayout";
+
 import { getJson } from "../lib/api";
 
 const e = React.createElement;
@@ -34,7 +40,7 @@ function getBlessingId(blessing) {
 
 function getBlessingImage(blessing) {
   if (blessing.blessingEn) {
-    return `/images/jinjasagashi/blessing_${blessing.blessingEn}.png`;
+    return `/images/jinjasagashi/blessing_${blessing.blessingEn}.webp`;
   }
 
   return `/images/blessing${getBlessingId(blessing)}.png`;
@@ -89,7 +95,7 @@ function JinjaSagashiApp(props) {
           return;
         }
 
-        setFatalError("データの読み込みに失敗しました。");
+        setFatalError(JINJA_BOOTSTRAP_LOAD_ERROR_MESSAGE);
         // APIサーバーを確認してください。
         setLoading(false);
       });
@@ -430,7 +436,7 @@ function JinjaSagashiApp(props) {
     return e(
       BlurReveal,
       { className: "index jinja-result-main", key: `step3-${selectedSpot.spotID}` },
-      e("div", { className: "deco" }, e("img", { src: "/images/deco.png", alt: "" })),
+      e("div", { className: "deco" }, e("img", { src: "/images/deco.webp", alt: "" })),
       e(
         "div",
         { className: "spot-image" },
@@ -483,11 +489,11 @@ function JinjaSagashiApp(props) {
   }
 
   if (loading) {
-    return e(LoadingScreen, { message: "読み込み中…" });
+    return e(LoadingMessage, { variant: "screen" });
   }
 
   if (stepLoading) {
-    return e(LoadingScreen, { message: "次の道へご案内中" });
+    return e(LoadingMessage, { variant: "screen", message: STEP_TRANSITION_LOADING_MESSAGE });
   }
 
   if (fatalError) {

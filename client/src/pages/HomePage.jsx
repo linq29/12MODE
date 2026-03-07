@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+
 import ViewportBlurReveal from "../components/common/ViewportBlurReveal";
 import SiteFooter from "../components/layout/SiteFooter";
+
 import PageLayout from "../layouts/PageLayout";
 
 export default function HomePage() {
@@ -13,7 +15,7 @@ export default function HomePage() {
     >
       <div className="main-area">
         <ViewportBlurReveal className="top-visual">
-          <img src="/images/top-visual.png" alt="トップビジュアル" />
+          <img src="/images/top-visual.webp" alt="トップビジュアル" />
         </ViewportBlurReveal>
         <main className="index">
           {/* <ViewportBlurReveal className="index-p1 vertical">

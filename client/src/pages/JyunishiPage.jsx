@@ -1,10 +1,15 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+
 import BlurReveal from "../components/common/BlurReveal";
 import EmphasisLink from "../components/common/EmphasisLink";
 import GoldenButton from "../components/common/GoldenButton";
 import SpinRevealImage from "../components/common/SpinRevealImage";
+
+import { JYUNISHI_LOAD_ERROR_MESSAGE } from "../data/messageText";
+
 import PageLayout from "../layouts/PageLayout";
+
 import { getJson } from "../lib/api";
 
 const RESULT_TEXT_DELAY_MS = 800;
@@ -190,7 +195,7 @@ export default function JyunishiPage() {
         setLoading(false);
       })
       .catch(() => {
-        setError("干支データの読み込みに失敗しました。");
+        setError(JYUNISHI_LOAD_ERROR_MESSAGE);
         setLoading(false);
       });
   }, []);

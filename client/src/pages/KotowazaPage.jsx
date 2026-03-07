@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
+
 import BlurReveal from "../components/common/BlurReveal";
 import GoldenButton from "../components/common/GoldenButton";
-import LoadingScreen from "../components/common/LoadingScreen";
+import LoadingMessage from "../components/common/LoadingMessage";
+
+import { KOTOWAZA_LOAD_ERROR_MESSAGE } from "../data/messageText";
+
 import PageLayout from "../layouts/PageLayout";
+
 import { getJson } from "../lib/api";
 
 export default function KotowazaPage() {
@@ -18,7 +23,7 @@ export default function KotowazaPage() {
       setAnimationKey((value) => value + 1);
       setError("");
     } catch (fetchError) {
-      setError("ことわざデータの読み込みに失敗しました。");
+      setError(KOTOWAZA_LOAD_ERROR_MESSAGE);
     } finally {
       setLoading(false);
     }
@@ -42,7 +47,7 @@ export default function KotowazaPage() {
 
         <h1 className="kotowaza">今日のことわざ</h1>
         {loading ? (
-          <LoadingScreen message="読み込み中…" />
+          <LoadingMessage variant="screen" />
         ) : error ? (
           <p className="jinja-step-note">{error}</p>
         ) : (

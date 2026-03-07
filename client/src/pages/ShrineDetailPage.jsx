@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
 import BlurReveal from "../components/common/BlurReveal";
 import EmphasisLink from "../components/common/EmphasisLink";
+import LoadingMessage from "../components/common/LoadingMessage";
+
+import { SHRINE_DETAIL_LOAD_ERROR_MESSAGE } from "../data/messageText";
+
 import PageLayout from "../layouts/PageLayout";
+
 import { getJson } from "../lib/api";
 
 function getSpotSite(spot) {
@@ -40,7 +46,7 @@ export default function ShrineDetailPage() {
           return;
         }
 
-        setError("ご縁は、もう少し先のようです……");
+        setError(SHRINE_DETAIL_LOAD_ERROR_MESSAGE);
         setLoading(false);
       });
 
@@ -60,13 +66,13 @@ export default function ShrineDetailPage() {
       <div className="main-area">
         <main className="index">
           {loading ? (
-            <h1 className="jinjasagashi">読み込み中…</h1>
+            <LoadingMessage as="h1" className="jinjasagashi" />
           ) : error ? (
             <p className="jinja-step-note">{error}</p>
           ) : (
             <>
               <BlurReveal className="deco" key={`detail-deco-${spot.spotID}`}>
-                <img src="/images/deco.png" alt="飾り" />
+                <img src="/images/deco.webp" alt="飾り" />
               </BlurReveal>
               <BlurReveal className="spot-image" key={`detail-image-${spot.spotID}`}>
                 <SpotImage spotId={spot.spotID} alt={spot.spot} />

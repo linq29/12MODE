@@ -65,7 +65,7 @@ body {
     font-weight: 500;
     font-style: normal;
     letter-spacing: 0.05em;
-    background-image: url(/images/grid.jpg);
+    background-image: url(/images/grid.webp);
     background-repeat: repeat;
     background-attachment: fixed;
     min-width: 1200px;

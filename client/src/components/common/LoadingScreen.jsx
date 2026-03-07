@@ -1,4 +1,6 @@
-export default function LoadingScreen({ message = "ご案内中…", className = "" }) {
+import { DEFAULT_LOADING_MESSAGE } from "../../data/loadingMessageText";
+
+export default function LoadingScreen({ message = DEFAULT_LOADING_MESSAGE, className = "" }) {
   const mergedClassName =
   ["jinja-loading-screen", className].filter(Boolean).join(" ");
 
