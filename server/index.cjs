@@ -184,7 +184,7 @@ const server = http.createServer((req, res) => {
       return;
     }
 
-    sendText(res, 404, "Not found");
+    sendText(res, 404, "ここは霧に包まれたようです。");
   } catch (error) {
     sendJson(res, 500, { error: "Internal server error" });
   }
