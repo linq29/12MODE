@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import BlurReveal from "../components/common/BlurReveal";
 import GoldenButton from "../components/common/GoldenButton";
+import LoadingScreen from "../components/common/LoadingScreen";
 import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
 
@@ -41,7 +42,7 @@ export default function KotowazaPage() {
 
         <h1 className="kotowaza">今日のことわざ</h1>
         {loading ? (
-          <p className="jinja-step-note">読み込み中…</p>
+          <LoadingScreen message="読み込み中…" />
         ) : error ? (
           <p className="jinja-step-note">{error}</p>
         ) : (
