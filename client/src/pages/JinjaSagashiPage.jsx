@@ -302,7 +302,7 @@ function JinjaSagashiApp(props) {
       e("h1", { className: "jinjasagashi" }, "干支を選んでね！"),
       e(
         "div",
-        { className: "select-step1 justify-wrapper" },
+        { className: "select-step1 justify-wrapper blur-reveal is-revealing" },
         zodiacList.map((zodiac) =>
           e(
             "button",

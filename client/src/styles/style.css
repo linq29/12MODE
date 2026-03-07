@@ -485,6 +485,11 @@ h1 {
     cursor: pointer;
 }
 
+.zodiac-pick-image-wrap {
+    display: block;
+    width: 100%;
+}
+
 .zodiac-box {
     width: 100%;
     aspect-ratio: 1 / 1;

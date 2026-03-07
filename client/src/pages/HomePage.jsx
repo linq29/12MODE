@@ -18,30 +18,6 @@ export default function HomePage() {
           <img src="/images/top-visual.webp" alt="トップビジュアル" />
         </ViewportBlurReveal>
         <main className="index">
-          {/* <ViewportBlurReveal className="index-p1 vertical">
-            <h1>
-              <ruby>
-                十二支詣<rt>じゅうにしもうで</rt>
-              </ruby>
-              とは？
-            </h1>
-            <p>
-              年の流れを象徴する十二支と、
-              <br />人が過ごす時間を見守る神社。
-              <br />
-              <em>「十二支」にまつわる神社へ「詣る」</em>
-              <br />
-              <em>それが、「十二支詣」です。</em>
-            </p>
-            <br />
-            <p>
-              このサイトでは、
-              <br />あなたにゆかりのある動物たちによって
-              <br />縁の深い神社を見つけるのを
-              <br />お手伝いをします。
-            </p>
-          </ViewportBlurReveal> */}
-
           <ViewportBlurReveal className="ruby-gold">
             <img src="/images/ruby-gold1.png" alt="飾り" />
           </ViewportBlurReveal>
@@ -62,7 +38,11 @@ export default function HomePage() {
             </div>
           </ViewportBlurReveal>
 
-          <ViewportBlurReveal as={Link} to="/jinjasagashi" className="index-func-link">
+          <ViewportBlurReveal
+            as={Link}
+            to="/jinjasagashi"
+            className="index-func-link"
+          >
             <div className="index-func">
               <div className="inline-wrapper">
                 <div className="h2-icon">
@@ -80,7 +60,11 @@ export default function HomePage() {
             </div>
           </ViewportBlurReveal>
 
-          <ViewportBlurReveal as={Link} to="/jyunishi" className="index-func-link">
+          <ViewportBlurReveal
+            as={Link}
+            to="/jyunishi"
+            className="index-func-link"
+          >
             <div className="index-func">
               <div className="inline-wrapper">
                 <div className="h2-icon">
@@ -88,11 +72,17 @@ export default function HomePage() {
                 </div>
                 <h2>十二支診断</h2>
               </div>
-              <p>自分の生まれ年や、特定年の十二支を確認したい人のためのツール。</p>
+              <p>
+                自分の生まれ年や、特定年の十二支を確認したい人のためのツール。
+              </p>
             </div>
           </ViewportBlurReveal>
 
-          <ViewportBlurReveal as={Link} to="/kotowaza" className="index-func-link">
+          <ViewportBlurReveal
+            as={Link}
+            to="/kotowaza"
+            className="index-func-link"
+          >
             <div className="index-func">
               <div className="inline-wrapper">
                 <div className="h2-icon">
