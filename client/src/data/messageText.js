@@ -7,7 +7,7 @@ export const JINJA_BOOTSTRAP_LOAD_ERROR_MESSAGE = "この先の記録は見つ�
 export const SHRINE_DETAIL_LOAD_ERROR_MESSAGE = "ご縁は、もう少し先のようです。";
 
 // 干支データ読み込み失敗
-export const JYUNISHI_LOAD_ERROR_MESSAGE = "干支についてのの記録は見つかりませんでした。";
+export const JYUNISHI_LOAD_ERROR_MESSAGE = "干支についての記録は見つかりませんでした。";
 
 // ことわざデータ読み込み失敗
 export const KOTOWAZA_LOAD_ERROR_MESSAGE = "引けるくじは見つかりませんでした。";
