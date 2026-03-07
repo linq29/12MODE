@@ -4,6 +4,7 @@ import BlurReveal from "../components/common/BlurReveal";
 import EmphasisLink from "../components/common/EmphasisLink";
 import FlipImage from "../components/common/FlipImage";
 import GoldenButton from "../components/common/GoldenButton";
+import LoadingScreen from "../components/common/LoadingScreen";
 import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
 
@@ -88,7 +89,8 @@ function JinjaSagashiApp(props) {
           return;
         }
 
-        setFatalError("データの読み込みに失敗しました。APIサーバーを確認してください。");
+        setFatalError("データの読み込みに失敗しました。");
+        // APIサーバーを確認してください。
         setLoading(false);
       });
 
@@ -283,14 +285,6 @@ function JinjaSagashiApp(props) {
     setStep(1);
   }
 
-  function renderStepLoading() {
-    return e(
-      "div",
-      { className: "jinja-loading-screen", role: "status", "aria-live": "polite" },
-      e("div", { className: "jinja-loading-spinner", "aria-hidden": "true" }),
-      e("p", { className: "jinja-loading-text blur-reveal is-revealing" }, "次の道へご案内中")
-    );
-  }
 
   function renderStep1() {
     const zodiacList = (db && db.zodiacs) || [];
@@ -489,11 +483,11 @@ function JinjaSagashiApp(props) {
   }
 
   if (loading) {
-    return e("h1", { className: "jinjasagashi" }, "読み込み中…");
+    return e(LoadingScreen, { message: "読み込み中…" });
   }
 
   if (stepLoading) {
-    return renderStepLoading();
+    return e(LoadingScreen, { message: "次の道へご案内中" });
   }
 
   if (fatalError) {

@@ -33,6 +33,7 @@ HAL東京 進級制作展 2024年度 銀賞受賞
 
 - Vite + React（フロントエンド）
 - Node.js (HTTP server) + SQLite（バックエンド）
+- Render（デプロイ）
 - Photoshop / Illustrator
 
 ## 制作期間
@@ -53,4 +54,4 @@ HAL東京 進級制作展 2024年度 銀賞受賞
 
 ## 備考
 
-- AI補助あり（ChatGPT / Codex / Gemini）
+- AI補助あり（Codex / Claude Code）
