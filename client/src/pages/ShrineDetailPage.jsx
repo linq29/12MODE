@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import BlurReveal from "../components/common/BlurReveal";
+import EmphasisLink from "../components/common/EmphasisLink";
 import PageLayout from "../layouts/PageLayout";
 import { getJson } from "../lib/api";
 
@@ -59,7 +60,7 @@ export default function ShrineDetailPage() {
       <div className="main-area">
         <main className="index">
           {loading ? (
-            <h1 className="jinjasagashi">読み込み中...</h1>
+            <h1 className="jinjasagashi">読み込み中…</h1>
           ) : error ? (
             <p className="jinja-step-note">{error}</p>
           ) : (
@@ -81,9 +82,13 @@ export default function ShrineDetailPage() {
                 <div className="addr">📌{spot.addr}</div>
                 <div className="spot-site">
                   {getSpotSite(spot) ? (
-                    <a href={getSpotSite(spot)} target="_blank" rel="noopener noreferrer">
-                      {getSpotSite(spot)}
-                    </a>
+                    <EmphasisLink
+                      href={getSpotSite(spot)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      公式サイトへ
+                    </EmphasisLink>
                   ) : null}
                 </div>
               </BlurReveal>

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import BlurReveal from "../components/common/BlurReveal";
+import EmphasisLink from "../components/common/EmphasisLink";
 import GoldenButton from "../components/common/GoldenButton";
 import SpinRevealImage from "../components/common/SpinRevealImage";
 import PageLayout from "../layouts/PageLayout";
@@ -389,12 +390,9 @@ export default function JyunishiPage() {
       {relatedSpotItems.map((item, index) => (
         <span key={`${item.label}-${index}`}>
           {Number.isFinite(item.spotId) ? (
-            <Link
-              className="jyunishi-spot-link"
-              to={`/jinja/${item.spotId}`}
-            >
+            <EmphasisLink as={Link} to={`/jinja/${item.spotId}`}>
               {item.label}
-            </Link>
+            </EmphasisLink>
           ) : (
             item.label
           )}
