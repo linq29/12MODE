@@ -10,11 +10,11 @@ services:
       - key: NODE_VERSION
         value: 24.12.0
 
-  - type: static
+  - type: web
     name: 12mode-web-prod
-    rootDir: client
-    buildCommand: npm install && npm run build
-    staticPublishPath: dist
+    runtime: static
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: client/dist
     routes:
       - type: rewrite
         source: /api/*
