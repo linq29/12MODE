@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import JinjaSagashiPage from "./pages/JinjaSagashiPage";
-import JyunishiPage from "./pages/JyunishiPage";
+import JunishiPage from "./pages/JunishiPage";
 import KotowazaPage from "./pages/KotowazaPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ShrineDetailPage from "./pages/ShrineDetailPage";
@@ -12,7 +12,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/jinjasagashi" element={<JinjaSagashiPage />} />
-      <Route path="/jyunishi" element={<JyunishiPage />} />
+      <Route path="/junishi" element={<JunishiPage />} />
       <Route path="/kotowaza" element={<KotowazaPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/blessings" element={<Navigate to="/jinjasagashi" replace />} />
@@ -26,7 +26,7 @@ export default function App() {
         path="/jinjasagashi.html"
         element={<Navigate to="/jinjasagashi" replace />}
       />
-      <Route path="/jyunishi.html" element={<Navigate to="/jyunishi" replace />} />
+      <Route path="/junishi.html" element={<Navigate to="/junishi" replace />} />
       <Route path="/kotowaza.html" element={<Navigate to="/kotowaza" replace />} />
       <Route path="/about.html" element={<Navigate to="/about" replace />} />
       <Route path="/blessings.html" element={<Navigate to="/jinjasagashi" replace />} />

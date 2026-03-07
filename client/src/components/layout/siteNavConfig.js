@@ -11,7 +11,7 @@ export const SITE_NAV_ITEMS = [
     subtitle: "あなたに縁のある一社を",
   },
   {
-    href: "/jyunishi",
+    href: "/junishi",
     title: "十二支診断",
     subtitle: "特定年の十二支をチェック",
   },

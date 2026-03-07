@@ -6,7 +6,7 @@ import EmphasisLink from "../components/common/EmphasisLink";
 import GoldenButton from "../components/common/GoldenButton";
 import SpinRevealImage from "../components/common/SpinRevealImage";
 
-import { JYUNISHI_LOAD_ERROR_MESSAGE } from "../data/messageText";
+import { JUNISHI_LOAD_ERROR_MESSAGE } from "../data/messageText";
 
 import PageLayout from "../layouts/PageLayout";
 
@@ -164,7 +164,7 @@ function mergeZodiacs(primary, secondary) {
   return [...map.values()].sort((a, b) => a.zodiacID - b.zodiacID);
 }
 
-export default function JyunishiPage() {
+export default function JunishiPage() {
   const [zodiacs, setZodiacs] = useState([]);
   const [blessingMap, setBlessingMap] = useState(new Map());
   const [spotMap, setSpotMap] = useState(new Map());
@@ -195,7 +195,7 @@ export default function JyunishiPage() {
         setLoading(false);
       })
       .catch(() => {
-        setError(JYUNISHI_LOAD_ERROR_MESSAGE);
+        setError(JUNISHI_LOAD_ERROR_MESSAGE);
         setLoading(false);
       });
   }, []);
@@ -411,18 +411,18 @@ export default function JyunishiPage() {
 
   return (
     <PageLayout
-      bodyClass="page-jyunishi"
+      bodyClass="page-junishi"
       pageTitle="十二支診断 | 十二支詣"
-      titleImage="/images/title-jyunishi.png"
+      titleImage="/images/title-junishi.png"
       titleAlt="十二支診断"
     >
       <main className="whole">
         <div className="page-icon">
-          <img src="/images/icon-jyunishi.png" alt="十二支診断" />
+          <img src="/images/icon-junishi.png" alt="十二支診断" />
         </div>
 
         <div className="selection-area" id="selectionArea">
-          <h1 className="jyunishi">診断したい年を選んでね！</h1>
+          <h1 className="junishi">診断したい年を選んでね！</h1>
           <div className="selection-wrapper">
             <select
               id="yearSelect"
@@ -466,8 +466,8 @@ export default function JyunishiPage() {
           </BlurReveal>
           {showRetryBtn && result ? (
             <BlurReveal reveal={showRetryBtn}>
-              <div className="jyunishi-detail-table-wrap">
-                <table className="jyunishi-detail-table">
+              <div className="junishi-detail-table-wrap">
+                <table className="junishi-detail-table">
                   <tbody>
                     <tr>
                       <th scope="row">神使いとしての{result.animal}</th>

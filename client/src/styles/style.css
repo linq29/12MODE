@@ -23,6 +23,11 @@ p {
     margin: 1.25rem 0;
 }
 
+::selection {
+    background: var(--primary-accent);
+    color: white;
+}
+
 em,
 .emphasis-link {
     font-style: normal;
@@ -50,11 +55,6 @@ ul,
 ol {
     list-style: none;
     padding: 0;
-}
-
-::selection {
-    background: var(--primary-accent);
-    color: white;
 }
 
 body {
@@ -268,8 +268,19 @@ h1 {
     font-family: "Kaisei Decol", serif;
     font-weight: 500;
     font-size: 1.7rem;
-    line-height: 1.2;
+    line-height: 1;
     color: var(--primary-accent);
+}
+
+.nav-area-items li .nav-title {
+    display: inline-block;
+    text-decoration: underline 0.4em transparent;
+    text-underline-offset: -0.5em;
+    transition: text-decoration-color 0.28s ease;
+}
+
+.nav-area-items li a:hover .nav-title {
+    text-decoration-color: #e3d4b7;
 }
 
 .nav-area-items li .nav-small {
@@ -773,7 +784,7 @@ hr {
 }
 
 
-/* for jyunishi.html */
+/* for junishi.html */
 .selection-area {
     text-align: center;
     margin-bottom: 2rem;
@@ -816,26 +827,26 @@ hr {
     margin: 0;
 }
 
-.page-jyunishi #resultArea .golden-btn {
+.page-junishi #resultArea .golden-btn {
     margin: auto;
     display: block;
 }
 
-.jyunishi-detail-table-wrap {
+.junishi-detail-table-wrap {
     max-width: 900px;
     margin: 1.4rem auto 0;
     text-align: left;
 }
 
-.jyunishi-detail-table {
+.junishi-detail-table {
     width: 100%;
     border-collapse: collapse;
     background-color: #fffaf2;
     margin: 2rem 0;
 }
 
-.jyunishi-detail-table th,
-.jyunishi-detail-table td {
+.junishi-detail-table th,
+.junishi-detail-table td {
     font-family: "Shippori Mincho", serif;
     font-size: 1rem;
     line-height: 1.8;
@@ -843,7 +854,7 @@ hr {
     vertical-align: top;
 }
 
-.jyunishi-detail-table th {
+.junishi-detail-table th {
     background-color: #ede0ce;
     border-right: 1px solid rgba(177, 139, 9, 0.45);
     width: 35%;
@@ -852,28 +863,28 @@ hr {
     padding: 0.5rem;
 }
 
-.jyunishi-detail-table td {
+.junishi-detail-table td {
     padding: 0.5rem 0rem 0.5rem 0.5rem;
 }
 
 @media (max-width: 768px) {
-    .jyunishi-detail-table th,
-    .jyunishi-detail-table td {
+    .junishi-detail-table th,
+    .junishi-detail-table td {
         display: block;
         width: 100%;
         box-sizing: border-box;
     }
 
-    .jyunishi-detail-table th {
+    .junishi-detail-table th {
         border-bottom: none;
     }
 
-    .jyunishi-detail-table tr {
+    .junishi-detail-table tr {
         display: block;
         border-bottom: 1px solid rgba(177, 139, 9, 0.45);
     }
 
-    .jyunishi-detail-table tr:last-child {
+    .junishi-detail-table tr:last-child {
         border-bottom: none;
     }
 }

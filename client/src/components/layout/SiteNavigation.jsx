@@ -5,9 +5,11 @@ export default function SiteNavigation({
   onItemClick,
   showMobileOnly = false,
 }) {
-  const navClassName = centered ? "nav-area-items is-centered" : "nav-area-items";
+  const navClassName = centered
+    ? "nav-area-items is-centered"
+    : "nav-area-items";
   const navItems = SITE_NAV_ITEMS.filter((item) =>
-    showMobileOnly ? true : !item.mobileOnly
+    showMobileOnly ? true : !item.mobileOnly,
   );
 
   return (
@@ -16,10 +18,10 @@ export default function SiteNavigation({
         {navItems.map((item) => (
           <li key={item.title}>
             <a href={item.href} onClick={onItemClick}>
-              {item.title}
+              <span className="nav-title">{item.title}</span>
+              <br />
+              <span className="nav-small">{item.subtitle}</span>
             </a>
-            <br />
-            <span className="nav-small">{item.subtitle}</span>
           </li>
         ))}
       </ul>

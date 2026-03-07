@@ -12,7 +12,7 @@ export default function NotFoundPage() {
       titleAlt="十二支詣"
     >
       <main className="whole">
-        <h1 className="jyunishi">ページが見つかりませんでした。</h1>
+        <h1 className="junishi">ページが見つかりませんでした。</h1>
         <div className="jinja-step-actions">
           <GoldenButton as={Link} to="/">
             トップへ戻る

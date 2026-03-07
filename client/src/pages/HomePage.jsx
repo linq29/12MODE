@@ -62,13 +62,13 @@ export default function HomePage() {
 
           <ViewportBlurReveal
             as={Link}
-            to="/jyunishi"
+            to="/junishi"
             className="index-func-link"
           >
             <div className="index-func">
               <div className="inline-wrapper">
                 <div className="h2-icon">
-                  <img src="/images/icon-jyunishi.png" alt="十二支診断" />
+                  <img src="/images/icon-junishi.png" alt="十二支診断" />
                 </div>
                 <h2>十二支診断</h2>
               </div>
