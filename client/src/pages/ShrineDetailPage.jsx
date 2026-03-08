@@ -10,6 +10,7 @@ import { SHRINE_DETAIL_LOAD_ERROR_MESSAGE } from "../data/messageText";
 import PageLayout from "../layouts/PageLayout";
 
 import { getJson } from "../lib/api";
+import { preloadImages } from "../lib/preload";
 
 function getSpotSite(spot) {
   return spot.spotSite || spot["Unnamed: 7"] || "";
@@ -17,6 +18,10 @@ function getSpotSite(spot) {
 
 function getSpotImage(spotId) {
   return `/images/spot/spot${spotId}.webp`;
+}
+
+function getDetailAssetUrls(spotId) {
+  return ["/images/deco.webp", getSpotImage(spotId)];
 }
 
 function SpotImage({ spotId, alt }) {
@@ -32,23 +37,34 @@ export default function ShrineDetailPage() {
   useEffect(() => {
     let mounted = true;
 
-    getJson(`/api/spots/${spotId}`)
-      .then((foundSpot) => {
+    setLoading(true);
+    setError("");
+    setSpot(null);
+
+    (async () => {
+      try {
+        const foundSpot = await getJson(`/api/spots/${spotId}`);
+        await preloadImages(getDetailAssetUrls(foundSpot.spotID));
+
         if (!mounted) {
           return;
         }
 
         setSpot(foundSpot);
-        setLoading(false);
-      })
-      .catch(() => {
+      } catch {
         if (!mounted) {
           return;
         }
 
         setError(SHRINE_DETAIL_LOAD_ERROR_MESSAGE);
+      } finally {
+        if (!mounted) {
+          return;
+        }
+
         setLoading(false);
-      });
+      }
+    })();
 
     return () => {
       mounted = false;

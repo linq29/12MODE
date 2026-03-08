@@ -1,11 +1,59 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import LoadingMessage from "../components/common/LoadingMessage";
 import ViewportBlurReveal from "../components/common/ViewportBlurReveal";
 import SiteFooter from "../components/layout/SiteFooter";
 
 import PageLayout from "../layouts/PageLayout";
+import { preloadImages } from "../lib/preload";
+
+const HOME_LOADING_MESSAGE = "案内中";
+const HOME_ASSET_URLS = [
+  "/images/top-visual.webp",
+  "/images/ruby-gold1.png",
+  "/images/carousel/c1.jpg",
+  "/images/carousel/c2.jpg",
+  "/images/carousel/c3.jpg",
+  "/images/carousel/c4.jpg",
+  "/images/carousel/c5.jpg",
+  "/images/icon-torii.png",
+  "/images/icon-junishi.png",
+  "/images/icon-kuji.png",
+];
 
 export default function HomePage() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let mounted = true;
+
+    preloadImages(HOME_ASSET_URLS).finally(() => {
+      if (!mounted) {
+        return;
+      }
+
+      setLoading(false);
+    });
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  if (loading) {
+    return (
+      <PageLayout
+        bodyClass="page-index"
+        pageTitle="十二支詣"
+        titleImage="/images/logo-v.png"
+        titleAlt="十二支詣"
+      >
+        <LoadingMessage variant="screen" message={HOME_LOADING_MESSAGE} />
+      </PageLayout>
+    );
+  }
+
   return (
     <PageLayout
       bodyClass="page-index"

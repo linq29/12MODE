@@ -13,6 +13,7 @@ import { JINJA_BOOTSTRAP_LOAD_ERROR_MESSAGE } from "../data/messageText";
 import PageLayout from "../layouts/PageLayout";
 
 import { getJson } from "../lib/api";
+import { preloadImages } from "../lib/preload";
 
 const e = React.createElement;
 const STEP_TRANSITION_MS = 1200;
@@ -50,6 +51,10 @@ function getSpotImage(spotId) {
   return `/images/spot/spot${spotId}.webp`;
 }
 
+function getResultAssetUrls(spotId) {
+  return ["/images/deco.webp", getSpotImage(spotId)];
+}
+
 function getSpotSite(spot) {
   return spot.spotSite || spot["Unnamed: 7"] || "";
 }
@@ -77,6 +82,7 @@ function JinjaSagashiApp(props) {
   const [selectedBlessing, setSelectedBlessing] = useState(null);
   const [selectedSpot, setSelectedSpot] = useState(null);
   const transitionTimerRef = useRef(null);
+  const transitionSequenceRef = useRef(0);
 
   useEffect(() => {
     let mounted = true;
@@ -107,6 +113,8 @@ function JinjaSagashiApp(props) {
 
   useEffect(
     () => () => {
+      transitionSequenceRef.current += 1;
+
       if (transitionTimerRef.current) {
         clearTimeout(transitionTimerRef.current);
       }
@@ -114,17 +122,31 @@ function JinjaSagashiApp(props) {
     []
   );
 
-  function runStepTransition(next) {
+  function runStepTransition(next, preloadTask = Promise.resolve()) {
+    const sequence = transitionSequenceRef.current + 1;
+    transitionSequenceRef.current = sequence;
+
     if (transitionTimerRef.current) {
       clearTimeout(transitionTimerRef.current);
     }
 
     setStepLoading(true);
-    transitionTimerRef.current = setTimeout(() => {
+
+    const delayTask = new Promise((resolve) => {
+      transitionTimerRef.current = setTimeout(() => {
+        transitionTimerRef.current = null;
+        resolve();
+      }, STEP_TRANSITION_MS);
+    });
+
+    Promise.allSettled([delayTask, Promise.resolve(preloadTask)]).then(() => {
+      if (transitionSequenceRef.current !== sequence) {
+        return;
+      }
+
       next();
       setStepLoading(false);
-      transitionTimerRef.current = null;
-    }, STEP_TRANSITION_MS);
+    });
   }
 
   function getZodiacSpots(zodiacId) {
@@ -272,12 +294,15 @@ function JinjaSagashiApp(props) {
 
     const randomSpot = matchedSpots[Math.floor(Math.random() * matchedSpots.length)];
 
-    runStepTransition(() => {
-      setStepNotice("");
-      setSelectedBlessing(blessing);
-      setSelectedSpot(randomSpot);
-      setStep(3);
-    });
+    runStepTransition(
+      () => {
+        setStepNotice("");
+        setSelectedBlessing(blessing);
+        setSelectedSpot(randomSpot);
+        setStep(3);
+      },
+      preloadImages(getResultAssetUrls(randomSpot.spotID))
+    );
   }
 
   function resetSearch() {
